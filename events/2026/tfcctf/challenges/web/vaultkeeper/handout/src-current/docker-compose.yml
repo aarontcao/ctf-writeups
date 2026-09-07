@@ -1,0 +1,9 @@
+services:
+  vaultkeeper:
+    build: .
+    ports:
+      - "8080:80"
+    # REQUIRED per team: set a UNIQUE random flag at deploy time, e.g.
+    #   docker run -e FLAG="TFC{$(openssl rand -hex 16)}" ...
+    # environment:
+    #   FLAG: "TFC{...}"

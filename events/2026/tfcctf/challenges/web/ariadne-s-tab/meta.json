@@ -1,0 +1,33 @@
+{
+  "author": "Mtib",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "5a585e4b-4694-4aca-a7ed-abf63b4f1c93",
+  "connection": "https://android.koth.pro/\"",
+  "description": "This is a mixed Web and Android Challenge, running on an API 37 (Google APIs) phone.<br>\nThe flag is present in the bot's account. The bot is logged-in on the phone.<br>\nThe solve APK must be submitted on <a href=\"https://android.koth.pro/\" target=\"_blank\" style=\"color:#40e0d0\">https://android.koth.pro/</a>.<br>\nYou do not need bruteforce or any other compute-intensive operations to solve this challenge.<br><br>\n\nNote: To see the logs of your PoC, you can use logging with the \"TFCCTF\" tag.",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "ariadnetab.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/ariadnetab_a9ca502e9faf1282.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "flag_id": "abfab595-175e-4fbe-9929-27b2f2dee1a4",
+      "points": 357,
+      "question": "",
+      "solved": false,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Ariadne's Tab",
+  "points": 357,
+  "slug": "ariadne-s-tab",
+  "solved": false,
+  "solves": 23,
+  "status": "new"
+}

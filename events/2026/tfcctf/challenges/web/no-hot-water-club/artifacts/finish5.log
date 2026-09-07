@@ -1,0 +1,31 @@
+[health] 200 {"reply":"Hey. Mira here. The pipes are quiet, the notice board is confident, and neither fact is re
+[+] pool of 6 principals ready
+  rank 0 words= 54 200 'albastre și a lăsat o monedă rece '
+  rank 1 words= 44 200 'nal a găsit harta udă la ceainăria'
+  rank 2 words= 32 200 'și a păstrat borcanul cu zgomot de'
+  rank 3 words= 24 200 't o carte despre ploaie în ultimul'
+  rank 4 words= 16 200 'mul vagon înainte de răsărit. Apoi'
+  rank 5 words=  8 200 ' Curierul Caca a schimbat eticheta'
+[+] prefix CONFIRMED: [54, 44, 32, 24, 16, 8]
+[*] slot T3
+[+] pool of 9 principals ready
+    round 0: 'înainte de răsărit' gap 2.563s
+    [!] 9 non 200, first (1788616246.0881698, 405, '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><title>405 Method Not Allowed</title><style>html { color-scheme: lig')
+    [!] 9 non 200, first (1788616266.23143, 405, '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><title>405 Method Not Allowed</title><style>html { color-scheme: lig')
+    [!] 9 non 200, first (1788616286.3749475, 405, '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><title>405 Method Not Allowed</title><style>html { color-scheme: lig')
+[+] T3 = 'înainte de răsărit'
+[+] context: Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie în ultimul vagon și a păstrat borcanul cu zgomot de râu după miezul nopții. La final a găsit harta udă la ceainăria cu ferestre albastre și a lăsat o monedă rece înainte de răsărit.
+[+] using prebuilt blob 52
+Traceback (most recent call last):
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/finish.py", line 175, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/finish.py", line 170, in main
+    audit(base, blob)
+    ~~~~~^^^^^^^^^^^^
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/solve.py", line 218, in audit
+    f"{container}:/tmp/make_blob.py"], check=True)
+    ^^^^
+  File "$HOME/ctf-tools/venv/lib/python3.13/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 405 Client Error: Method Not Allowed for url: https://no-hot-water-team-c6c787430650b4b3.challs.ctf.thefewchosen.com/api/accounts

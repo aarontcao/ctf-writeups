@@ -1,0 +1,58 @@
+target 127.0.0.1:58888
+name                   verdict   gunicorn environ key(s)
+'brevski'              BLOCKED   
+'BREVSKI'              BLOCKED   
+'Brevski'              BLOCKED   
+'bReVsKi'              BLOCKED   
+'brevskI'              BLOCKED   
+'BrEvSkI'              BLOCKED   
+'brev_ski'             FWD       
+'brev-ski'             FWD       BREV_SKI
+'brevski_'             FWD       
+'_brevski'             FWD       
+'brevski-'             FWD       BREVSKI_
+'-brevski'             FWD       _BREVSKI
+'brevskii'             FWD       BREVSKII
+'brevsk'               FWD       BREVSK
+'brevskj'              FWD       BREVSKJ
+'brevsk1'              FWD       BREVSK1
+'brevskibrevski'       FWD       BREVSKIBREVSKI
+'x-brevski'            FWD       X_BREVSKI
+'brev.ski'             FWD       BREV.SKI
+'br.ev.ski'            FWD       BR.EV.SKI
+'brevski.'             FWD       BREVSKI.
+'brevski|'             FWD       BREVSKI|
+'brevski~'             FWD       BREVSKI~
+'brevski^'             FWD       BREVSKI^
+'brevski`'             FWD       BREVSKI`
+'brevski*'             FWD       BREVSKI*
+'brevski+'             FWD       BREVSKI+
+'brevski!'             FWD       BREVSKI!
+'brevski#'             FWD       BREVSKI#
+'brevski$'             FWD       BREVSKI$
+'brevski%'             FWD       BREVSKI%
+'brevski&'             FWD       BREVSKI&
+"brevski'"             FWD       BREVSKI'
+'brevski\xdf'          BLOCKED   
+'brev\xdfski'          BLOCKED   
+'brevsk\xc4\xb1'       BLOCKED   
+'brevsk\xc5\xbfi'      BLOCKED   
+'brevs\xe2\x84\xaai'   BLOCKED   
+'brevski\x00'          BLOCKED   
+'brevski\t'            BLOCKED   
+'brevski '             BLOCKED   
+'BREVSKI\xdf'          BLOCKED   
+'\xc3\x82brevski'      BLOCKED   
+
+-- value-side control: name brevski, value variants --
+george                 BLOCKED   
+zzz                    FWD       BREVSKI
+GEORGE                 FWD       BREVSKI
+georgeX                BLOCKED   
+SP george SP           BLOCKED   
+
+-- cookies. config-difference test --
+brevski=george         FWD       COOKIE
+a=1; brevski=george    FWD       COOKIE
+brevski=zzz            FWD       COOKIE
+BREVSKI=george         FWD       COOKIE

@@ -1,0 +1,93 @@
+# KOTH arena reachability probe
+# captured 2026-09-06T13:17:41Z from the analysis VM
+# contest ended 2026-09-06T10:00:00Z
+
+=== GET https://game.koth.pro/ ===
+HTTP/2 521 
+date: Sun, 06 Sep 2026 13:17:41 GMT
+content-type: text/plain; charset=UTF-8
+content-length: 16
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+server: cloudflare
+cf-ray: a36dc15bfb6390b3-ORD
+alt-svc: h3=":443"; ma=86400
+
+
+=== GET https://game.koth.pro/leaderboard ===
+HTTP/2 521 
+date: Sun, 06 Sep 2026 13:17:41 GMT
+content-type: text/plain; charset=UTF-8
+content-length: 16
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+server: cloudflare
+cf-ray: a36dc15d4e630298-ORD
+alt-svc: h3=":443"; ma=86400
+
+
+=== GET https://game.koth.pro/api/leaderboard ===
+HTTP/2 521 
+date: Sun, 06 Sep 2026 13:17:41 GMT
+content-type: text/plain; charset=UTF-8
+content-length: 16
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+server: cloudflare
+cf-ray: a36dc15e7f511090-ORD
+alt-svc: h3=":443"; ma=86400
+
+
+=== GET https://game.koth.pro/api/replays ===
+HTTP/2 521 
+date: Sun, 06 Sep 2026 13:17:41 GMT
+content-type: text/plain; charset=UTF-8
+content-length: 16
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+server: cloudflare
+cf-ray: a36dc15fb8121a46-ORD
+alt-svc: h3=":443"; ma=86400
+
+
+=== GET https://game.koth.pro/static/app.js ===
+HTTP/2 200 
+date: Sun, 06 Sep 2026 13:17:42 GMT
+content-type: text/javascript; charset=utf-8
+content-length: 4986
+accept-ranges: bytes
+cache-control: max-age=14400
+content-disposition: inline; filename=app.js
+etag: "1788532747.0-4986-2381449783"
+last-modified: Fri, 04 Sep 2026 14:39:07 GMT
+server: cloudflare
+age: 97089
+cf-cache-status: STALE
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2F5IDJO5D2jSFWZ3TjvU1Y24XHZTYZ2CpOdW40oeDR69fHjjn%2FLY7zBcTGQmwEDz2ZwICv7qzi3WtC9xWC6Y6WYm66n1PxidISDVxTiOGoCpltV8Q2dsfAoqKfinArNlq"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-ray: a36dc160eaf4dc66-ORD
+alt-svc: h3=":443"; ma=86400
+
+
+=== GET https://game.koth.pro/static/replay_view.js ===
+HTTP/2 521 
+date: Sun, 06 Sep 2026 13:17:42 GMT
+content-type: text/plain; charset=UTF-8
+content-length: 16
+cache-control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+expires: Thu, 01 Jan 1970 00:00:01 GMT
+referrer-policy: same-origin
+x-frame-options: SAMEORIGIN
+server: cloudflare
+cf-ray: a36dc1622ff24e06-ORD
+alt-svc: h3=":443"; ma=86400
+
+

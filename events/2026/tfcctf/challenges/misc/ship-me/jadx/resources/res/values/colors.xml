@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="aqua">#5be7c4</color>
+    <color name="navy">#07131f</color>
+    <color name="navy_border">#214259</color>
+    <color name="navy_light">#102333</color>
+    <color name="slate">#91a7b5</color>
+    <color name="white">#f4fafd</color>
+</resources>

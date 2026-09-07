@@ -1,0 +1,116 @@
+
+====================================================================================================
+## 0  CONTROLS
+====================================================================================================
+control: no brevski                          FWD      brevski=None keys=HOST
+control: brevski: george in HEAD             DROPPED  HTTP/1.1 200 OK
+control: brevski: zzz in HEAD                FWD      brevski='zzz' keys=BREVSKI,HOST
+control: parse error (Upgrade)               CLOSED   
+
+====================================================================================================
+## A  WHITESPACE AND LINE ENDINGS AROUND NAME / COLON / VALUE
+====================================================================================================
+A no space after colon                       DROPPED  HTTP/1.1 200 OK
+A two spaces after colon                     DROPPED  HTTP/1.1 200 OK
+A tab after colon                            DROPPED  HTTP/1.1 200 OK
+A trailing space in value                    DROPPED  HTTP/1.1 200 OK
+A trailing tab in value                      DROPPED  HTTP/1.1 200 OK
+A leading+trailing tabs                      DROPPED  HTTP/1.1 200 OK
+A space before colon                         CLOSED   
+A tab before colon                           CLOSED   
+A empty value then george later              DROPPED  HTTP/1.1 200 OK
+A interior tab in value                      FWD      brevski='geo\trge' keys=BREVSKI,HOST
+A interior space in value                    FWD      brevski='geo rge' keys=BREVSKI,HOST
+A 0xa0 prefix on value                       DROPPED  HTTP/1.1 200 OK
+A 0xa0 suffix on value                       DROPPED  HTTP/1.1 200 OK
+A 0x0b prefix on value                       CLOSED   
+A quoted value                               DROPPED  HTTP/1.1 200 OK
+A value with trailing semicolon              DROPPED  HTTP/1.1 200 OK
+A value with trailing comma                  DROPPED  HTTP/1.1 200 OK
+A value with leading comma                   DROPPED  HTTP/1.1 200 OK
+A bare LF terminator on the line             CLOSED   
+A bare CR inside the value                   CLOSED   
+A CR LF CR in the value                      CLOSED   
+A NUL in the value                           CLOSED   
+A DEL in the value                           CLOSED   
+A 0xff suffix                                DROPPED  HTTP/1.1 200 OK
+
+====================================================================================================
+## B  NAME SHAPES
+====================================================================================================
+B BREVSKI upper                              DROPPED  HTTP/1.1 200 OK
+B BrEvSkI mixed                              DROPPED  HTTP/1.1 200 OK
+B brevski_ trailing underscore               FWD      brevski=None keys=HOST
+B _brevski leading underscore                FWD      brevski=None keys=HOST
+B brevski. trailing dot                      FWD      brevski=None keys=BREVSKI.,HOST
+B brevski| trailing pipe                     FWD      brevski=None keys=BREVSKI|,HOST
+B brev-ski                                   FWD      brevski=None keys=BREV_SKI,HOST
+B brevskii (8 chars)                         FWD      brevski=None keys=BREVSKII,HOST
+B brevsk (6 chars)                           FWD      brevski=None keys=BREVSK,HOST
+B HTTP_BREVSKI                               FWD      brevski=None keys=HOST
+B HTTP-BREVSKI                               FWD      brevski=None keys=HOST,HTTP_BREVSKI
+B name with double colon                     DROPPED  HTTP/1.1 200 OK
+B empty name                                 CLOSED   
+
+====================================================================================================
+## C  DUPLICATES, BOTH ORDERS, WITH AND WITHOUT NEIGHBOURS
+====================================================================================================
+C george then zzz                            DROPPED  HTTP/1.1 200 OK
+C zzz then george                            DROPPED  HTTP/1.1 200 OK
+C george twice                               DROPPED  HTTP/1.1 200 OK
+C empty then george                          DROPPED  HTTP/1.1 200 OK
+C george then empty                          DROPPED  HTTP/1.1 200 OK
+C geo + rge split                            FWD      brevski='geo,rge' keys=BREVSKI,HOST
+C BREVSKI then brevski                       DROPPED  HTTP/1.1 200 OK
+C brevski_ then brevski                      FWD      brevski='zzz' keys=BREVSKI,HOST
+C brevski between two X_ pads                DROPPED  HTTP/1.1 200 OK
+C 100 X_p pads then brevski                  DROPPED  HTTP/1.1 200 OK
+C 124 X_p pads then brevski                  DROPPED  HTTP/1.1 200 OK
+C 99 X-p pads then brevski                   DROPPED  HTTP/1.1 200 OK
+
+====================================================================================================
+## D  FOLDING AND CONTINUATION
+====================================================================================================
+D fold: brevski: geo / SP rge                CLOSED   
+D fold: brevski: / SP george                 CLOSED   
+D fold with tab                              CLOSED   
+D fold after a different header              CLOSED   
+D line starting with space only              CLOSED   
+
+====================================================================================================
+## E  FRAMING NEIGHBOURS: CL / TE INTERACTIONS
+====================================================================================================
+E brevski + CL 0                             DROPPED  HTTP/1.1 200 OK
+E brevski + CL 5 + body                      DROPPED  HTTP/1.1 200 OK
+E brevski + TE chunked                       DROPPED  HTTP/1.1 200 OK
+E brevski after CL                           DROPPED  HTTP/1.1 200 OK
+E brevski + CL_ underscore                   CLOSED   
+E brevski + Content-Length_                  DROPPED  HTTP/1.1 200 OK
+E brevski + CL twice equal                   DROPPED  HTTP/1.1 200 OK
+
+====================================================================================================
+## F  TRAILER CHANNEL, WITH THE ORACLE ATTACHED
+====================================================================================================
+F empty body, brevski trailer                FWD      brevski=None keys=HOST,TRANSFER_ENCODING
+F one chunk, brevski trailer                 FWD      brevski=None keys=HOST,TRANSFER_ENCODING
+F declared Trailer, brevski trailer          FWD      brevski=None keys=HOST,TRAILER,TRANSFER_ENCODING
+F two trailers                               FWD      brevski=None keys=HOST,TRANSFER_ENCODING
+F BREVSKI trailer upper                      FWD      brevski=None keys=HOST,TRANSFER_ENCODING
+F chunk size understated by 1                CLOSED   
+F chunk size overstated                      CLOSED   
+F trailer then extra CRLF                    PART     brevski=None keys=HOST,TRANSFER_ENCODING
+
+====================================================================================================
+## G  VALUE ENCODINGS THAT MIGHT NORMALISE TO george
+====================================================================================================
+G percent-encoded g                          FWD      brevski='%67eorge' keys=BREVSKI,HOST
+G utf8 overlong-ish bytes                    FWD      brevski='Ç§eorge' keys=BREVSKI,HOST
+G latin1 sharp-s (upper -> SS)               FWD      brevski='georgß' keys=BREVSKI,HOST
+G value georgeX                              DROPPED  HTTP/1.1 200 OK
+G value Xgeorge                              DROPPED  HTTP/1.1 200 OK
+G value GEORGE                               FWD      brevski='GEORGE' keys=BREVSKI,HOST
+G value George                               FWD      brevski='George' keys=BREVSKI,HOST
+
+====================================================================================================
+WINS: none
+====================================================================================================

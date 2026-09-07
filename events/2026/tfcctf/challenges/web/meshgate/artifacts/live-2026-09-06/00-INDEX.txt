@@ -1,0 +1,27 @@
+target: http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com
+captured: 2026-09-06T13:20:30Z
+
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/  -> 00-root.http
+ 405 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/login  -> 01-login.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/help  -> 02-help.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/robots.txt  -> 03-robots.http
+ 200 POST  http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/idp/register  -> 10-idp-register.http
+ 302 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/start  -> 11-sso-start.http
+ 302 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/idp/authorize?response_type=code&client_id=meshgate-gw&redirect_uri=http%3A%2F%2Fmeshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com%2Fauth%2Fsso%2Fcallback&scope=openid+profile+email&state=Kb88FxxyxIDCf6cU  -> 12-idp-authorize.http
+ 302 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/callback?code=ZunLTq5vix-WkVD0T1mQYg&state=Kb88FxxyxIDCf6cU  -> 13-idp-loginform.http
+ 405 POST  http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/callback?code=ZunLTq5vix-WkVD0T1mQYg&state=Kb88FxxyxIDCf6cU  -> 14-idp-login-post.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/dashboard  -> 20-dashboard.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/whoami  -> 30-api-whoami.json.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/directory  -> 31-api-directory.json.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/support/diagnostics  -> 32-api-support-diagnostics.json.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/support/bundle  -> 33-api-support-bundle.json.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/tokens  -> 34-api-tokens.json.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/integrations  -> 35-api-integrations.json.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/partner-apps  -> 36-api-partner-apps.json.http
+ 502 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2Fmeshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com%2Flogin  -> 40-api-unfurl-loopback.json.http
+ 502 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2Fmeshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com%2Fidp%2Fjwks  -> 41-api-unfurl-xml.json.http
+ 404 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/admin/  -> 50-admin-root.http
+ 403 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/admin/updates  -> 51-admin-updates.http
+ 403 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/admin/audit  -> 52-admin-audit.http
+ 200 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/admin/status/health  -> 53-admin-status-health.http
+ 400 GET   http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/admin/session/adopt  -> 54-admin-session-adopt.http

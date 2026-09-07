@@ -1,0 +1,55 @@
+# A pattern with an internal slash is anchored to this file's directory, so
+# anything meant to match inside events/<year>/<event>/ needs a **/ prefix.
+
+# messy scratchwork
+scratch/
+!**/scratch/.gitkeep
+
+# contest state stuff that can be huge
+.state/
+*.token
+token.json
+
+# solve script debris
+__pycache__/
+*.pyc
+.venv/
+venv/
+core
+core.*
+*.core
+peda-session-*.txt
+.gdb_history
+
+# large artifacts
+**/artifacts/**/*.bin
+**/artifacts/**/*.raw
+**/artifacts/**/*.img
+**/artifacts/**/*.iso
+**/artifacts/**/*.pcap
+**/artifacts/**/*.dmp
+*.tar.gz
+*.zip
+
+# we do want to include contest handouts
+!**/handout/**
+
+# auth-state caches written by solve scripts, these have bearer tokens and whatnot
+.*-state.json
+*-state.json
+!meta.json
+
+# throwaway APK signing keystores, solve/build.sh can regenerate if needed
+ks.jks
+
+# internal notes, ledgers, etc. for LLMs
+NOTES.md
+ENDGAME.md
+WRITEUP-PLAN.md
+BULLETIN.md
+
+# runbooks and logs
+ops/
+
+# King of the Hill bot workshops
+**/challenges/koth/analysis/

@@ -1,0 +1,19 @@
+name                   value       verdict
+'brevski'              'george'    DROP(rule)
+'BREVSKI'              'george'    DROP(rule)
+'bReVsKi'              'george'    DROP(rule)
+'brevski\xdf'          'george'    CLOSE(parse)
+'brev\xdfski'          'george'    CLOSE(parse)
+'brevsk\xc4\xb1'       'george'    CLOSE(parse)
+'brevsk\xc5\xbfi'      'george'    CLOSE(parse)
+'brevs\xe2\x84\xaai'   'george'    CLOSE(parse)
+'brevski\x00'          'george'    CLOSE(parse)
+'brevski\t'            'george'    CLOSE(parse)
+'brevski '             'george'    CLOSE(parse)
+'BREVSKI\xdf'          'george'    CLOSE(parse)
+'\xc3\x82brevski'      'george'    CLOSE(parse)
+'brevski'              'georgeX'   DROP(rule)
+'brevski'              ' george '  DROP(rule)
+'brevski'              'zzz'       FORWARDED
+'brevskj'              'george'    FORWARDED
+'brev-ski'             'george'    FORWARDED

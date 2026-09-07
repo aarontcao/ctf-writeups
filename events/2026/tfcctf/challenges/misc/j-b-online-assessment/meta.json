@@ -1,0 +1,37 @@
+{
+  "author": "cr0",
+  "category": "misc",
+  "category_display": "misc",
+  "challenge_id": "600836c9-9738-422b-8a61-34a382fc6605",
+  "connection": "",
+  "description": "Can you get a j*b in 2026?",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:25:42Z",
+      "flag_id": "59e70d50-b9d7-4eae-8b01-c8207988bc50",
+      "points": 93,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "J*B Online Assessment",
+  "points": 93,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{cheating_is_the_only_way_to_get_a_job_in_2026}",
+      "flag_id": null,
+      "recorded": "2026-09-05T11:25:25Z",
+      "submitted": true
+    }
+  ],
+  "slug": "j-b-online-assessment",
+  "solved": true,
+  "solves": 142,
+  "status": "solved"
+}

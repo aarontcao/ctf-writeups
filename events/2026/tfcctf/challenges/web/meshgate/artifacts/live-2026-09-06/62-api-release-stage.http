@@ -1,0 +1,14 @@
+# the release-publish capability wall
+POST http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/release/stage
+HTTP 403
+Content-Length: 48
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:21:08 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"error":"release-publish capability required"}

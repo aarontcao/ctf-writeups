@@ -1,0 +1,95 @@
+[+] pool of 22 principals ready
+[*] slot V1, 6 candidates
+    round 0: winner 'schimbat' gap 0.778s
+    round 1: winner 'schimbat' gap 0.560s
+[+] V1 = 'schimbat'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat "
+[*] slot O1, 21 candidates
+    round 0: winner 'eticheta verde' gap 0.521s
+    round 1: winner 'eticheta verde' gap 0.458s
+[+] O1 = 'eticheta verde'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde "
+[*] slot L1, 18 candidates
+    round 0: winner 'în ultimul vagon' gap 0.448s
+    round 1: winner 'în ultimul vagon' gap 0.309s
+[+] L1 = 'în ultimul vagon'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon "
+[*] slot T1, 9 candidates
+    round 0: winner 'înainte de răsărit' gap 0.213s
+    round 1: winner 'înainte de răsărit' gap 0.313s
+[+] T1 = 'înainte de răsărit'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a "
+[*] slot V2, 6 candidates
+    round 0: winner 'lăsat' gap 0.468s
+    round 1: winner 'lăsat' gap 0.581s
+[+] V2 = 'lăsat'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat "
+[*] slot I2, 11 candidates
+    round 0: winner 'o carte despre ploaie' gap 0.877s
+    round 1: winner 'o carte despre ploaie' gap 0.685s
+[+] I2 = 'o carte despre ploaie'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie "
+[*] slot L2, 18 candidates
+    round 0: winner 'în ultimul vagon' gap 0.844s
+    round 1: winner 'în ultimul vagon' gap 0.487s
+[+] L2 = 'în ultimul vagon'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie în ultimul vagon și a păstrat "
+[*] slot O2, 21 candidates
+    round 0: winner 'borcanul cu zgomot de râu' gap 0.334s
+    round 1: winner 'borcanul cu zgomot de râu' gap 0.825s
+[+] O2 = 'borcanul cu zgomot de râu'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie în ultimul vagon și a păstrat borcanul cu zgomot de râu "
+[*] slot T2, 9 candidates
+    round 0: winner 'după miezul nopții' gap 1.204s
+    round 1: winner 'după miezul nopții' gap 4.055s
+[+] T2 = 'după miezul nopții'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie în ultimul vagon și a păstrat borcanul cu zgomot de râu după miezul nopții. La final a "
+[*] slot V3, 6 candidates
+    round 0: winner 'găsit' gap 0.924s
+    round 1: winner 'găsit' gap 3.689s
+[+] V3 = 'găsit'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie în ultimul vagon și a păstrat borcanul cu zgomot de râu după miezul nopții. La final a găsit "
+[*] slot O3, 21 candidates
+    round 0: winner 'harta udă' gap 0.688s
+    round 1: winner 'harta udă' gap 3.492s
+[+] O3 = 'harta udă'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie în ultimul vagon și a păstrat borcanul cu zgomot de râu după miezul nopții. La final a găsit harta udă "
+[*] slot L3, 18 candidates
+    round 0: winner 'la ceainăria cu ferestre albastre' gap 0.545s
+    [!] 6 non 200 responses, first: (1788611886.6924806, 502, '{"error":"Inference unavailable: fetch failed"}')
+    round 1: winner 'la ceainăria cu ferestre albastre' gap 0.437s
+[+] L3 = 'la ceainăria cu ferestre albastre'
+    context so far: "Mira's continuity note: Curierul Caca a schimbat eticheta verde în ultimul vagon înainte de răsărit. Apoi a lăsat o carte despre ploaie în ultimul vagon și a păstrat borcanul cu zgomot de râu după miezul nopții. La final a găsit harta udă la ceainăria cu ferestre albastre și a lăsat "
+[*] slot I3, 11 candidates
+    [!] 11 non 200 responses, first: (1788611886.9818869, 502, '{"error":"Inference unavailable: fetch failed"}')
+Traceback (most recent call last):
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/solve.py", line 232, in <module>
+    recover(sys.argv[2])
+    ~~~~~~~^^^^^^^^^^^^^
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/solve.py", line 180, in recover
+    value = resolve_slot(pool, prefix, candidates)
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/solve.py", line 144, in resolve_slot
+    winner = candidates[order[0]]
+                        ~~~~~^^^
+IndexError: list index out of range
+[+] pool of 22 principals ready
+[*] slot I3, 11 candidates
+    [!] 11 non 200 responses, first: (1788612060.9093702, 502, '{"error":"Inference unavailable: fetch failed"}')
+    [!] whole batch failed, backing off
+    [!] 11 non 200 responses, first: (1788612081.2002995, 502, '{"error":"Inference unavailable: fetch failed"}')
+    [!] whole batch failed, backing off
+    [!] 11 non 200 responses, first: (1788612101.5059085, 502, '{"error":"Inference unavailable: fetch failed"}')
+    [!] whole batch failed, backing off
+    [!] 11 non 200 responses, first: (1788612121.793799, 502, '{"error":"Inference unavailable: fetch failed"}')
+    [!] whole batch failed, backing off
+    [!] 11 non 200 responses, first: (1788612142.0834327, 502, '{"error":"Inference unavailable: fetch failed"}')
+    [!] whole batch failed, backing off
+Traceback (most recent call last):
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/solve.py", line 236, in <module>
+    recover(sys.argv[2])
+    ~~~~~~~^^^^^^^^^^^^^
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/solve.py", line 184, in recover
+    value = resolve_slot(pool, prefix, candidates)
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/solve.py", line 155, in resolve_slot
+    return max(counts, key=counts.get)
+ValueError: max() iterable argument is empty

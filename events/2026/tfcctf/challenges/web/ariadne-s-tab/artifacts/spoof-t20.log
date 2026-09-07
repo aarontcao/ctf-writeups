@@ -1,0 +1,6 @@
+Signer #1 certificate DN: CN=solve
+Signer #1 certificate SHA-256 digest: 14f2d23b633f3479c502902677f562ab20d2fb3cedfee24527d55a6dcfe76950
+BUILT: $HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/ariadne-s-tab/solve/spoof/../spoof.apk
+tag=t20 payload=b379aa79-1152-4a40-bb7f-124c49f9faca
+provision attempt 0 -> 401 {'detail': 'Unauthorized'}
+provision attempt 1 -> 401 {'detail': 'Unauthorized'}

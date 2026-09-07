@@ -1,0 +1,68 @@
+target 127.0.0.1:28888
+=== PART A: new proxoxy fingerprint discriminators ===
+A ver.HTTP/1.1       HTTP/1.1 200 OK                    len=160 n200=1
+A ver.HTTP/1.0       HTTP/1.0 200 OK                    len=155 n200=0
+A ver.HTTP/1.2       EATEN(0 bytes)
+A ver.HTTP/1.5       EATEN(0 bytes)
+A ver.HTTP/1.9       EATEN(0 bytes)
+A ver.HTTP/0.9       EATEN(0 bytes)
+A ver.HTTP/2.0       EATEN(0 bytes)
+A method.1A          HTTP/1.1 400 Bad Request           len=276 n200=1
+A method.1A;x        EATEN(0 bytes)
+A method.20char      HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A nohost.11          EATEN(0 bytes)
+A nohost.10          HTTP/1.0 200 OK                    len=155 n200=0
+A nohost.10.hdr      HTTP/1.0 200 OK                    len=155 n200=0
+A cl.0               HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A cl.0,0             HTTP/1.1 400 Bad Request           len=261 n200=1
+A cl.0               HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A cl. 0              HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A cl.+0              EATEN(0 bytes)
+A cl.0x0             EATEN(0 bytes)
+A cl.00              HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A cl.0\xa0           EATEN(0 bytes)
+A te.chunked         HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A te.chunked\xa0     EATEN(0 bytes)
+A te.gzip,chunked    EATEN(0 bytes)
+A te.deflate, chunked HTTP/1.1 405 METHOD NOT ALLOWED    len=350 n200=1
+A te.compress, chunked HTTP/1.1 405 METHOD NOT ALLOWED    len=350 n200=1
+A te.identity,chunked EATEN(0 bytes)
+A te.chunked;a=b     EATEN(0 bytes)
+A te.br,chunked      EATEN(0 bytes)
+A chunkext.8189      HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A chunkext.8190      HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A chunkext.8191      EATEN(0 bytes)
+A trcount.127        HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A trcount.128        EATEN(0 bytes)
+A trcount.129        EATEN(0 bytes)
+A hdrcount.124       HTTP/1.1 431 Request Header Fields len=337 n200=1
+A hdrcount.125       HTTP/1.1 431 Request Header Fields len=337 n200=1
+A hdrcount.126       HTTP/1.1 431 Request Header Fields len=337 n200=1
+A ce.gzip.bad        EATEN(0 bytes)
+A ce.br.bad          EATEN(0 bytes)
+A ce.zstd.bad        HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A ce.gzip.ok         HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+A trailer.brev.g     HTTP/1.1 500 INTERNAL SERVER ERROR len=443 n200=1
+A trailer.brev.z     HTTP/1.1 500 INTERNAL SERVER ERROR len=443 n200=1
+A head.brev.g        EATEN(0 bytes)
+A head.brev.z        HTTP/1.1 500 INTERNAL SERVER ERROR len=443 n200=1
+A ctrl.health        HTTP/1.1 200 OK                    len=160 n200=1
+=== PART B: smuggle battery (last-byte trick) ===
+B cl0            HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B cl8            HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B te0            HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B te.tr          HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B te.data        HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B te.ext         HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B te.0pad        HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B nobody         HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B http10         HTTP/1.0 405 METHOD NOT ALLOWED    len=350 n200=0
+B headless10     HTTP/1.0 405 METHOD NOT ALLOWED    len=350 n200=0
+B headless11     EATEN(0 bytes)
+B cl0.under      EATEN(0 bytes)
+B te.under       EATEN(0 bytes)
+B cl.comma       HTTP/1.1 400 Bad Request           len=261 n200=1
+B dupcl          HTTP/1.1 400 Bad Request           len=261 n200=1
+B script         HTTP/1.1 500 Bad Request           len=316 n200=1
+B tr.after       HTTP/1.1 405 METHOD NOT ALLOWED    len=355 n200=1
+B tr.inline      HTTP/1.1 500 INTERNAL SERVER ERROR len=443 n200=1

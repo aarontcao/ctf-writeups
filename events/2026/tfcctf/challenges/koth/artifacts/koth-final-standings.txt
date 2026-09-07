@@ -1,0 +1,32 @@
+KOTH "Capture the Flag?" FINAL STANDINGS  118 teams
+captured 2026-09-06T13:23:19Z from GET /koth   frozen at best_submitted_at 2026-09-06T09:59:30Z
+score_rank = by accumulated total_points.  current_rank = arena ladder position at close.
+
+ SCORE  ARENA   TEAM                             TOTAL_PTS   PTS/TICK
+ RANK   RANK
+ -----  -----   -------------------------------- ---------   --------
+     1      1   maimai                             1542.61     3.7500
+     2    117   Cosmic Bit Flip                    1326.79     0.0529
+     3      2   L.A.R.P.                           1081.97     3.7500
+     4     20   tjcsc                               946.11     0.3393
+     5      3   krauq                               898.93     2.5000
+     6     15   THEM?!                              829.50     0.4261
+     7     14   ddl                                 806.71     0.4261
+     8      4   Squid Proxy Lovers                  737.23     1.6667
+     9      8   seojin fan club                     686.23     0.8333
+    10      5   no rev/pwn no life                  577.11     1.1250
+    11      6   n0l3rain                            574.02     1.1250
+    12     12   fedcamp                             559.58     0.5000
+  ...
+    29     40   1nf1n1ty                            163.31     0.1562
+    30     28   scandal                             159.23     0.2273
+    31     35   localhost969                        156.65     0.1786
+    32     21   Nol3ptr                             156.21     0.3333
+    33     91   bi0s                                153.40     0.0752
+    34     54   Kessoku Band                        142.23     0.1163 <<<
+    35     19   KCSC                                140.29     0.3393
+    36     55   hu/prod/random                      137.26     0.1136
+    37     17   NCRT                                135.61     0.3846
+    38     37   uniguri                             134.94     0.1695
+    39     39   Selfwash                            133.80     0.1613
+    40     42   0xfun                               131.37     0.1450

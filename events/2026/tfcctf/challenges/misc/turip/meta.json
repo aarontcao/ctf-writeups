@@ -1,0 +1,42 @@
+{
+  "author": "mcsky23",
+  "category": "misc",
+  "category_display": "misc",
+  "challenge_id": "93a751cd-5169-42dc-8e00-ac733a3d9f0c",
+  "connection": "https://youtu.be/145Qd0aVTEk<br>",
+  "description": "https://youtu.be/145Qd0aVTEk<br>                                                            http://2.29.39.4:1337",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "turip.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/turip_80a4d5fdc9812c0f.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:30:17Z",
+      "flag_id": "5ad13d31-748d-49e9-ba6d-c0a3825f5189",
+      "points": 170,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "turip",
+  "points": 170,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{this_was_discovered_in_the_good_old_days_when_people_still_played_ctf}",
+      "flag_id": null,
+      "recorded": "2026-09-05T11:30:05Z",
+      "submitted": true
+    }
+  ],
+  "slug": "turip",
+  "solved": true,
+  "solves": 90,
+  "status": "solved"
+}

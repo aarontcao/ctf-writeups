@@ -1,0 +1,1 @@
+document.getElementById("viewer-premium-token").textContent = "";

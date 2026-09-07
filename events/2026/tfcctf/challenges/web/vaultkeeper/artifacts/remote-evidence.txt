@@ -1,0 +1,40 @@
+### GET /api/keyring.php (direct, blocked by Apache Require ip)
+HTTP 403
+
+### GET /api/keyring.php%3Fa.php (Apache 2.4.56 filename-confusion ACL bypass)
+HTTP 403
+
+### bar oracle, threshold below ord: renders [redacted]
+{
+    "event": "maintenance.x",
+    "ok": true,
+    "rendered": "[redacted]",
+    "tokens": [
+        "event",
+        "appliance",
+        "node",
+        "job",
+        "source",
+        "status",
+        "when",
+        "workspace",
+        "config"
+    ]
+}
+### bar oracle, threshold above ord: str_repeat ValueError, span echoed verbatim
+{
+    "event": "maintenance.x",
+    "ok": true,
+    "rendered": "[[config.cap_mask|at:0|code|sub:200|bar:.]]",
+    "tokens": [
+        "event",
+        "appliance",
+        "node",
+        "job",
+        "source",
+        "status",
+        "when",
+        "workspace",
+        "config"
+    ]
+}

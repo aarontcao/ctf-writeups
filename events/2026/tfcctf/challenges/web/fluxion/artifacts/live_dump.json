@@ -1,0 +1,495 @@
+{
+ "fetchAuditLog": {
+  "result": {
+   "entries": []
+  }
+ },
+ "listViews": {
+  "result": {
+   "views": [
+    {
+     "name": "failures",
+     "columns": [
+      "run",
+      "workflow",
+      "status"
+     ],
+     "filter": {
+      "status": "failed"
+     },
+     "createdAt": 1788608781262
+    },
+    {
+     "name": "awaiting",
+     "columns": [
+      "run",
+      "workflow",
+      "status"
+     ],
+     "filter": {
+      "status": "awaiting"
+     },
+     "createdAt": 1788608781262
+    }
+   ]
+  }
+ },
+ "getSettings": {
+  "result": {
+   "settings": {
+    "engine": {
+     "concurrency": 8,
+     "stepTimeoutMs": 900000,
+     "retry": {
+      "max": 5,
+      "backoff": "exponential",
+      "jitter": true,
+      "baseMs": 250
+     },
+     "hooks": {
+      "deliveryTimeoutMs": 4000,
+      "signatureHeader": "x-fluxion-signature",
+      "maxPending": 256
+     },
+     "retention": {
+      "completedDays": 30,
+      "failedDays": 90,
+      "eventsPerRun": 5000
+     },
+     "observability": {
+      "streamBufferKb": 64,
+      "sampleRate": 1,
+      "redactSecrets": true
+     }
+    },
+    "view": {
+     "columns": [
+      "run",
+      "workflow",
+      "status"
+     ],
+     "density": "comfortable",
+     "theme": "system",
+     "timezone": "UTC",
+     "refreshMs": 4000
+    }
+   }
+  }
+ },
+ "getDashboardLayout": {
+  "result": {
+   "layout": {
+    "grid": {
+     "columns": 12,
+     "rowHeight": 32,
+     "gap": 8
+    },
+    "panels": {
+     "runs": {
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 6,
+      "collapsed": false
+     },
+     "alerts": {
+      "x": 8,
+      "y": 0,
+      "w": 4,
+      "h": 3,
+      "collapsed": false
+     },
+     "timeline": {
+      "x": 8,
+      "y": 3,
+      "w": 4,
+      "h": 3,
+      "collapsed": false
+     }
+    },
+    "pinned": [
+     "runs",
+     "alerts"
+    ]
+   }
+  }
+ },
+ "listWorkflows": {
+  "result": {
+   "workflows": [
+    {
+     "name": "db-nightly-vacuum",
+     "kind": "durable"
+    },
+    {
+     "name": "ingest-csv-batch",
+     "kind": "durable"
+    },
+    {
+     "name": "slack-digest",
+     "kind": "durable"
+    },
+    {
+     "name": "nightly-report-export",
+     "kind": "durable"
+    },
+    {
+     "name": "invoice-pdf-render",
+     "kind": "durable"
+    },
+    {
+     "name": "github-deploy-notify",
+     "kind": "durable"
+    },
+    {
+     "name": "admin-provision-approval",
+     "kind": "durable"
+    }
+   ]
+  }
+ },
+ "listRetentionPolicies": {
+  "result": {
+   "policies": [
+    {
+     "workflowName": "nightly-report-export",
+     "runs": {
+      "days": 30,
+      "keepFailed": true
+     },
+     "events": {
+      "days": 14
+     },
+     "audit": {
+      "days": 90
+     },
+     "metrics": {
+      "days": 365,
+      "rollup": "daily"
+     },
+     "incidents": {
+      "days": 180
+     },
+     "updatedAt": 1788608781262
+    },
+    {
+     "workflowName": "ingest-csv-batch",
+     "runs": {
+      "days": 30,
+      "keepFailed": true
+     },
+     "events": {
+      "days": 14
+     },
+     "audit": {
+      "days": 90
+     },
+     "metrics": {
+      "days": 365,
+      "rollup": "daily"
+     },
+     "incidents": {
+      "days": 180
+     },
+     "updatedAt": 1788608781262
+    },
+    {
+     "workflowName": "db-nightly-vacuum",
+     "runs": {
+      "days": 7,
+      "keepFailed": true
+     },
+     "events": {
+      "days": 3
+     },
+     "audit": {
+      "days": 90
+     },
+     "metrics": {
+      "days": 365,
+      "rollup": "daily"
+     },
+     "incidents": {
+      "days": 180
+     },
+     "updatedAt": 1788608781263
+    }
+   ]
+  }
+ },
+ "listIncidents": {
+  "result": {
+   "incidents": [
+    {
+     "id": "inc_1001",
+     "runId": "",
+     "workflowName": "ingest-csv-batch",
+     "severity": "sev2",
+     "status": "acknowledged",
+     "title": "ingest failing on malformed rows",
+     "openedAt": 1788608781262,
+     "acknowledgedAt": 1788608781262,
+     "resolvedAt": null,
+     "annotations": {}
+    },
+    {
+     "id": "inc_1002",
+     "runId": "",
+     "workflowName": "slack-digest",
+     "severity": "sev4",
+     "status": "open",
+     "title": "digest delivery delayed",
+     "openedAt": 1788608781262,
+     "acknowledgedAt": null,
+     "resolvedAt": null,
+     "annotations": {}
+    }
+   ]
+  }
+ },
+ "listIntegrations": {
+  "result": {
+   "integrations": [
+    {
+     "id": "int_501",
+     "name": "ops-alert-webhook",
+     "kind": "webhook",
+     "url": "https://hooks.example.com/ops",
+     "connectionRef": "ops-slack",
+     "health": "unknown",
+     "lastCheckedAt": null,
+     "createdAt": 1788608781263
+    },
+    {
+     "id": "int_502",
+     "name": "public-status-mirror",
+     "kind": "status-mirror",
+     "url": "https://status.example.com/ingest",
+     "connectionRef": "",
+     "health": "unknown",
+     "lastCheckedAt": null,
+     "createdAt": 1788608781263
+    },
+    {
+     "id": "int_503",
+     "name": "metrics-push",
+     "kind": "pushgateway",
+     "url": "https://push.example.com/metrics/job/fluxion",
+     "connectionRef": "",
+     "health": "unknown",
+     "lastCheckedAt": null,
+     "createdAt": 1788608781263
+    }
+   ]
+  }
+ },
+ "listConnections": {
+  "result": {
+   "connections": [
+    {
+     "name": "prod-postgres",
+     "type": "postgres",
+     "hint": "\u2022\u2022\u2022\u2022rest",
+     "createdAt": 1788608781262
+    },
+    {
+     "name": "ops-slack",
+     "type": "slack",
+     "hint": "\u2022\u2022\u2022\u2022cted",
+     "createdAt": 1788608781262
+    },
+    {
+     "name": "archive-s3",
+     "type": "s3",
+     "hint": "\u2022\u2022\u2022\u2022cted",
+     "createdAt": 1788608781262
+    }
+   ]
+  }
+ },
+ "listRetryPolicies": {
+  "result": {
+   "policies": [
+    {
+     "workflowName": "ingest-csv-batch",
+     "maxAttempts": 8,
+     "baseDelayMs": 1000,
+     "factor": 2,
+     "capMs": 120000,
+     "jitter": 0.2,
+     "updatedAt": 1788608781263
+    },
+    {
+     "workflowName": "github-deploy-notify",
+     "maxAttempts": 3,
+     "baseDelayMs": 250,
+     "factor": 2,
+     "capMs": 60000,
+     "jitter": 0.2,
+     "updatedAt": 1788608781355
+    }
+   ]
+  }
+ },
+ "listSlaPolicies": {
+  "result": {
+   "policies": [
+    {
+     "workflowName": "nightly-report-export",
+     "target": 0.995,
+     "ackWindowMins": 15,
+     "description": "nightly export SLO",
+     "enabled": true,
+     "updatedAt": 1788608781263
+    },
+    {
+     "workflowName": "ingest-csv-batch",
+     "target": 0.95,
+     "ackWindowMins": 60,
+     "description": "",
+     "enabled": true,
+     "updatedAt": 1788608781263
+    }
+   ]
+  }
+ },
+ "listDefinitions": {
+  "result": {
+   "definitions": [
+    {
+     "name": "nightly-report-export",
+     "versions": 1
+    },
+    {
+     "name": "invoice-pdf-render",
+     "versions": 1
+    },
+    {
+     "name": "github-deploy-notify",
+     "versions": 1
+    },
+    {
+     "name": "admin-provision-approval",
+     "versions": 1
+    }
+   ]
+  }
+ },
+ "listSchedules": {
+  "result": {
+   "schedules": [
+    {
+     "id": "sch_0001",
+     "workflow": "nightly-report-export",
+     "cron": "0 2 * * *",
+     "enabled": true,
+     "nextRun": 1788660000000
+    },
+    {
+     "id": "sch_0002",
+     "workflow": "db-nightly-vacuum",
+     "cron": "30 3 * * 0",
+     "enabled": true,
+     "nextRun": 1788665400000
+    },
+    {
+     "id": "sch_0003",
+     "workflow": "slack-digest",
+     "cron": "0 */4 * * *",
+     "enabled": true,
+     "nextRun": 1788609600000
+    }
+   ]
+  }
+ },
+ "fetchHooks": {
+  "result": [
+   {
+    "id": "hook_DW9KHF56KBYS7H4NHXXWQHZA7K",
+    "runId": "run_59ZGSQ14ZCDBB7HJJCPCF49KYJ",
+    "token": "EhCr",
+    "isWebhook": true
+   },
+   {
+    "id": "hook_SRX52513SJEGNJJPGV4AM0HCKY",
+    "runId": "run_XBKR1CVCZMQJX2ZP7SJEDQTS6Y",
+    "token": "jd7B",
+    "isWebhook": true
+   }
+  ]
+ },
+ "storeHealth": {
+  "result": {
+   "runs": 7,
+   "hooks": 3,
+   "withOutput": 4,
+   "pending": 3
+  }
+ },
+ "getRuntimeInfo": {
+  "result": {
+   "engine": "fluxion",
+   "version": "1.4.0",
+   "node": "v20.20.2",
+   "platform": "linux",
+   "arch": "x64",
+   "pid": 8,
+   "uptime": 734.413997634,
+   "rssMb": 50,
+   "heapUsedMb": 12,
+   "env": {
+    "HOSTNAME": "fluxion-3effff5b91127b19-69d86d85bf-4448x",
+    "PORT": "8001"
+   }
+  }
+ },
+ "describeHooks": {
+  "result": {
+   "hooks": [
+    {
+     "id": "hook_DW9KHF56KBYS7H4NHXXWQHZA7K",
+     "runId": "run_59ZGSQ14ZCDBB7HJJCPCF49KYJ",
+     "isWebhook": true,
+     "resumed": false
+    },
+    {
+     "id": "hook_SRX52513SJEGNJJPGV4AM0HCKY",
+     "runId": "run_XBKR1CVCZMQJX2ZP7SJEDQTS6Y",
+     "isWebhook": true,
+     "resumed": false
+    },
+    {
+     "id": "hook_V5NAP6T48GS6BD3HQ7KNQWWRK7",
+     "runId": "run_R56KZJ092PJ0DRQVP07TWDSN7Z",
+     "isWebhook": false,
+     "resumed": false
+    }
+   ]
+  }
+ },
+ "controlPlaneStatus": {
+  "result": {
+   "proto": "FCP/1",
+   "uptimeMs": 732090,
+   "fleet": {
+    "total": 74,
+    "byTier": {
+     "viewer": 73,
+     "auditor": 1
+    }
+   },
+   "approvers": [
+    "sre-oncall",
+    "platform-lead"
+   ]
+  }
+ },
+ "listApprovers": {
+  "result": {
+   "approvers": [
+    "sre-oncall",
+    "platform-lead"
+   ]
+  }
+ }
+}

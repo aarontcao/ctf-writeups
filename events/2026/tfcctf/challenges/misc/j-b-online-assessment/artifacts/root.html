@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11102a">
+    <title>J*B Online Assessment</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="J*B Online Assessment home"><span>J*B</span><span>ONLINE ASSESSMENT</span></a>
+        <div class="event"><span class="pulse"></span>TFCCTF26 / J*B APPLICATION</div>
+        <div class="node-id">CANDIDATE <b>NET-01</b></div>
+      </header>
+
+      <section class="content">
+        <section class="hero" id="brief">
+          <h1>J*B <em>Online Assessment.</em></h1>
+          <p class="lead">Dear candidate, please complete this short assessment to proceed with your J*B application. Save the finished <code>.pka</code> and submit it for review. Only 100% completion will be considered.</p>
+        </section>
+
+        <section class="panel download-panel" id="download">
+          <div>
+            <p class="eyebrow">ACTIVITY FILE / 2.9 MiB</p>
+            <h2>Challenge file</h2>
+          </div>
+          <a class="button primary" href="/downloads/job-oa.pka" download>Download .pka <span>↓</span></a>
+        </section>
+
+        <section class="panel submission" id="submit">
+          <div class="submission-title">
+            <p class="eyebrow">SUBMISSION</p>
+            <h2>Get the flag</h2>
+            <p>Upload your completed <code>.pka</code>.</p>
+          </div>
+          <form id="upload-form" novalidate>
+            <input id="activity" type="file" accept=".pka,application/octet-stream" hidden>
+            <label class="dropzone" id="dropzone" for="activity">
+              <span class="upload-glyph">↑</span>
+              <strong id="file-name">Choose a saved .pka</strong>
+              <small>or drag it into this relay window · max 8 MiB</small>
+            </label>
+            <button class="button submit" id="submit-button" type="submit" disabled>Transmit solution <span>↗</span></button>
+          </form>
+          <div class="result" id="result" aria-live="polite">Relay idle. Awaiting activity package.</div>
+        </section>
+      </section>
+      <footer>J*B ONLINE ASSESSMENT // TFCCTF26</footer>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

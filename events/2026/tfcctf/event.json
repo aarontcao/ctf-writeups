@@ -1,0 +1,40 @@
+{
+  "slug": "2026/tfcctf",
+  "name": "The Few Chosen CTF 2026",
+  "api_base": "https://api.ctf.thefewchosen.com",
+  "site": "https://ctf.thefewchosen.com",
+  "flag_regex": "TFCCTF\\{[^}\\n]{1,256}\\}",
+  "live": false,
+  "category_ids": {
+    "6a405a86-85f7-4e26-a282-0bb8be973e32": "pwn",
+    "b76b709a-99ec-4c01-bfb6-65967e03be59": "web",
+    "f027d346-1ee7-48b9-8720-15a158caf09d": "rev",
+    "8c1da7f6-10f6-41da-a7f7-e3f546771ae6": "crypto",
+    "c76d2ce0-8d43-4304-8da0-65d861b7afcf": "misc"
+  },
+  "category_ids_note": "The API returns category_id as a UUID and doesn't expose a lookup endpoint. This map was read off the handout shapes. netcat plus a zip carrying a libc is pwn, http or nodeport with a source zip is web, a bare stripped ELF is rev, a maths-flavoured zip with no service is crypto, and the pyjail plus Discord plus APK bucket is misc.",
+  "start_utc": "2026-09-05T10:00:00Z",
+  "end_utc": "2026-09-06T10:00:00Z",
+  "scoring": "80 percent jeopardy, 20 percent King of the Hill",
+  "result": {
+    "place": 38,
+    "solved": 24,
+    "total_challenges": 29,
+    "points_banked": 3298,
+    "unsolved": [
+      "meshgate",
+      "larpin2",
+      "mccrab3",
+      "ariadne-s-tab",
+      "fishing-not-phishing"
+    ],
+    "koth_final_bot": "v41 camper8.wasm md5 8cf7ccca343d2727195eedcdf71e14e0, loadout WBB",
+    "points_note": "Scoring is dynamic. Every challenge revalued downward as solve counts increased.",
+    "teams": 1022,
+    "division": "AI (open), 617 teams",
+    "jeopardy_score_at_close": 2873,
+    "koth_score": 142.234,
+    "teams_note": "1022 total and 617 AI/open, read off the final leaderboard. Screenshots/captures from earlier in the contest may show different numbers."
+  },
+  "readme_preamble": "2026-09-05 to 2026-09-06. Jeopardy is 80% of the score, a King of the Hill\narena is the other 20%.\n\nScoring is dynamic, so Points below is the value at close. Screenshot captions\ntaken during the contest often show a higher number. Our banked total read 3298\nlive and 2873 once the board settled.\n\n[MEDIA.md](MEDIA.md) indexes the walkthrough screenshots, including which ones\nshow a placeholder flag instead of a real one."
+}

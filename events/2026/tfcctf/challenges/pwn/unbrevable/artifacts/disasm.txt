@@ -1,0 +1,163 @@
+0000000000001279 <init>:
+    1279:	endbr64
+    127d:	push   rbp
+    127e:	mov    rbp,rsp
+    1281:	mov    rax,QWORD PTR [rip+0x2da8]        # 4030 <stdin@GLIBC_2.2.5>
+    1288:	mov    ecx,0x0
+    128d:	mov    edx,0x2
+    1292:	mov    esi,0x0
+    1297:	mov    rdi,rax
+    129a:	call   10d0 <setvbuf@plt>
+    129f:	mov    rax,QWORD PTR [rip+0x2d7a]        # 4020 <stdout@GLIBC_2.2.5>
+    12a6:	mov    ecx,0x0
+    12ab:	mov    edx,0x2
+    12b0:	mov    esi,0x0
+    12b5:	mov    rdi,rax
+    12b8:	call   10d0 <setvbuf@plt>
+    12bd:	mov    rax,QWORD PTR [rip+0x2d7c]        # 4040 <stderr@GLIBC_2.2.5>
+    12c4:	mov    ecx,0x0
+    12c9:	mov    edx,0x2
+    12ce:	mov    esi,0x0
+    12d3:	mov    rdi,rax
+    12d6:	call   10d0 <setvbuf@plt>
+    12db:	nop
+    12dc:	pop    rbp
+    12dd:	ret
+
+00000000000012de <setup_seccomp>:
+    12de:	endbr64
+    12e2:	push   rbp
+    12e3:	mov    rbp,rsp
+    12e6:	sub    rsp,0x10
+    12ea:	mov    edi,0x80000000
+    12ef:	call   10f0 <seccomp_init@plt>
+    12f4:	mov    QWORD PTR [rbp-0x8],rax
+    12f8:	cmp    QWORD PTR [rbp-0x8],0x0
+    12fd:	jne    1309 <setup_seccomp+0x2b>
+    12ff:	mov    edi,0x1
+    1304:	call   1170 <exit@plt>
+    1309:	mov    rax,QWORD PTR [rbp-0x8]
+    130d:	mov    ecx,0x0
+    1312:	mov    edx,0x2
+    1317:	mov    esi,0x7fff0000
+    131c:	mov    rdi,rax
+    131f:	mov    eax,0x0
+    1324:	call   1100 <seccomp_rule_add@plt>
+    1329:	mov    rax,QWORD PTR [rbp-0x8]
+    132d:	mov    ecx,0x0
+    1332:	mov    edx,0x101
+    1337:	mov    esi,0x7fff0000
+    133c:	mov    rdi,rax
+    133f:	mov    eax,0x0
+    1344:	call   1100 <seccomp_rule_add@plt>
+    1349:	mov    rax,QWORD PTR [rbp-0x8]
+    134d:	mov    ecx,0x0
+    1352:	mov    edx,0x0
+    1357:	mov    esi,0x7fff0000
+    135c:	mov    rdi,rax
+    135f:	mov    eax,0x0
+    1364:	call   1100 <seccomp_rule_add@plt>
+    1369:	mov    rax,QWORD PTR [rbp-0x8]
+    136d:	mov    ecx,0x0
+    1372:	mov    edx,0x1
+    1377:	mov    esi,0x7fff0000
+    137c:	mov    rdi,rax
+    137f:	mov    eax,0x0
+    1384:	call   1100 <seccomp_rule_add@plt>
+    1389:	mov    rax,QWORD PTR [rbp-0x8]
+    138d:	mov    ecx,0x0
+    1392:	mov    edx,0xe
+    1397:	mov    esi,0x7fff0000
+    139c:	mov    rdi,rax
+    139f:	mov    eax,0x0
+    13a4:	call   1100 <seccomp_rule_add@plt>
+    13a9:	mov    rax,QWORD PTR [rbp-0x8]
+    13ad:	mov    ecx,0x0
+    13b2:	mov    edx,0xf
+    13b7:	mov    esi,0x7fff0000
+    13bc:	mov    rdi,rax
+    13bf:	mov    eax,0x0
+    13c4:	call   1100 <seccomp_rule_add@plt>
+    13c9:	mov    rax,QWORD PTR [rbp-0x8]
+    13cd:	mov    ecx,0x0
+    13d2:	mov    edx,0x3c
+    13d7:	mov    esi,0x7fff0000
+    13dc:	mov    rdi,rax
+    13df:	mov    eax,0x0
+    13e4:	call   1100 <seccomp_rule_add@plt>
+    13e9:	mov    rax,QWORD PTR [rbp-0x8]
+    13ed:	mov    ecx,0x0
+    13f2:	mov    edx,0xe7
+    13f7:	mov    esi,0x7fff0000
+    13fc:	mov    rdi,rax
+    13ff:	mov    eax,0x0
+    1404:	call   1100 <seccomp_rule_add@plt>
+    1409:	mov    rax,QWORD PTR [rbp-0x8]
+    140d:	mov    ecx,0x0
+    1412:	mov    edx,0x142
+    1417:	mov    esi,0x7fff0000
+    141c:	mov    rdi,rax
+    141f:	mov    eax,0x0
+    1424:	call   1100 <seccomp_rule_add@plt>
+    1429:	mov    rax,QWORD PTR [rbp-0x8]
+    142d:	mov    rdi,rax
+    1430:	call   1110 <seccomp_load@plt>
+    1435:	test   eax,eax
+    1437:	jns    1443 <setup_seccomp+0x165>
+    1439:	mov    edi,0x1
+    143e:	call   1170 <exit@plt>
+    1443:	mov    rax,QWORD PTR [rbp-0x8]
+    1447:	mov    rdi,rax
+    144a:	call   1140 <seccomp_release@plt>
+    144f:	nop
+    1450:	leave
+    1451:	ret
+
+0000000000001452 <main>:
+    1452:	endbr64
+    1456:	push   rbp
+    1457:	mov    rbp,rsp
+    145a:	sub    rsp,0x20
+    145e:	mov    rax,QWORD PTR fs:0x28
+    1467:	mov    QWORD PTR [rbp-0x8],rax
+    146b:	xor    eax,eax
+    146d:	mov    eax,0x0
+    1472:	call   1279 <init>
+    1477:	call   12de <setup_seccomp>
+    147c:	mov    rax,QWORD PTR [rip+0x2b65]        # 3fe8 <setvbuf@GLIBC_2.2.5>
+    1483:	mov    rsi,rax
+    1486:	lea    rax,[rip+0xb77]        # 2004 <_IO_stdin_used+0x4>
+    148d:	mov    rdi,rax
+    1490:	mov    eax,0x0
+    1495:	call   1130 <printf@plt>
+    149a:	lea    rdx,[rbp-0x10]
+    149e:	lea    rax,[rbp-0x18]
+    14a2:	mov    rsi,rax
+    14a5:	lea    rax,[rip+0xb5c]        # 2008 <_IO_stdin_used+0x8>
+    14ac:	mov    rdi,rax
+    14af:	mov    eax,0x0
+    14b4:	call   1160 <__isoc99_scanf@plt>
+    14b9:	mov    rax,QWORD PTR [rip+0x2b70]        # 4030 <stdin@GLIBC_2.2.5>
+    14c0:	mov    rdx,QWORD PTR [rbp-0x10]
+    14c4:	mov    esi,edx
+    14c6:	mov    rdx,QWORD PTR [rbp-0x18]
+    14ca:	mov    rcx,rdx
+    14cd:	mov    rdx,rax
+    14d0:	mov    rdi,rcx
+    14d3:	call   1150 <fgets@plt>
+    14d8:	call   1180 <fork@plt>
+    14dd:	mov    eax,0x0
+    14e2:	mov    rdx,QWORD PTR [rbp-0x8]
+    14e6:	sub    rdx,QWORD PTR fs:0x28
+    14ef:	je     14f6 <main+0xa4>
+    14f1:	call   1120 <__stack_chk_fail@plt>
+    14f6:	leave
+    14f7:	ret
+
+Disassembly of section .fini:
+
+00000000000014f8 <_fini>:
+    14f8:	endbr64
+    14fc:	sub    rsp,0x8
+    1500:	add    rsp,0x8
+    1504:	ret

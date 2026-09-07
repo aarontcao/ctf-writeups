@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="package_images">
+        <item>No image</item>
+        <item>Medical cargo</item>
+        <item>Camera cargo</item>
+        <item>Yacht components</item>
+    </array>
+</resources>

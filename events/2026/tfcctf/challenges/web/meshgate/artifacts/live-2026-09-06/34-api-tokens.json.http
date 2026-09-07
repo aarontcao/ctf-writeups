@@ -1,0 +1,14 @@
+# GET /api/tokens
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/tokens
+HTTP 200
+Content-Length: 14
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:20:20 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"tokens":[]}

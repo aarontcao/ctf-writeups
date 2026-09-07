@@ -1,0 +1,28 @@
+{
+  "author": "skyv3il",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "ebae1fe7-191f-4886-8c86-a657ce23af17",
+  "connection": "",
+  "description": "Enterprise file-sync gateway with corporate SSO: staff sign in locally or via a federated IdP; admins manage releases from a built-in update center. Ship the brief only.\n\nWait 2-3 minutes ! It starts slower !",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [],
+  "first_seen": "2026-09-05T13:31:45Z",
+  "flags": [
+    {
+      "flag_id": "88b02bab-a03d-4a47-9a96-7fe5ddcb7d1c",
+      "points": 500,
+      "question": "",
+      "solved": false,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "meshgate",
+  "points": 500,
+  "slug": "meshgate",
+  "solved": false,
+  "solves": 0,
+  "status": "new"
+}

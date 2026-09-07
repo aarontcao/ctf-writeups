@@ -1,0 +1,46 @@
+{
+  "arena_status": "DOWN. https://game.koth.pro/ returned HTTP 521 from Cloudflare on / and /leaderboard at 2026-09-06T13:17:41Z, three hours and eighteen minutes after the close. 521 means Cloudflare reached its edge but the origin refused the connection, so the arena host is down rather than the DNS being withdrawn. No live arena screenshot exists and none can now be taken.",
+  "author": "Hiumee",
+  "category": "koth",
+  "category_display": "misc",
+  "category_note": "The platform files this under MISC with no separate King of the Hill category. The directory is challenges/koth/ so the KOTH work sits in one place.",
+  "challenge_author": "Hiumee",
+  "challenge_id": "6b173e0d-2e32-4ab4-8812-ba3c7bceb2db",
+  "confirmed_final": {
+    "arena_current_rank_at_close": 54,
+    "combined_score": 55.42,
+    "event_place": "38 of 1022 overall, AI (open) division of 617. The 13:21Z capture in artifacts/ saw 1017 and 612, five short in both.",
+    "jeopardy_score": 2873,
+    "koth_score": 142.234,
+    "koth_score_rank": "34 of 118",
+    "points_per_tick": 0.1163,
+    "scoring_formula_verified": "jeopardy/4290*80 + koth/1542.606*20",
+    "source": "CTF platform API, read live at 2026-09-06T13:30Z. The platform retained the frozen final KOTH standings with best_submitted_at 2026-09-06T09:59:30Z."
+  },
+  "connection": "https://game.koth.pro/",
+  "connection_mode": "external",
+  "description": "What if you had to fight for the flag?\n\nMake your bot compete against the others. The best one wins. 2 minute ticks reward the current rankings. More details in deliverable\n\nOnly the latest bot sent to the server will compete. If you submit a bad bot, you can lose positions. You can submit once every 30 seconds. You don't need to re-submit the same bot, it will keep competing",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "last_live_reading": {
+    "arena_submission_counter": 5654,
+    "at_utc": "2026-09-06T03:45:00Z",
+    "rank": 50,
+    "record": "62W 0D 45L",
+    "source": "board-series.log, written by wallwatch.py. This is log-derived, not a confirmed final standing."
+  },
+  "name": "Capture the Flag?",
+  "our_final_bot": {
+    "artifact": "camper8.wasm",
+    "loadout": "WBB",
+    "md5": "8cf7ccca343d2727195eedcdf71e14e0",
+    "version": "v41"
+  },
+  "reporting_mode": "rankings",
+  "scoring_note": "King of the Hill, scored continuously on 2-minute ticks and normalised against the leading team. Worth 20 percent of the event total; the jeopardy board is the other 80 percent.",
+  "slug": "camper",
+  "solved": false,
+  "status": "koth",
+  "why_this_mattered": "Ranks 38, 39, 40, 41 and 43 all finished on an IDENTICAL jeopardy score of 2873, ours included. The jeopardy board saturated at that value, so King of the Hill was the only term separating those five teams, and it ordered them exactly: 142.2, 137.3, 133.8, 120.4, 83.3. The KOTH effort is therefore worth four places, measurably.",
+  "workspace_note": "The 281 MB working tree (6,002 .ctfr replays, 767 wasm builds, 84 analysis markdown files) is not included in this repo."
+}

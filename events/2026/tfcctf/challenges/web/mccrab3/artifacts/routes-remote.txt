@@ -1,0 +1,71 @@
+target special.thefewchosen.com:30847
+=== A. path enumeration with method PROBE (405+Allow = route exists) ===
+/                        CONNERR                  len=0     allow=
+/flag                    405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST
+/health                  405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS
+/random_ahh_game         405 METHOD NOT ALLOWED   len=153   allow=CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP
+/.env                    CONNERR                  len=0     allow=
+/swagger                 CONNERR                  len=0     allow=
+/openapi.json            CONNERR                  len=0     allow=
+/docs                    CONNERR                  len=0     allow=
+//flag                   405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST
+
+CONTROL: sweep re-found known routes? missing=NONE - control passes
+
+=== B. every known route x every known method, for a local/remote diff ===
+/health            GET      200 OK                   len=2     allow=                                          
+/health            HEAD     200 OK                   len=0     allow=                                          
+/health            POST     405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            OPTIONS  200 OK                   len=0     allow=GET, HEAD, OPTIONS                        
+/health            PUT      405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            DELETE   405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            TRACE    405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            PATCH    405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            PLAY     405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            RESET    405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            STOP     405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            CHEAT    405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            FLAG     405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/health            PROBE    405 METHOD NOT ALLOWED   len=153   allow=GET, HEAD, OPTIONS                        
+/flag              GET      EATEN                    len=0     allow=                                          
+/flag              HEAD     405 METHOD NOT ALLOWED   len=0     allow=OPTIONS, POST                             
+/flag              POST     500 INTERNAL SERVER ERRO len=265   allow=                                          
+/flag              OPTIONS  200 OK                   len=0     allow=OPTIONS, POST                             
+/flag              PUT      405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              DELETE   405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              TRACE    405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              PATCH    405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              PLAY     405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              RESET    405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              STOP     405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              CHEAT    405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              FLAG     405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/flag              PROBE    405 METHOD NOT ALLOWED   len=153   allow=OPTIONS, POST                             
+/random_ahh_game   GET      200 OK                   len=90    allow=                                          
+/random_ahh_game   HEAD     500 INTERNAL SERVER ERRO len=0     allow=                                          
+/random_ahh_game   POST     405 METHOD NOT ALLOWED   len=153   allow=CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP
+/random_ahh_game   OPTIONS  200 OK                   len=0     allow=CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP
+/random_ahh_game   PUT      405 METHOD NOT ALLOWED   len=153   allow=CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP
+/random_ahh_game   DELETE   405 METHOD NOT ALLOWED   len=153   allow=CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP
+/random_ahh_game   TRACE    405 METHOD NOT ALLOWED   len=153   allow=CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP
+/random_ahh_game   PATCH    405 METHOD NOT ALLOWED   len=153   allow=CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP
+/random_ahh_game   PLAY     200 OK                   len=65    allow=                                          
+/random_ahh_game   RESET    CONNERR                  len=0     allow=                                          
+/random_ahh_game   STOP     200 OK                   len=95    allow=                                          
+/random_ahh_game   CHEAT    CONNERR                  len=0     allow=                                          
+/random_ahh_game   FLAG     CONNERR                  len=0     allow=                                          
+/random_ahh_game   PROBE    CONNERR                  len=0     allow=                                          
+/nope              GET      404 NOT FOUND            len=207   allow=                                          
+/nope              HEAD     404 NOT FOUND            len=0     allow=                                          
+/nope              POST     404 NOT FOUND            len=207   allow=                                          
+/nope              OPTIONS  404 NOT FOUND            len=207   allow=                                          
+/nope              PUT      404 NOT FOUND            len=207   allow=                                          
+/nope              DELETE   404 NOT FOUND            len=207   allow=                                          
+/nope              TRACE    404 NOT FOUND            len=207   allow=                                          
+/nope              PATCH    404 NOT FOUND            len=207   allow=                                          
+/nope              PLAY     404 NOT FOUND            len=207   allow=                                          
+/nope              RESET    404 NOT FOUND            len=207   allow=                                          
+/nope              STOP     404 NOT FOUND            len=207   allow=                                          
+/nope              CHEAT    404 NOT FOUND            len=207   allow=                                          
+/nope              FLAG     404 NOT FOUND            len=207   allow=                                          
+/nope              PROBE    404 NOT FOUND            len=207   allow=                                          

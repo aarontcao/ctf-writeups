@@ -1,0 +1,9 @@
+# GET /flag : proxoxy rule (a) blocks method GET on path /flag. A decoy, because the Flask route is POST-only.
+# --- request bytes ---
+GET /flag HTTP/1.1
+Host: special.thefewchosen.com:30494
+Connection: close
+
+
+# --- response bytes ---
+<connection closed with no response: proxoxy dropped it>

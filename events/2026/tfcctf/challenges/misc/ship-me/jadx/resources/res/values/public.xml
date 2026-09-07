@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="array" name="package_images" id="0x7f010000" />
+    <public type="color" name="aqua" id="0x7f020000" />
+    <public type="color" name="navy" id="0x7f020001" />
+    <public type="color" name="navy_border" id="0x7f020002" />
+    <public type="color" name="navy_light" id="0x7f020003" />
+    <public type="color" name="slate" id="0x7f020004" />
+    <public type="color" name="white" id="0x7f020005" />
+    <public type="drawable" name="ic_camera_cargo" id="0x7f030000" />
+    <public type="drawable" name="ic_medical_cargo" id="0x7f030001" />
+    <public type="drawable" name="ic_parts_cargo" id="0x7f030002" />
+    <public type="drawable" name="ic_ship" id="0x7f030003" />
+    <public type="drawable" name="image_background" id="0x7f030004" />
+    <public type="id" name="create_package" id="0x7f040000" />
+    <public type="id" name="empty_state" id="0x7f040001" />
+    <public type="id" name="package_list" id="0x7f040002" />
+    <public type="layout" name="activity_main" id="0x7f050000" />
+    <public type="string" name="app_name" id="0x7f060000" />
+    <public type="string" name="create" id="0x7f060001" />
+    <public type="string" name="create_package" id="0x7f060002" />
+    <public type="string" name="description_hint" id="0x7f060003" />
+    <public type="string" name="destination_hint" id="0x7f060004" />
+    <public type="string" name="get_shipping_label" id="0x7f060005" />
+    <public type="string" name="invalid_package_uri" id="0x7f060006" />
+    <public type="string" name="mark_shipped" id="0x7f060007" />
+    <public type="string" name="name_hint" id="0x7f060008" />
+    <public type="string" name="no_packages" id="0x7f060009" />
+    <public type="string" name="normal_package_note" id="0x7f06000a" />
+    <public type="string" name="operation_failed" id="0x7f06000b" />
+    <public type="string" name="origin_hint" id="0x7f06000c" />
+    <public type="string" name="package_fields_required" id="0x7f06000d" />
+    <public type="string" name="package_received" id="0x7f06000e" />
+    <public type="string" name="ready_to_ship" id="0x7f06000f" />
+    <public type="string" name="ship_icon_description" id="0x7f060010" />
+    <public type="string" name="shipped" id="0x7f060011" />
+    <public type="string" name="tagline" id="0x7f060012" />
+    <public type="string" name="weight_hint" id="0x7f060013" />
+    <public type="string" name="weight_value" id="0x7f060014" />
+    <public type="string" name="your_packages" id="0x7f060015" />
+    <public type="style" name="Theme.ShipMe" id="0x7f070000" />
+    <public type="xml" name="data_extraction_rules" id="0x7f080000" />
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ship.me</string>
+    <string name="create">Create</string>
+    <string name="create_package">Create package</string>
+    <string name="description_hint">Contents and handling notes (optional)</string>
+    <string name="destination_hint">Destination</string>
+    <string name="get_shipping_label">Get shipping label</string>
+    <string name="invalid_package_uri">Invalid package URI</string>
+    <string name="mark_shipped">Mark as shipped</string>
+    <string name="name_hint">Package name</string>
+    <string name="no_packages">No packages yet. Create one to begin its route.</string>
+    <string name="normal_package_note">Add the package details and choose an optional image.</string>
+    <string name="operation_failed">The operation could not be completed.</string>
+    <string name="origin_hint">Origin</string>
+    <string name="package_fields_required">Enter a name, route, and valid weight.</string>
+    <string name="package_received">Package created from ADB</string>
+    <string name="ready_to_ship">Ready to ship</string>
+    <string name="ship_icon_description">Ship.me vessel</string>
+    <string name="shipped">Shipped</string>
+    <string name="tagline">Route intelligence for every voyage</string>
+    <string name="weight_hint">Weight in kg</string>
+    <string name="weight_value">%1$.1f kg</string>
+    <string name="your_packages">Your packages</string>
+</resources>

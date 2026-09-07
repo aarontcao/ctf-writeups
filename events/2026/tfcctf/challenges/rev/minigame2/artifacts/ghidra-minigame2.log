@@ -1,0 +1,108 @@
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)
+INFO  Using log config file: jar:file:$HOME/ctf-tools/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (2811 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (5322 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Decompiler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/8051/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FunctionID/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PyGhidra/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/Atmel/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/PIC/ghidra_scripts
+    $HOME/ctf-tools/ghidra-scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/DATA/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/JVM/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BSim/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PDB/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/VersionTracking/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Base/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating temporary project: /tmp/tmp.8wv0lJ6yBO/tmp (HeadlessAnalyzer)  
+INFO  Creating project: /tmp/tmp.8wv0lJ6yBO/tmp (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /tmp/tmp.8wv0lJ6yBO/tmp (HeadlessAnalyzer)  
+INFO  IMPORTING: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/minigame2/handout/minigame2 (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:64:default:gcc (ProgramLoader)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (ProgramLoader)  
+INFO  Additional info:
+Loading file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/minigame2/handout/minigame2?MD5=c576bb8bdd434fdff2d75f56cb4893f8...
+Skipping section [.got] with invalid size 0x0
+Ignored attempt to set non-loaded memory as read-only: [011f8e30, 011f8fff]
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/minigame2/handout/minigame2 (HeadlessAnalyzer)  
+WARN  Decompiling 011ca6a0: Unable to read bytes at ram:00000008 (DecompileCallback)  
+WARN  Decompiling 011ca6a0, pcode error at 011b8a87: Unable to resolve constructor at 011b8a87 (DecompileCallback)  
+WARN  Decompiling 011ca6a0: Unable to read bytes at ram:00000008 (DecompileCallback)  
+WARN  Decompiling 011ca6a0, pcode error at 011b8a87: Unable to resolve constructor at 011b8a87 (DecompileCallback)  
+WARN  Decompiling 011ca6a0: Unable to read bytes at ram:00000008 (DecompileCallback)  
+INFO  Packed database cache: /var/tmp/ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: generic_clib_64 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              1.025 secs
+    Apply Data Archives                        0.338 secs
+    Call Convention ID                         0.014 secs
+    Call-Fixup Installer                       0.007 secs
+    Create Address Tables                      0.101 secs
+    Create Address Tables - One Time           5.049 secs
+    Create Function                            0.000 secs
+    Data Reference                             0.611 secs
+    Decompiler Switch Analysis                91.458 secs
+    Demangler GNU                              0.099 secs
+    Disassemble Entry Points                   3.999 secs
+    ELF Scalar Operand References              1.774 secs
+    Embedded Media                             0.136 secs
+    External Entry References                  0.000 secs
+    Function ID                                1.762 secs
+    Function Start Pre Search                  0.032 secs
+    Function Start Search                      0.096 secs
+    Function Start Search After Code           0.056 secs
+    Function Start Search After Data           0.032 secs
+    GCC Exception Handlers                     0.690 secs
+    Non-Returning Functions - Discovered       0.350 secs
+    Non-Returning Functions - Known            0.002 secs
+    Reference                                  0.684 secs
+    Shared Return Calls                        0.266 secs
+    Stack                                      5.681 secs
+    Subroutine References                      0.254 secs
+    x86 Constant Reference Analyzer            5.905 secs
+-----------------------------------------------------
+     Total Time   120 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/minigame2/handout/minigame2 (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DecompileAll.java '$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/minigame2/artifacts/minigame2.c'  (HeadlessAnalyzer)  
+INFO  SCRIPT: $HOME/ctf-tools/ghidra-scripts/DecompileAll.java (HeadlessAnalyzer)  
+WARN  Decompiling 011ca6a0: Unable to read bytes at ram:00000008 (DecompileCallback)  
+WARN  Decompiling 011ca6a0, pcode error at 011b8a87: Unable to resolve constructor at 011b8a87 (DecompileCallback)  
+WARN  Decompiling 011ca6a0: Unable to read bytes at ram:00000008 (DecompileCallback)  
+WARN  Decompiling 011ca6a0, pcode error at 011b8a87: Unable to resolve constructor at 011b8a87 (DecompileCallback)  
+WARN  Decompiling 011ca6a0: Unable to read bytes at ram:00000008 (DecompileCallback)  
+INFO  ANALYZING changes made by post scripts: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/minigame2/handout/minigame2 (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/minigame2/handout/minigame2 (HeadlessAnalyzer)  
+INFO  /minigame2: file created (user) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /minigame2 (tmp:/minigame2) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

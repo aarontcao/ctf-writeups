@@ -1,0 +1,26 @@
+target 127.0.0.1:28888   23 variants
+00 proposed exact                        HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+01 name brevski                          HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+02 name Brevski                          HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+03 name BREVSKI                          HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+04 name bReVsKi                          HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+05 declared Trailer: brevski             HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+06 declared Trailer: brevski, x          HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+07 value no space                        HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+08 value leading tab                     HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+09 value trailing space                  HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+10 one chunk then trailer                HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+11 two chunks then trailer               HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+12 TE identity,chunked                   <no bytes>                         len=0     
+13 TE chunked,chunked                    <no bytes>                         len=0     
+14 trailer twice                         HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+15 other trailer first                   HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+16 other trailer after                   HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+17 keep-alive                            HTTP/1.1 500 INTERNAL SERVER ERROR len=443   
+18 keep-alive + follow-up                HTTP/1.1 500 INTERNAL SERVER ERROR len=443   
+19 CONTROL trailer zzz (must 500)        HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+20 CONTROL head brevski (must be eaten)  <no bytes>                         len=0     
+21 CONTROL benign (must 500, app returns None) HTTP/1.1 500 INTERNAL SERVER ERROR len=438   
+22 CONTROL health (must 200 OK)          HTTP/1.1 200 OK                    len=155   
+
+no flag in any variant

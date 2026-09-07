@@ -1,0 +1,9 @@
+{
+    "error": "non-standard redirect chain",
+    "chain": [
+        418,
+        200
+    ],
+    "hops": 1,
+    "trace": "{\n    \"service\": \"vk-keyring\",\n    \"node\": \"node-a\",\n    \"restore_sessions\": [\n        {\n            \"id\": 4,\n            \"session_id\": \"2a38cbef625581f9b2a8f893\"\n        }\n    ],\n    \"unseal_ref\": \"550cf6aeac64d27bc08a6a51\",\n    \"seal_service\": \"/api/vault_unseal.php\",\n    \"issued\": 1788607594.799078\n}"
+}

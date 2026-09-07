@@ -1,0 +1,65 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA-256-Digest-Manifest: tF4hJ+sUcgoNW4Uuvp0H0dn23BtBtbRnFigLDF84Hdk=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: 3oqiM5uH38ELXfR8yejq0LBMPstNNCbZSBQ5KQ3lBKg=
+
+Name: META-INF/com/android/build/gradle/app-metadata.properties
+SHA-256-Digest: 0lLxa3lS6cuWQRSpjAlibSViofqGv+D8qZZRnhtTx4I=
+
+Name: META-INF/version-control-info.textproto
+SHA-256-Digest: bGPYrKSsmb5tpmtltqs82gWayRJtXwCM3VXJFk8mnb8=
+
+Name: classes.dex
+SHA-256-Digest: ID6y4j3YqZNwdSrjUYZq6sYkSpIjza4zVfpBYLFMlcE=
+
+Name: kotlin/annotation/annotation.kotlin_builtins
+SHA-256-Digest: bQ8ghTWMoMFxVR1ZfUxySUhEo2EIkWfttb5/5hOgiy4=
+
+Name: kotlin/collections/collections.kotlin_builtins
+SHA-256-Digest: KdiT3rQdrSBCcMQO/ZdRoi01uCRn7JHU1nGR7E+8QWM=
+
+Name: kotlin/concurrent/atomics/atomics.kotlin_builtins
+SHA-256-Digest: WIs8vorA+L0Uvh8MX4O46qj+IcVdoAWTRkOGQ7PIMnw=
+
+Name: kotlin/coroutines/coroutines.kotlin_builtins
+SHA-256-Digest: nPTP8Gxvf6S4p6d8sm9SkCsciBbGBPbYiuzBBo1a+50=
+
+Name: kotlin/internal/internal.kotlin_builtins
+SHA-256-Digest: 7hGZIyaIVYwJBDQPWXJXoIK2bWLdDGwhaKq4Vud8mhs=
+
+Name: kotlin/kotlin.kotlin_builtins
+SHA-256-Digest: kPdvpGCH7NrVHAzFs5Qk9azYqxT3KTqWwM9QqhaEadA=
+
+Name: kotlin/ranges/ranges.kotlin_builtins
+SHA-256-Digest: N0/4snlKQATA1mZbpAy9mCbH/NBX5kwQXB2wGlWX3/E=
+
+Name: kotlin/reflect/reflect.kotlin_builtins
+SHA-256-Digest: P4muotrTRNQI9baXc/ebtRvLxjmMUNSTp72fM4z2KN0=
+
+Name: res/12.xml
+SHA-256-Digest: fIgMaV+M+f6kqdiFQCW+dmcuiYGB+ntCDQhtkHMKwB0=
+
+Name: res/4j.xml
+SHA-256-Digest: GlaaviO/usT0vuyiNgZdUMSyvQaHLhPlAEYMmCBsYqc=
+
+Name: res/Hr.xml
+SHA-256-Digest: SbTqL8SSGsL+L5jSZaKU1r3AO2RI9edW+62bpdg2fvs=
+
+Name: res/Lb.xml
+SHA-256-Digest: MjeW0tadCUmHK3+dAfWgj6fozz4MRs4HuF4fI8477wI=
+
+Name: res/V9.xml
+SHA-256-Digest: G1QDtXYKoU6dkaPNhYLwzgDKacMUIO1YFqPVknhI1TU=
+
+Name: res/r-.xml
+SHA-256-Digest: +TDGf/ekxcBBeP9Go1LjIBotJ5ulWYlAFvW7shoDebo=
+
+Name: res/v9.xml
+SHA-256-Digest: JnaNuwvaozJ0awhNu1atoMXMIwmpPakPYl8ks2qBaW4=
+
+Name: resources.arsc
+SHA-256-Digest: pfi6thQ5VvKgvQUXttHu0RtQv0WB0XwbDCTlAHXEc/M=
+
