@@ -1,6 +1,7 @@
 #!/usr/bin/env ctf-python
 """
-Fishing not Phishing. Never solved.
+Fishing not Phishing. My own attempt, which never landed. See
+harshit_method.py for the solve that works.
 Give it one MMSI and it derives the other four flag fields from the GFW v3
 API. With no FNP_MMSI it surveys and prints the known negatives.
 ```
