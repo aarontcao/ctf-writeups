@@ -1,6 +1,6 @@
 # The Few Chosen CTF 2026
 
-A 24h CTF that ran 2026-09-05 to 2026-09-06. I competed solo in the AI division under the username `aarontcao` and under the team `Kessoku Band` ("solo" lol, my good friend Claude helped out a bit). It's been a few years since my last full CTF, so I was a bit rusty! Jeopardy was 80% of the score and a King of the Hill arena was the other 20%.
+A 24h CTF that ran 2026-09-05 to 2026-09-06. I competed solo in the AI division under the username `aarontcao` and under the team `Kessoku Band` ("solo" lol, my good friend Claude helped out a bit, also was not affiliated with the Indonesian team [kessoku band](https://ctftime.org/team/207127) we just overloaded on team name there). It's been a few years since my last full CTF, so I was a bit rusty! Jeopardy was 80% of the score and a King of the Hill arena was the other 20%.
 
 Scoring was dynamic and values per-challenge decayed with number of solves, so the point values below are end-of-contest. Screenshots taken during the contest often show a higher number. My final jeopardy total was 2873 and my final KOTH total was 142.234 (+0.116/tick). Ending score was 55.42/100, rank 38th/1022 overall, rank 34th/118 in KOTH. Not bad for my first time back in a few years!
 
