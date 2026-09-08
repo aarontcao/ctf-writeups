@@ -8,7 +8,7 @@
 | Author | Walker |
 | Points at close | 144 |
 | Solves | 105 |
-| Status | unsolved by me, solved after the contest by [Harshit](https://harshitc.me) |
+| Status | unsolved |
 
 > Not every vessel leaves a clear trail behind.
 >
