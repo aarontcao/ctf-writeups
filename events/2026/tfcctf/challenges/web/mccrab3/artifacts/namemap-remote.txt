@@ -1,0 +1,23 @@
+target special.thefewchosen.com:30118
+kind     probe                    verdict       first line / flag
+name     brevski                  CONNFAIL       
+name     BREVSKI                  DROP(rule)     
+name     bReVsKi                  DROP(rule)     
+name     brevskj                  FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+name     brev-ski                 FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+name     brev_ski                 FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+name     brevski.                 FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+name     brevski\xdf              CLOSE(parse)   
+name     brevsk\xc5\xbfi          CLOSE(parse)   
+name     brevski\t                CLOSE(parse)   
+val      zzz                      FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+val      GEORGE                   FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+val      georgeX                  DROP(rule)     
+cookie   brevski=george           FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+cookie   a=1; brevski=george      FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+cookie   brevski=zzz              FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+cookie   BREVSKI=george           FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+cookie   brevski = george         FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+ctl      benign                   FORWARDED     HTTP/1.1 500 INTERNAL SERVER ERROR 
+ctl      health                   FORWARDED     HTTP/1.1 200 OK 
+FLAGS: []

@@ -1,0 +1,1 @@
+{"created":1712600000,"id":"rpt-1003","kind":"usage","owner":"jordan","report":{"bytes":2486886,"files":3,"nodes":[{"free_gb":4120,"id":"sync-a","region":"eu-west-1"},{"free_gb":8800,"id":"sync-b","region":"us-east-2"},{"free_gb":220,"id":"sync-c","region":"ap-south-1"}]}}

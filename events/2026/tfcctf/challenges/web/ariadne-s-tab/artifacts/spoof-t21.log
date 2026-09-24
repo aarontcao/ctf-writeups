@@ -1,0 +1,51 @@
+provision 0 429 {'detail': 'Rate limit exceeded'}
+provision 1 429 {'detail': 'Rate limit exceeded'}
+provision 2 429 {'detail': 'Rate limit exceeded'}
+provision 3 429 {'detail': 'Rate limit exceeded'}
+provision 4 429 {'detail': 'Rate limit exceeded'}
+provision 5 429 {'detail': 'Rate limit exceeded'}
+provision 6 429 {'detail': 'Rate limit exceeded'}
+provision 7 200 {'session_id': 'c96dn04ovs', 'status': 'pending', 'message': 'Session provisioning started. Connect to WebSocket for updates.'}
+2026-09-06T03:57:02.917119: [platform] Preparing emulator
+2026-09-06T03:57:02.654135: [platform] Waiting for an emulator
+2026-09-06T03:57:02.645025: [platform] Validating APKs
+2026-09-06T03:57:05.313542: [platform] Preparing challenge
+2026-09-06T03:58:34.353162: 09-06 03:58:33.741  6071  6071 I TFCCTF  : cct service connected ComponentInfo{com.android.chrome/org.chromium.chrome.browser.customtabs.CustomTabsConnectionService}
+2026-09-06T03:58:33.907926: 09-06 03:58:32.820  6071  6071 I TFCCTF  : bindService=true
+2026-09-06T03:58:33.818861: 09-06 03:58:32.787  6071  6071 I TFCCTF  : payload=https://content.ariadnetab.xyz/viewer.html#cap=eyJfcmFpbHMiOnsiZGF0YSI6eyJkb2N1bWVudF9pZCI6IjZjNGFkZTgxLTg2NDAtNDg0Yy1hMzVkLWFkZDFlODJjYmQ2MyIsIm5vbmNlIjoiNjVhOTEzMjkwYTRiYzdlNGFiNjE1NDY2MWM2YzI4MmIifSwiZXhwIjoiMjAyNi0wOS0wNlQwNDo0NjoxMS44NzZaIiwicHVyIjoicmVuZGVyIn19--8b1bcef9f7008ab2cb621a2f00c5882020c86f41&key=D5CL4HecIN1LfNKtP2HZSFOO9A4RbwgBNfe9u_uQxnw
+2026-09-06T03:58:33.729851: 09-06 03:58:32.787  6071  6071 I TFCCTF  : === spoof start pkg=ariadnetab.xyz sdk=37
+2026-09-06T03:58:33.577637: --------- beginning of main
+2026-09-06T03:58:33.221007: [platform] Submitted APK launched
+2026-09-06T03:58:32.046152: [platform] Launching submitted APK
+2026-09-06T03:58:31.541594: [platform] Installing submitted APK
+2026-09-06T03:58:31.541417: [platform] Challenge ready
+2026-09-06T03:58:36.869789: 09-06 03:58:36.065  6071  6190 I TFCCTF  : reqChannel[navfin1] origin=android-app://ariadnetab.xyz sent=true result=false
+2026-09-06T03:58:36.765846: 09-06 03:58:36.032  6071  6190 I TFCCTF  : cb onNavigationEvent 2
+2026-09-06T03:58:35.568821: 09-06 03:58:34.866  6071  6190 I TFCCTF  : cb onNavigationEvent 1
+2026-09-06T03:58:35.472766: 09-06 03:58:34.828  6071  6190 I TFCCTF  : cb onNavigationEvent 5
+2026-09-06T03:58:35.418832: 09-06 03:58:34.762  6071  6085 I TFCCTF  : cb transact 9
+2026-09-06T03:58:35.367521: 09-06 03:58:34.761  6071  6190 I TFCCTF  : cb extraCallback onWarmupCompleted null
+2026-09-06T03:58:34.741935: 09-06 03:58:33.784  6071  6071 I TFCCTF  : tab launched https://content.ariadnetab.xyz/viewer.html#cap=eyJfcmFpbHMiOnsiZGF0YSI6eyJkb2N1bWVudF9pZCI6IjZjNGFkZTgxLTg2NDAtNDg0Yy1hMzVkLWFkZDFlODJjYmQ2MyIsIm5vbmNlIjoiNjVhOTEzMjkwYTRiYzdlNGFiNjE1NDY2MWM2YzI4MmIifSwiZXhwIjoiMjAyNi0wOS0wNlQwNDo0NjoxMS44NzZaIiwicHVyIjoicmVuZGVyIn19--8b1bcef9f7008ab2cb621a2f00c5882020c86f41&key=D5CL4HecIN1LfNKtP2HZSFOO9A4RbwgBNfe9u_uQxnw&probe=origin
+2026-09-06T03:58:34.635543: 09-06 03:58:33.768  6071  6071 I TFCCTF  : reqChannel[boot] origin=android-app://ariadnetab.xyz sent=true result=false
+2026-09-06T03:58:34.551473: 09-06 03:58:33.764  6071  6071 I TFCCTF  : newSession sent=true result=true
+2026-09-06T03:58:34.477618: 09-06 03:58:33.743  6071  6071 I TFCCTF  : warmup sent=true result=true
+  [page] t21r0|000|13|boot targets=1
+  [page] t21r0|001|2519|beat t=1 probed=0 hits=0 healthyMiss=0 navAway=0 queued=0
+  [page] t21r0|002|5019|beat t=2 probed=0 hits=0 healthyMiss=0 navAway=0 queued=0
+2026-09-06T03:58:48.403240: 09-06 03:58:47.796  6071  6071 I TFCCTF  : reqChannelExtras[ext] origin=android-app://ariadnetab.xyz target=https://ariadnetab.xyz sent=true result=false
+  [page] t21r0|003|7519|beat t=3 probed=0 hits=0 healthyMiss=0 navAway=0 queued=0
+  [page] t21r0|004|10019|beat t=4 probed=0 hits=0 healthyMiss=0 navAway=0 queued=0
+2026-09-06T03:58:52.396252: 09-06 03:58:51.789  6071  6071 I TFCCTF  : reqChannel[bare] origin=android-app://ariadnetab.xyz sent=true result=false
+  [page] t21r0|005|12123|DONE hits=0 probed=1 healthyMiss=1 navAway=0 queued=0
+  [page] t21r0|006|12520|beat t=5 probed=1 hits=0 healthyMiss=1 navAway=0 queued=0
+  [page] t21r0|007|15019|beat t=6 probed=1 hits=0 healthyMiss=1 navAway=0 queued=0
+  [page] t21r0|008|17519|beat t=7 probed=1 hits=0 healthyMiss=1 navAway=0 queued=0
+  [page] t21r0|009|20019|beat t=8 probed=1 hits=0 healthyMiss=1 navAway=0 queued=0
+2026-09-06T03:59:02.920530: 09-06 03:59:02.310  6071  6071 I TFCCTF  : reqChannel[app-origin] origin=android-app://ariadnetab.xyz sent=true result=false
+2026-09-06T03:59:01.019987: 09-06 03:59:00.292  6071  6085 I TFCCTF  : reqChannel[navfin2] origin=android-app://ariadnetab.xyz sent=true result=false
+2026-09-06T03:59:00.896563: 09-06 03:59:00.288  6071  6085 I TFCCTF  : cb onNavigationEvent 2
+2026-09-06T03:59:00.539142: 09-06 03:58:59.880  6071  6085 I TFCCTF  : cb onNavigationEvent 1
+2026-09-06T03:59:00.409983: 09-06 03:58:59.802  6071  6071 I TFCCTF  : tab launched https://ariadnetab.xyz/
+  [page] t21r0|010|22527|beat t=9 probed=1 hits=0 healthyMiss=1 navAway=0 queued=0
+2026-09-06T03:59:32.046537: [platform] Runtime limit reached
+DONE c96dn04ovs

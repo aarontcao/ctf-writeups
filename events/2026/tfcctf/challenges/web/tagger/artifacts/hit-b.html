@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090c18" />
+    <title>Chat with Hacker  · Tagger</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Tagger home">
+        <span class="brand-mark">T</span>
+        <span>TAGGER<span class="cursor">_</span></span>
+      </a>
+      
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="active" href="/chat">Chat</a>
+          <a class="" href="/discover">Discover</a>
+          <a class="" href="/requests">Requests</a>
+          <a class="" href="/settings">Settings</a>
+        </nav>
+        <div class="user-panel">
+          <span class="online-dot" aria-hidden="true"></span>
+          <span class="username">FlagHolder </span>
+          <form action="/logout" method="post">
+            <button class="button button-small button-ghost" type="submit">Log out</button>
+          </form>
+        </div>
+      
+    </header>
+    <main class="page-shell">
+      
+      
+
+
+<section class="chat-window window">
+  <div class="window-bar">
+    <span>TAGGER_MESSENGER.EXE</span>
+    <div class="window-controls"><i></i><i></i><i></i></div>
+  </div>
+  <div class="chat-layout">
+    <aside class="conversation-sidebar">
+      <div class="sidebar-heading">
+        <div>
+          <span class="eyebrow">YOUR NETWORK</span>
+          <h1>Conversations</h1>
+        </div>
+        <a class="square-button" href="/discover" aria-label="Find friends">+</a>
+      </div>
+      <div class="conversation-list">
+        
+          
+            <a
+              class="conversation selected"
+              href="/chat/3"
+            >
+              <div class="pixel-avatar small">H</div>
+              <div class="conversation-copy">
+                <strong>Hacker </strong>
+                
+                  <span>
+                    ▧ Image
+                  </span>
+                
+              </div>
+              
+                <time>Sep 5, 12:12 PM</time>
+              
+            </a>
+          
+        
+      </div>
+    </aside>
+
+    <section class="message-panel">
+      
+        <header class="chat-header">
+          <div class="pixel-avatar">H</div>
+          <div>
+            <h2>Hacker </h2>
+            <p><span class="online-dot"></span> FRIEND CHANNEL</p>
+          </div>
+        </header>
+        <div class="messages" id="messages">
+          
+            
+              
+              <article class="message-row received">
+                <div class="message-bubble">
+                  <p>Give me the flag!</p>
+                  <time>Sep 5, 12:13 PM</time>
+                </div>
+              </article>
+            
+              
+              <article class="message-row received">
+                <div class="message-bubble">
+                  <p>TFCCTF{LOCAL_ONLY_NOT_REAL_d4g}</p>
+                  <time>Sep 5, 12:13 PM</time>
+                </div>
+              </article>
+            
+          
+        </div>
+        <form
+          class="composer"
+          action="/chat/3/message"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label class="image-picker" title="Attach image">
+            <span aria-hidden="true">▧</span>
+            <span class="sr-only">Choose an image</span>
+            <input id="image-input" type="file" name="image" accept="image/png,image/jpeg,image/gif,image/webp" />
+          </label>
+          <label class="sr-only" for="message-input">Message</label>
+          <input
+            id="message-input"
+            type="text"
+            name="message"
+            maxlength="4000"
+            placeholder="Type a message..."
+            autocomplete="off"
+          />
+          <span class="file-name" id="file-name"></span>
+          <button class="button button-primary" type="submit">SEND <span>↗</span></button>
+        </form>
+      
+    </section>
+  </div>
+</section>
+
+    </main>
+    <footer class="site-footer">
+      <span>TAGGER NETWORK</span>
+      <span class="signal"><i></i><i></i><i></i> SIGNAL OK</span>
+    </footer>
+  </body>
+</html>
+

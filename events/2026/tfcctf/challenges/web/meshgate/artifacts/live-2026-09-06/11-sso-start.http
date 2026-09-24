@@ -1,0 +1,20 @@
+# gateway kicks off the OIDC authorization request
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/start
+HTTP 302
+Content-Length: 757
+Content-Type: text/html; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:19 GMT
+Location: http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/idp/authorize?response_type=code&client_id=meshgate-gw&redirect_uri=http%3A%2F%2Fmeshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com%2Fauth%2Fsso%2Fcallback&scope=openid+profile+email&state=Kb88FxxyxIDCf6cU
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Set-Cookie: mg_session=eyJpZHBfdXNlciI6ImNhcHR1cmUwOTA2Iiwib2lkY19zdGF0ZSI6IktiODhGeHh5eElEQ2Y2Y1UifQ.ap1okw.ozN_ADSk7Ds1TVZXwqglgWxTkjc; HttpOnly; Path=/
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/idp/authorize?response_type=code&amp;client_id=meshgate-gw&amp;redirect_uri=http%3A%2F%2Fmeshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com%2Fauth%2Fsso%2Fcallback&amp;scope=openid+profile+email&amp;state=Kb88FxxyxIDCf6cU">http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/idp/authorize?response_type=code&amp;client_id=meshgate-gw&amp;redirect_uri=http%3A%2F%2Fmeshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com%2Fauth%2Fsso%2Fcallback&amp;scope=openid+profile+email&amp;state=Kb88FxxyxIDCf6cU</a>. If not, click the link.

@@ -1,0 +1,37 @@
+{
+  "author": "mcsky23",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "5d07b524-6ee6-43c9-9419-fa02315c9bf4",
+  "connection": "",
+  "description": "There is no limit to the larp.",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T14:45:23Z",
+      "flag_id": "6c6aee3a-4681-4e13-928d-737c41cf4d6e",
+      "points": 241,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "LarpIn",
+  "points": 241,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{cause_we_can_stay_here_or_we_can_go_we_can_go_larp_larp_larp_sahur}",
+      "flag_id": null,
+      "recorded": "2026-09-05T14:45:10Z",
+      "submitted": true
+    }
+  ],
+  "slug": "larpin",
+  "solved": true,
+  "solves": 57,
+  "status": "solved"
+}

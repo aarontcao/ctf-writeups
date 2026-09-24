@@ -1,0 +1,37 @@
+{
+  "author": "hofill",
+  "category": "misc",
+  "category_display": "misc",
+  "challenge_id": "369d21b5-5285-41b3-9c3a-f533442546f3",
+  "connection": "",
+  "description": "You already know. We don't want this challenge to be guessy. Wrap the hidden word in TFCCTF{}. It's in #announcements.",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T10:42:17Z",
+      "flag_id": "bce2f191-50fe-4e24-8c41-87e9061f8837",
+      "points": 50,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Discord Shenanigans v6",
+  "points": 50,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{CASTLE}",
+      "flag_id": null,
+      "recorded": "2026-09-05T10:27:13Z",
+      "submitted": true
+    }
+  ],
+  "slug": "discord-shenanigans-v6",
+  "solved": true,
+  "solves": 265,
+  "status": "solved"
+}

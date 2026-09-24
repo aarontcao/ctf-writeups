@@ -1,0 +1,12 @@
+method   path                   | LOCAL                      | REMOTE                    
+PROBE    /                      | 404 NOT FOUND len=207      | 404 NOT FOUND len=207      
+PROBE    /.env                  | 404 NOT FOUND len=207      | 404 NOT FOUND len=207      
+PROBE    /swagger               | 404 NOT FOUND len=207      | 404 NOT FOUND len=207      
+PROBE    /openapi.json          | 404 NOT FOUND len=207      | 404 NOT FOUND len=207      
+PROBE    /docs                  | 404 NOT FOUND len=207      | 404 NOT FOUND len=207      
+RESET    /random_ahh_game       | 200 OK len=20              | 200 OK len=20              
+CHEAT    /random_ahh_game       | 200 OK len=31              | 200 OK len=31              
+FLAG     /random_ahh_game       | 500 INTERNAL SERVER ERRO len=265  | 500 INTERNAL SERVER ERRO len=265  
+PROBE    /random_ahh_game       | 405 METHOD NOT ALLOWED len=153 CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP | 405 METHOD NOT ALLOWED len=153 CHEAT, FLAG, GET, HEAD, OPTIONS, PLAY, RESET, STOP 
+
+rows differing on (status, allow): 0

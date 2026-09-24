@@ -1,0 +1,42 @@
+{
+  "author": "cr0",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "ac5e882c-6902-4f05-bac4-db52a6ae286c",
+  "connection": "",
+  "description": "Can you audit the hot water pls?",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "attachment.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/attachment_76ed5d9de4092b0e.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T13:50:45Z",
+      "flag_id": "fc33c74c-0739-4769-a76a-867d29382a47",
+      "points": 224,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "No Hot Water Club",
+  "points": 224,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{hot_water_is_like_a_mirage_in_bucharest}",
+      "flag_id": null,
+      "recorded": "2026-09-05T13:50:37Z",
+      "submitted": true
+    }
+  ],
+  "slug": "no-hot-water-club",
+  "solved": true,
+  "solves": 64,
+  "status": "solved"
+}

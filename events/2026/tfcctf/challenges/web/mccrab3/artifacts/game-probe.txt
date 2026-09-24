@@ -1,0 +1,57 @@
+
+### live mechanics, through proxoxy on 28888 ###
+  RESET (clean slate)                    HTTP/1.1 200 OK | Game has been reset.
+  STOP with no game                      HTTP/1.1 200 OK | You haven't started a game yet!
+  CHEAT with no game                     HTTP/1.1 200 OK | You haven't started a game yet!
+  -- five PLAYs, watching draw_count accumulate across CONNECTIONS --
+  PLAY #1                                HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  PLAY #2                                HTTP/1.1 200 OK | You have drawn 2 numbers so far. You can stop any timeski brevski
+  PLAY #3                                HTTP/1.1 200 OK | You have drawn 3 numbers so far. You can stop any timeski brevski
+  PLAY #4                                HTTP/1.1 200 OK | You have drawn 4 numbers so far. You can stop any timeski brevski
+  PLAY #5                                HTTP/1.1 200 OK | You have drawn 5 numbers so far. You can stop any timeski brevski
+  STOP below 10                          HTTP/1.1 200 OK | You need to draw at least 10 numbers before stopping the game! You have drawn 5 numbers so far.
+  -- game was destroyed by STOP? re-check --
+  STOP again                             HTTP/1.1 200 OK | You need to draw at least 10 numbers before stopping the game! You have drawn 5 numbers so far.
+  -- CHEAT semantics --
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.
+  PLAY (start a game)                    HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT 5                                HTTP/1.1 200 OK | You used the cheat option! The number 5 has been added to your drawn numbers.
+  CHEAT 6 (second, same game)            HTTP/1.1 200 OK | You have already used the cheat option in this game!
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.
+  PLAY                                   HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT true (bool is an int)            HTTP/1.1 200 OK | You used the cheat option! The number True has been added to your drawn numbers.
+  CHEAT 7 after the bool                 HTTP/1.1 200 OK | You have already used the cheat option in this game!
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.
+  PLAY                                   HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT 999 (out of range)               HTTP/1.1 200 OK | Invalid cheat number! Please provide a number between 1 and 69.
+  CHEAT 7 after invalid                  HTTP/1.1 200 OK | You have already used the cheat option in this game!
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.
+  PLAY                                   HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT missing key                      HTTP/1.1 200 OK | Invalid cheat number! Please provide a number between 1 and 69.
+  CHEAT 7 after missing                  HTTP/1.1 200 OK | You have already used the cheat option in this game!
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.
+  PLAY                                   HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT no body at all                   HTTP/1.1 415 UNSUPPORTED MEDIA TYPE | <!doctype html>
+<html lang=en>
+<title>415 Unsupported Media Type</title>
+<h1>Unsupported Media Type</h1>
+<p>Did not attempt to load JSON data because the request Content-Type was not &#39;application/
+  CHEAT 7 after no body                  HTTP/1.1 200 OK | You have already used the cheat option in this game!
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.
+  PLAY                                   HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT bad json                         HTTP/1.1 400 BAD REQUEST | <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The browser (or proxy) sent a request that this server could not understand.</p>
+  CHEAT 7 after bad json                 HTTP/1.1 200 OK | You have already used the cheat option in this game!
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.
+  -- undeclared methods --
+  FLAG method                            HTTP/1.1 500 INTERNAL SERVER ERROR | <!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the s
+  GET                                    HTTP/1.1 200 OK | ts ah random ahh game if you get bored. draw numbers, if you draw the same number you lose
+  PLAY on /random_ahh_game               HTTP/1.1 200 OK | You have drawn 1 numbers so far. You can stop any timeski brevski
+  RESET                                  HTTP/1.1 200 OK | Game has been reset.

@@ -1,0 +1,20 @@
+# IdP login form
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/callback?code=ZunLTq5vix-WkVD0T1mQYg&state=Kb88FxxyxIDCf6cU
+HTTP 302
+Content-Length: 207
+Content-Type: text/html; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:19 GMT
+Location: /dashboard
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Set-Cookie: mg_session=.eJyrVkovjy8tTi1SslJKTiwoKS1KNbA0MFPSUcpMKcAukZ-ZkhxfXJJYkgqU8k6ysHCrqKis8HRxTjNLDlWqBQBrxRr7.ap1okw.5tjFJLr8RRn2hzElaP_ysu2QCD8; HttpOnly; Path=/
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="/dashboard">/dashboard</a>. If not, click the link.

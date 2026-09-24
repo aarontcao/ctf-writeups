@@ -1,0 +1,12 @@
+target: special.thefewchosen.com:30494
+captured: 2026-09-06T13:39:49Z
+
+70-get-root.http                             HTTP/1.1 404 NOT FOUND
+71-get-flag-blocked.http                     <dropped, no response>
+72-post-flag-no-header.http                  HTTP/1.1 500 INTERNAL SERVER ERROR
+73-post-flag-brevski-george.http             <dropped, no response>
+74-post-flag-brevski-case.http               HTTP/1.1 500 INTERNAL SERVER ERROR
+75-post-flag-brevski-wrong.http              <dropped, no response>
+76-cl-te-both-dropped.http                   <dropped, no response>
+78-brevski-gorge-control.http                HTTP/1.1 500 INTERNAL SERVER ERROR
+77-te-identity-dropped.http                  <dropped, no response>

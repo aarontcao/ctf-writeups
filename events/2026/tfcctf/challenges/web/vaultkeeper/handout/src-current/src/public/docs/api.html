@@ -1,0 +1,11 @@
+<p>Bundles are uncompressed archives containing <code>database.sql</code> and the site file tree.
+The restore queue is exposed read-only at <code>/api/jobs.php</code>.</p>
+
+<h2>Console API</h2>
+<ul>
+  <li><code>GET /api/bundle_index.php?kind=&amp;sort=&amp;dir=</code> — sortable index of catalogued bundles.</li>
+  <li><code>POST /api/session_ticket.php</code> — mint a console session ticket; <code>GET ?ticket=</code> resolves it.</li>
+  <li><code>POST /api/render_template.php</code> — preview an alert notification template.</li>
+  <li><code>POST /api/import_checkpoint.php</code> — migrate a pre-4.0 console checkpoint export.</li>
+  <li><code>GET/POST /api/annotations.php?ref=</code> — operator notes for a restore run.</li>
+</ul>

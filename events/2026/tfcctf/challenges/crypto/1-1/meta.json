@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "crypto",
+  "category_display": "crypto",
+  "challenge_id": "67506128-6ff0-407a-ba95-7338f55bcc5c",
+  "connection": "",
+  "description": "should be easy",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [
+    {
+      "name": "challenge.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_c45aec71c2899aee.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T10:52:13Z",
+      "flag_id": "066b10e3-ceb9-4e32-8c42-60ce6b6592d0",
+      "points": 50,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "1+1",
+  "points": 50,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{nice_crypto_skillz_kid_you_will_be_great_one_day_af56c3}",
+      "flag_id": null,
+      "recorded": "2026-09-05T10:52:01Z",
+      "submitted": true
+    }
+  ],
+  "slug": "1-1",
+  "solved": true,
+  "solves": 365,
+  "status": "solved"
+}

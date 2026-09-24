@@ -1,0 +1,22 @@
+<h2>Architecture</h2>
+<p>Vaultkeeper is a single-appliance backup &amp; restore engine. Requests flow through the
+public API into the restore engine, which stages imports in an isolated <code>vk_restore</code>
+schema before reconciling them against the live <code>vaultkeeper</code> schema.</p>
+
+<h3>Components</h3>
+<ul>
+  <li><b>Public API</b> — job telemetry, catalog search, schedules, metrics, status.</li>
+  <li><b>Restore console</b> — session-addressed upload → import → file-tree restore.</li>
+  <li><b>Restore engine</b> — replays <code>database.sql</code>, reconciles staging tables.</li>
+  <li><b>Replication</b> — mirrors staging manifests to sibling nodes.</li>
+</ul>
+
+<h3>Access tokens</h3>
+<p>The appliance issues short-lived, scoped access tokens for the console and for signed
+download links. Tokens are signed server-side and verified on every request; secrets are
+held on the appliance and never rendered in the UI.</p>
+
+<h3>Scopes</h3>
+<p>Roles are ranked <code>guest &lt; viewer &lt; operator &lt; maintainer &lt; admin</code>. Higher
+scopes unlock the maintenance actions in the restore console; day-to-day operators only need
+the standard restore workflow.</p>

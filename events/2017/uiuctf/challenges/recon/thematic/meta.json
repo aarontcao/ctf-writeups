@@ -1,0 +1,21 @@
+{
+  "author": "",
+  "category": "recon",
+  "category_display": "recon",
+  "connection": "",
+  "description": "Infosec twitter is a remarkable place.",
+  "difficulty": "",
+  "files": [],
+  "name": "Thematic",
+  "points": 100,
+  "recorded_flags": [
+    {
+      "flag": "flag{-uiuc.tf_l0v3s_taylor-}",
+      "submitted": true
+    }
+  ],
+  "slug": "thematic",
+  "solved": true,
+  "solves": null,
+  "status": "solved"
+}

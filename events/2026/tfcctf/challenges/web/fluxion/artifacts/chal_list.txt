@@ -1,0 +1,605 @@
+HTTP 200
+{
+  "challenges": [
+    {
+      "category_id": "6a405a86-85f7-4e26-a282-0bb8be973e32",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "V8 motor",
+      "challenge_author": "minipif",
+      "challenge_id": "e3596b9b-617e-4ac0-9e94-97ffe1dda47d",
+      "flags": [
+        {
+          "flag_id": "34be39a5-0dfb-474c-9449-330bfbd9d6ed",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 10,
+          "is_solved": false
+        }
+      ],
+      "description": "the sun is a deadly laser",
+      "files": [
+        {
+          "file_name": "motor_v8.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/motor_v8_5761a02bd6ec3629.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "netcat",
+      "image_name": "motor-v8",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "c76d2ce0-8d43-4304-8da0-65d861b7afcf",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "Ship Me",
+      "challenge_author": "Hiumee",
+      "challenge_id": "03db043b-94b1-4018-849d-007ea64d0692",
+      "flags": [
+        {
+          "flag_id": "84ba11fb-6766-48fa-833b-61620ed7e45c",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 21,
+          "is_solved": false
+        }
+      ],
+      "description": "They can throw away your package! Be careful<br>\n---<br>\nChallenge detail: You app will be installed using <code>adb install -g path</code> and the flag will be a shipment <code>am start -n me.ship/.MainActivity --eu package 'shipme://cargo/?name=FAKE_FLAG_HERE&origin=challenge</code><br>\n<a href=\"https://android.koth.pro/\">https://android.koth.pro/</a>",
+      "files": [
+        {
+          "file_name": "shipme-release.apk",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/shipme-release_4626b2084c58128c.apk"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 0,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "c76d2ce0-8d43-4304-8da0-65d861b7afcf",
+      "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+      "challenge_name": "Mid",
+      "challenge_author": "Walker",
+      "challenge_id": "7f330921-0e25-4653-ae2e-87e0bee5c94d",
+      "flags": [
+        {
+          "flag_id": "07aee090-806f-4c0f-89bb-de10b62711e0",
+          "flag_points": 482,
+          "flag_question": "",
+          "flag_order": 11,
+          "is_solved": false
+        }
+      ],
+      "description": "Mid means middle, right?",
+      "files": [
+        {
+          "file_name": "chall.py",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/chall_7d5a5719a653a9a0.py"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 3,
+      "connection_type": "netcat",
+      "image_name": "mid2",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "b76b709a-99ec-4c01-bfb6-65967e03be59",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "Ariadne's Tab",
+      "challenge_author": "Mtib",
+      "challenge_id": "5a585e4b-4694-4aca-a7ed-abf63b4f1c93",
+      "flags": [
+        {
+          "flag_id": "abfab595-175e-4fbe-9929-27b2f2dee1a4",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 22,
+          "is_solved": false
+        }
+      ],
+      "description": "This is a mixed Web and Android Challenge, running on an API 37 (Google APIs) phone.<br>\nThe flag is present in the bot's account. The bot is logged-in on the phone.<br>\nThe solve APK must be submitted on <a href=\"https://android.koth.pro/\" target=\"_blank\" style=\"color:#40e0d0\">https://android.koth.pro/</a>.<br>\nYou do not need bruteforce or any other compute-intensive operations to solve this challenge.<br><br>\n\nNote: To see the logs of your PoC, you can use logging with the \"TFCCTF\" tag.",
+      "files": [
+        {
+          "file_name": "ariadnetab.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/ariadnetab_a9ca502e9faf1282.zip"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 0,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "8c1da7f6-10f6-41da-a7f7-e3f546771ae6",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "cer frumos",
+      "challenge_author": "minipif",
+      "challenge_id": "75c53fad-bcb2-4fa2-ae25-9f43bcd7487d",
+      "flags": [
+        {
+          "flag_id": "b098ce8c-b639-4a4c-b412-3630b66401c8",
+          "flag_points": 278,
+          "flag_question": "",
+          "flag_order": 4,
+          "is_solved": false
+        }
+      ],
+      "description": "A description indeed.",
+      "files": [
+        {
+          "file_name": "challenge.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_dc9bad02a4e5c2cf.zip"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 44,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "f027d346-1ee7-48b9-8720-15a158caf09d",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "lumaes",
+      "challenge_author": "Livian",
+      "challenge_id": "4269e582-4842-4953-8ab0-513c40dc183e",
+      "flags": [
+        {
+          "flag_id": "3f8b9d52-1eb4-4786-874f-ce0e1dc3dbd6",
+          "flag_points": 436,
+          "flag_question": "",
+          "flag_order": 27,
+          "is_solved": false
+        }
+      ],
+      "description": "I heard CTF players love obfuscation!",
+      "files": [
+        {
+          "file_name": "challenge",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_b3e8e9af7611e524"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 9,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "b76b709a-99ec-4c01-bfb6-65967e03be59",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "mccrab3",
+      "challenge_author": "mcsky23",
+      "challenge_id": "ccac51b4-8594-4842-aa04-4ca7f1f3b5d1",
+      "flags": [
+        {
+          "flag_id": "96c22786-ef95-4361-8e9d-2bdcf11c5a25",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 8,
+          "is_solved": false
+        }
+      ],
+      "description": "I got the cheese, burrito fill it with beans.\n<br>\nalso rev",
+      "files": [
+        {
+          "file_name": "mccrab3.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/mccrab3_0d6352ad82fa224a.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "nodeport",
+      "image_name": "mccrab3",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "f027d346-1ee7-48b9-8720-15a158caf09d",
+      "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+      "challenge_name": "Cadence",
+      "challenge_author": "thek0der",
+      "challenge_id": "4b6fe26a-f5d0-4086-b426-cd2b3616eabb",
+      "flags": [
+        {
+          "flag_id": "5196af6f-a04e-46a5-b6ab-333c9186d98a",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 14,
+          "is_solved": false
+        }
+      ],
+      "description": "Winamp who?",
+      "files": [
+        {
+          "file_name": "cadence",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/cadence_2fb892dc7c804ae9"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "netcat",
+      "image_name": "chall-cadence-encore",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "b76b709a-99ec-4c01-bfb6-65967e03be59",
+      "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+      "challenge_name": "Vaultkeeper",
+      "challenge_author": "skyv3il",
+      "challenge_id": "0ccaa358-54b0-4872-a4fd-083db11f9937",
+      "flags": [
+        {
+          "flag_id": "5f89badb-27a1-4084-967c-e2f158d6fa4e",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 23,
+          "is_solved": false
+        }
+      ],
+      "description": "Self-hosted backup & restore appliance,schedule snapshots, ship them anywhere,roll a site back",
+      "files": [
+        {
+          "file_name": "vaultkeeper-source.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/vaultkeeper-source_bba729869f1caaec.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "http",
+      "image_name": "vaultkeeper",
+      "http_only": true,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "6a405a86-85f7-4e26-a282-0bb8be973e32",
+      "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+      "challenge_name": "unbrevable",
+      "challenge_author": "minipif",
+      "challenge_id": "89fdbeb2-5f0d-49f8-b4f4-be407f8a14bc",
+      "flags": [
+        {
+          "flag_id": "2b5f836a-103a-4224-9d1f-4ad9f4dd6515",
+          "flag_points": 491,
+          "flag_question": "",
+          "flag_order": 19,
+          "is_solved": false
+        }
+      ],
+      "description": "should be easy? now in pwn",
+      "files": [
+        {
+          "file_name": "unbrevable.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/unbrevable_a1986f1376fb9e38.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 2,
+      "connection_type": "netcat",
+      "image_name": "unbrevable-unbrevable",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "6a405a86-85f7-4e26-a282-0bb8be973e32",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "bitdebit\u00b3",
+      "challenge_author": "minipif",
+      "challenge_id": "f0fbe464-59b4-4696-99a1-fd5e5f6b73a3",
+      "flags": [
+        {
+          "flag_id": "ce9f56f1-b977-4644-80b3-892f91a94395",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 2,
+          "is_solved": false
+        }
+      ],
+      "description": "a bit flipped me off",
+      "files": [
+        {
+          "file_name": "bitdebit3.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/bitdebit3_49e68929e8cf5355.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "netcat",
+      "image_name": "bitdebit3-chal",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "f027d346-1ee7-48b9-8720-15a158caf09d",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "minigame",
+      "challenge_author": "minipif",
+      "challenge_id": "225277b6-5f36-4299-a83a-f0218d0b9276",
+      "flags": [
+        {
+          "flag_id": "f3cce99f-4629-404d-8f2a-b614d45f9ab6",
+          "flag_points": 372,
+          "flag_question": "",
+          "flag_order": 16,
+          "is_solved": false
+        }
+      ],
+      "description": "a game",
+      "files": [
+        {
+          "file_name": "minigame",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/minigame_4aaf356ca3c9ba57"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 20,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "8c1da7f6-10f6-41da-a7f7-e3f546771ae6",
+      "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+      "challenge_name": "1+1",
+      "challenge_author": "minipif",
+      "challenge_id": "67506128-6ff0-407a-ba95-7338f55bcc5c",
+      "flags": [
+        {
+          "flag_id": "066b10e3-ceb9-4e32-8c42-60ce6b6592d0",
+          "flag_points": 229,
+          "flag_question": "",
+          "flag_order": 18,
+          "is_solved": false
+        }
+      ],
+      "description": "should be easy",
+      "files": [
+        {
+          "file_name": "challenge.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_c45aec71c2899aee.zip"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 62,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "c76d2ce0-8d43-4304-8da0-65d861b7afcf",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "turip",
+      "challenge_author": "mcsky23",
+      "challenge_id": "93a751cd-5169-42dc-8e00-ac733a3d9f0c",
+      "flags": [
+        {
+          "flag_id": "5ad13d31-748d-49e9-ba6d-c0a3825f5189",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 15,
+          "is_solved": false
+        }
+      ],
+      "description": "https://youtu.be/145Qd0aVTEk<br>                                                            http://2.29.39.4:1337",
+      "files": [
+        {
+          "file_name": "turip.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/turip_80a4d5fdc9812c0f.zip"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 0,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "c76d2ce0-8d43-4304-8da0-65d861b7afcf",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "The pyjail",
+      "challenge_author": "Hiumee",
+      "challenge_id": "e5813711-226c-4419-9650-d1fbe8779ba6",
+      "flags": [
+        {
+          "flag_id": "c820235b-39ae-4dca-9a1f-aa79088453ae",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 28,
+          "is_solved": false
+        }
+      ],
+      "description": "pyjail",
+      "files": [
+        {
+          "file_name": "jail.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/jail_a50fb446c82467f3.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "nodeport",
+      "image_name": "python-jail",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "c76d2ce0-8d43-4304-8da0-65d861b7afcf",
+      "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+      "challenge_name": "J*B Online Assessment",
+      "challenge_author": "cr0",
+      "challenge_id": "600836c9-9738-422b-8a61-34a382fc6605",
+      "flags": [
+        {
+          "flag_id": "59e70d50-b9d7-4eae-8b01-c8207988bc50",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 9,
+          "is_solved": false
+        }
+      ],
+      "description": "Can you get a j*b in 2026?",
+      "files": [],
+      "is_dynamic": true,
+      "amount_solves": 1,
+      "connection_type": "http",
+      "image_name": "j-b-online-assessment",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "b76b709a-99ec-4c01-bfb6-65967e03be59",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "No Hot Water Club",
+      "challenge_author": "cr0",
+      "challenge_id": "ac5e882c-6902-4f05-bac4-db52a6ae286c",
+      "flags": [
+        {
+          "flag_id": "fc33c74c-0739-4769-a76a-867d29382a47",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 12,
+          "is_solved": false
+        }
+      ],
+      "description": "Can you audit the hot water pls?",
+      "files": [
+        {
+          "file_name": "attachment.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/attachment_76ed5d9de4092b0e.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "http",
+      "image_name": "no-hot-water-team",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "8c1da7f6-10f6-41da-a7f7-e3f546771ae6",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "math or meth?",
+      "challenge_author": "minipif",
+      "challenge_id": "364bd809-0d39-4596-9661-cabd249e82dc",
+      "flags": [
+        {
+          "flag_id": "874b3d6c-b606-4470-8d0a-b2e228307127",
+          "flag_points": 367,
+          "flag_question": "",
+          "flag_order": 7,
+          "is_solved": false
+        }
+      ],
+      "description": "Br Ba",
+      "files": [
+        {
+          "file_name": "chall.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/chall_832664c16adb5ace.zip"
+        }
+      ],
+      "is_dynamic": false,
+      "amount_solves": 21,
+      "connection_type": null,
+      "image_name": null,
+      "http_only": null,
+      "allow_host_header_override": null
+    },
+    {
+      "category_id": "b76b709a-99ec-4c01-bfb6-65967e03be59",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "LarpIn",
+      "challenge_author": "mcsky23",
+      "challenge_id": "5d07b524-6ee6-43c9-9419-fa02315c9bf4",
+      "flags": [
+        {
+          "flag_id": "6c6aee3a-4681-4e13-928d-737c41cf4d6e",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 5,
+          "is_solved": false
+        }
+      ],
+      "description": "There is no limit to the larp.",
+      "files": [],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "http",
+      "image_name": "larpin",
+      "http_only": false,
+      "allow_host_header_override": true
+    },
+    {
+      "category_id": "f027d346-1ee7-48b9-8720-15a158caf09d",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "rivers",
+      "challenge_author": "mcsky23",
+      "challenge_id": "ce526feb-0558-45d3-b753-e5ba83a989d9",
+      "flags": [
+        {
+          "flag_id": "6b16a5d7-82ef-4234-a4c2-fe001a11c7de",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 25,
+          "is_solved": false
+        }
+      ],
+      "description": "cry me a rivers",
+      "files": [
+        {
+          "file_name": "rivers",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/rivers_40be37c5dc0e3304"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 1,
+      "connection_type": "netcat",
+      "image_name": "rivers",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "b76b709a-99ec-4c01-bfb6-65967e03be59",
+      "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+      "challenge_name": "Tagger",
+      "challenge_author": "Sagi",
+      "challenge_id": "aa78d8ef-15d7-4d4d-bc44-e6e828fd9c01",
+      "flags": [
+        {
+          "flag_id": "4e3c4e36-d175-420b-9cf7-94b265320ac6",
+          "flag_points": 500,
+          "flag_question": "",
+          "flag_order": 3,
+          "is_solved": false
+        }
+      ],
+      "description": "Look at my new chat app, Tagger!!!",
+      "files": [
+        {
+          "file_name": "challenge.zip",
+          "file_url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_9a9c044df595d53f.zip"
+        }
+      ],
+      "is_dynamic": true,
+      "amount_solves": 0,
+      "connection_type": "http",
+      "image_name": "tagger",
+      "http_only": false,
+      "allow_host_header_override": false
+    },
+    {
+      "category_id": "b76b709a-99ec-4c01-bfb6-65967e03be59",
+      

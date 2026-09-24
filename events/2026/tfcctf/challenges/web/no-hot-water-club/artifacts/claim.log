@@ -1,0 +1,8 @@
+2026-09-05T12:15:38Z 409 {"error":"Max 3 running instances per team allowed"}
+   listing: {"data":[{"name":"fluxion-3effff5b91127b19","expiresAt":"2026-09-05T12:26:14Z"},{"name":"larpin-61fab72eca676106","expiresAt":"2026-09-05T12:26:08Z"},{"name":"vaultkeeper-752a3ad6a3c88e9b","expiresAt":"2026-09-05T12:54:34Z"}]}
+2026-09-05T12:19:10Z -1 URLError(TimeoutError('timed out'))
+   listing: URLError(TimeoutError('timed out'))
+2026-09-05T12:23:12Z 409 {"error":"Max 3 running instances per team allowed"}
+   listing: URLError(TimeoutError('timed out'))
+2026-09-05T12:27:43Z 409 {"error":"Max 3 running instances per team allowed"}
+   listing: {"data":[{"name":"bitdebit3-chal-fa3f0a8a90a3b27c","expiresAt":"2026-09-05T12:29:50Z"},{"name":"no-hot-water-team-fe4748a40aae15e3","expiresAt":"2026-09-05T13:16:42Z"},{"name":"vaultkeeper-752a3ad6a3c88e9b","expiresAt":"2026-09-05T12:54:34Z"}]}

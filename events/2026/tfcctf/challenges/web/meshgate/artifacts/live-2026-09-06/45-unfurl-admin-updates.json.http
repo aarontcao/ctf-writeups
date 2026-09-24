@@ -1,0 +1,14 @@
+# loopback does NOT bypass the admin gate: still 403
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2F127.0.0.1%3A5000%2Fadmin%2Fupdates
+HTTP 502
+Content-Length: 38
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:21:08 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"error":"HTTP Error 403: FORBIDDEN"}

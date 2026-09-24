@@ -1,0 +1,13 @@
+# CL plus TE together : proxoxy drops the connection outright, closing the classic desync
+# --- request bytes ---
+POST /flag HTTP/1.1
+Host: special.thefewchosen.com:30494
+Content-Length: 0
+Transfer-Encoding: chunked
+Connection: close
+
+0
+
+
+# --- response bytes ---
+<connection closed with no response: proxoxy dropped it>

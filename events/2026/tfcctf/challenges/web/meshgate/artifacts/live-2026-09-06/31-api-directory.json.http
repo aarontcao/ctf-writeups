@@ -1,0 +1,14 @@
+# GET /api/directory
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/directory
+HTTP 200
+Content-Length: 605
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:20:20 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"avatar_service":"https://www.gravatar.com/avatar/{hash}","org":"Meshgate Corp","people":[{"avatar":"f48c9188e6e0cbef765f3c716c583cda","name":"Dana Whitaker","role":"admin","title":"Director, Platform","username":"admin"},{"avatar":"263c07a170f210e3c19fb9411a54531e","name":"Jordan Okafor","role":"user","title":"Finance Analyst","username":"jordan"},{"avatar":"3f2796a09770f376e68602f8cbc64f30","name":"Release Bot","role":"user","title":"Release Automation","username":"releasebot"},{"avatar":"0429417c99a336228109a2fdc6723dbe","name":"capture0906","role":"user","title":"","username":"capture0906"}]}

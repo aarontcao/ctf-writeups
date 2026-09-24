@@ -1,0 +1,15 @@
+# GET /admin/status/health as role=user, the wall we never cleared
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/admin/status/health
+HTTP 200
+Content-Length: 313
+Content-Type: text/html; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:30 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: X-Meshgate-Edge-Render, Cookie
+X-Content-Type-Options: nosniff
+X-Edge-Cache: MISS
+X-Frame-Options: DENY
+
+<div class=admin-health>health: restricted — this console surface renders operator diagnostics, including a one-time console bootstrap in the <code>{console_token}</code> banner slot, only within an administrator session; it is served through the edge cache and periodically revalidated in the background.</div>

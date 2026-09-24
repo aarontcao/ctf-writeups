@@ -1,0 +1,139 @@
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)
+INFO  Using log config file: jar:file:$HOME/ctf-tools/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (3478 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (6016 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Decompiler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/8051/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FunctionID/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PyGhidra/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/Atmel/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/PIC/ghidra_scripts
+    $HOME/ctf-tools/ghidra-scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/DATA/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/JVM/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BSim/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PDB/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/VersionTracking/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Base/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating temporary project: /tmp/tmp.bFTIyXSCL8/tmp (HeadlessAnalyzer)  
+INFO  Creating project: /tmp/tmp.bFTIyXSCL8/tmp (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /tmp/tmp.bFTIyXSCL8/tmp (HeadlessAnalyzer)  
+INFO  IMPORTING: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/bitdebit/scratch/bitdebit%C2%B3 (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:64:default:gcc (ProgramLoader)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (ProgramLoader)  
+INFO  Additional info:
+Loading file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/bitdebit/scratch/bitdebit%C2%B3?MD5=bfe80db3bf910391299372c1bc9c3244...
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104020 (Symbol = stdout) - Runtime copy not supported (8-bytes)
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104030 (Symbol = stdin) - Runtime copy not supported (8-bytes)
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104040 (Symbol = stderr) - Runtime copy not supported (8-bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'bitdebit³' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/bitdebit³] - 13 unresolved symbols, no external libraries configured - skipping
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/bitdebit/scratch/bitdebit%C2%B3 (HeadlessAnalyzer)  
+INFO  Added 61 source map entries (DWARFImporter)  
+INFO  DWARF ver[5], 1 compUnits, 134 DIES, import - total elapsed: 207ms (DWARFImportSummary)  
+INFO  DWARF data type import - elapsed: 70ms (DWARFImportSummary)  
+INFO  DWARF func & symbol import - elapsed: 90ms (DWARFImportSummary)  
+INFO  DWARF types imported: 38 (DWARFImportSummary)  
+INFO  DWARF enums from macros - elapsed: 4ms (DWARFImportSummary)  
+INFO  DWARF compile dirs: [/home/linuxvb/temp/stdin_crazy_fsop_testing] (DWARFImportSummary)  
+INFO  DWARF producers: [GNU C17 13.1.0 -mtune=generic -march=x86-64 -g -O0 -fasynchronous-unwind-tables -fstack-protector-strong -fstack-clash-protection -fcf-protection] (DWARFImportSummary)  
+INFO  DWARF source languages: [DW_LANG_C11] (DWARFImportSummary)  
+INFO  DWARF compUnit: pipi2.c (DWARFImportSummary)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+WARN  Decompiling 00101200, pcode error at 00105070: Unable to disassemble EXTERNAL block location: 00105070 (DecompileCallback)  
+WARN  Decompiling 001011d0, pcode error at 00105008: Unable to disassemble EXTERNAL block location: 00105008 (DecompileCallback)  
+INFO  Packed database cache: /var/tmp/ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: generic_clib_64 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              0.928 secs
+    Apply Data Archives                        0.433 secs
+    Call Convention ID                         0.550 secs
+    Call-Fixup Installer                       0.005 secs
+    Create Address Tables                      0.007 secs
+    Create Function                            0.017 secs
+    DWARF                                      0.351 secs
+    Data Reference                             0.016 secs
+    Decompiler Switch Analysis                 0.045 secs
+    Decompiler Switch Analysis - One Time      0.886 secs
+    Demangler GNU                              0.043 secs
+    Disassemble                                0.016 secs
+    Disassemble Entry Points                   0.113 secs
+    ELF Scalar Operand References              0.022 secs
+    Embedded Media                             0.007 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.106 secs
+    Function Start Pre Search                  0.013 secs
+    Function Start Search                      0.063 secs
+    Function Start Search After Code           0.002 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.089 secs
+    Non-Returning Functions - Discovered       0.007 secs
+    Non-Returning Functions - Known            0.005 secs
+    Reference                                  0.032 secs
+    Shared Return Calls                        0.015 secs
+    Stack                                      0.067 secs
+    Subroutine References                      0.008 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.146 secs
+-----------------------------------------------------
+     Total Time   3 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/bitdebit/scratch/bitdebit%C2%B3 (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DecompileAll.java '$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/bitdebit/artifacts/decomp.c'  (HeadlessAnalyzer)  
+INFO  SCRIPT: $HOME/ctf-tools/ghidra-scripts/DecompileAll.java (HeadlessAnalyzer)  
+WARN  Decompiling 00105000, pcode error at 00105000: Unable to disassemble EXTERNAL block location: 00105000 (DecompileCallback)  
+WARN  Decompiling 00105008, pcode error at 00105008: Unable to disassemble EXTERNAL block location: 00105008 (DecompileCallback)  
+WARN  Decompiling 00105010, pcode error at 00105010: Unable to disassemble EXTERNAL block location: 00105010 (DecompileCallback)  
+WARN  Decompiling 00105018, pcode error at 00105018: Unable to disassemble EXTERNAL block location: 00105018 (DecompileCallback)  
+WARN  Decompiling 00105020, pcode error at 00105020: Unable to disassemble EXTERNAL block location: 00105020 (DecompileCallback)  
+WARN  Decompiling 00105028, pcode error at 00105028: Unable to disassemble EXTERNAL block location: 00105028 (DecompileCallback)  
+WARN  Decompiling 00105030, pcode error at 00105030: Unable to disassemble EXTERNAL block location: 00105030 (DecompileCallback)  
+WARN  Decompiling 00105038, pcode error at 00105038: Unable to disassemble EXTERNAL block location: 00105038 (DecompileCallback)  
+WARN  Decompiling 00105040, pcode error at 00105040: Unable to disassemble EXTERNAL block location: 00105040 (DecompileCallback)  
+WARN  Decompiling 00105048, pcode error at 00105048: Unable to disassemble EXTERNAL block location: 00105048 (DecompileCallback)  
+WARN  Decompiling 00105050, pcode error at 00105050: Unable to disassemble EXTERNAL block location: 00105050 (DecompileCallback)  
+WARN  Decompiling 00105058, pcode error at 00105058: Unable to disassemble EXTERNAL block location: 00105058 (DecompileCallback)  
+WARN  Decompiling 00105060, pcode error at 00105060: Unable to disassemble EXTERNAL block location: 00105060 (DecompileCallback)  
+WARN  Decompiling 00105068, pcode error at 00105068: Unable to disassemble EXTERNAL block location: 00105068 (DecompileCallback)  
+WARN  Decompiling 00105070, pcode error at 00105070: Unable to disassemble EXTERNAL block location: 00105070 (DecompileCallback)  
+WARN  Decompiling 00105078, pcode error at 00105078: Unable to disassemble EXTERNAL block location: 00105078 (DecompileCallback)  
+INFO  ANALYZING changes made by post scripts: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/bitdebit/scratch/bitdebit%C2%B3 (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/bitdebit/scratch/bitdebit%C2%B3 (HeadlessAnalyzer)  
+INFO  /bitdebit³: file created (user) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /bitdebit³ (tmp:/bitdebit³) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

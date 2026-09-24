@@ -1,0 +1,24 @@
+== does proxoxy forward each game method at all? ==
+  GET                                HTTP/1.1 200 OK                  ts ah random ahh game if you get bored. draw numbers, if you draw the same number you lose
+  PLAY                               HTTP/1.1 200 OK                  You have drawn 2 numbers so far. You can stop any timeski brevski
+  RESET                              HTTP/1.1 200 OK                  Game has been reset.
+  STOP                               HTTP/1.1 200 OK                  You haven't started a game yet!
+  CHEAT                              HTTP/1.1 200 OK                  You haven't started a game yet!
+  FLAG                               HTTP/1.1 500 INTERNAL SERVER ERROR <!doctype html> <html lang=en> <title>500 Internal Server Error</title> <h1>Internal Server Erro
+  BOGUS                              HTTP/1.1 405 METHOD NOT ALLOWED  <!doctype html> <html lang=en> <title>405 Method Not Allowed</title> <h1>Method Not Allowed</h1>
+== CHEAT with a real JSON body (reset, play, cheat) ==
+  RESET                              HTTP/1.1 200 OK                  Game has been reset.
+  PLAY                               HTTP/1.1 200 OK                  You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT json CL                      HTTP/1.1 200 OK                  You used the cheat option! The number 5 has been added to your drawn numbers.
+== CHEAT with a CHUNKED JSON body ==
+  RESET                              HTTP/1.1 200 OK                  Game has been reset.
+  PLAY                               HTTP/1.1 200 OK                  You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT json chunked                 HTTP/1.1 200 OK                  You used the cheat option! The number 5 has been added to your drawn numbers.
+== CHEAT with a LARGE JSON body (64 KiB of padding) ==
+  RESET                              HTTP/1.1 200 OK                  Game has been reset.
+  PLAY                               HTTP/1.1 200 OK                  You have drawn 1 numbers so far. You can stop any timeski brevski
+  CHEAT json 64KiB                   HTTP/1.1 200 OK                  You used the cheat option! The number 5 has been added to your drawn numbers.
+== is the game path blocked by any rule? (no brevski header) ==
+  /random_ahh_game                   HTTP/1.1 200 OK                  You have drawn 3 numbers so far. You can stop any timeski brevski
+  /random_ahh_game?x=1               HTTP/1.1 200 OK                  You have drawn 4 numbers so far. You can stop any timeski brevski
+  /RANDOM_AHH_GAME                   HTTP/1.1 404 NOT FOUND           <!doctype html> <html lang=en> <title>404 Not Found</title> <h1>Not Found</h1> <p>The requested 

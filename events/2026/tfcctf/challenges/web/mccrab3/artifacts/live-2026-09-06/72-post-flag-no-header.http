@@ -1,0 +1,21 @@
+# POST /flag with no brevski header : passes proxoxy and reaches gunicorn/Flask, which 500s. A 500 here is the marker that a request cleared the proxy.
+# --- request bytes ---
+POST /flag HTTP/1.1
+Host: special.thefewchosen.com:30494
+Content-Length: 0
+Connection: close
+
+
+# --- response bytes ---
+HTTP/1.1 500 INTERNAL SERVER ERROR
+Server: gunicorn
+Date: Sun, 06 Sep 2026 13:39:24 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 265
+
+<!doctype html>
+<html lang=en>
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>

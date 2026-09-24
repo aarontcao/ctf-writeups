@@ -1,0 +1,42 @@
+{
+  "author": "mcsky23",
+  "category": "rev",
+  "category_display": "reverse",
+  "challenge_id": "ce526feb-0558-45d3-b753-e5ba83a989d9",
+  "connection": "",
+  "description": "cry me a rivers",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "rivers",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/rivers_40be37c5dc0e3304"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T13:40:01Z",
+      "flag_id": "6b16a5d7-82ef-4234-a4c2-fe001a11c7de",
+      "points": 143,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "rivers",
+  "points": 143,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{even_math_is_cooked_its_so_joever}",
+      "flag_id": null,
+      "recorded": "2026-09-05T13:39:55Z",
+      "submitted": true
+    }
+  ],
+  "slug": "rivers",
+  "solved": true,
+  "solves": 106,
+  "status": "solved"
+}

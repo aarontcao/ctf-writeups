@@ -1,0 +1,19 @@
+# IdP authorize endpoint, redirects to its login form
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/idp/authorize?response_type=code&client_id=meshgate-gw&redirect_uri=http%3A%2F%2Fmeshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com%2Fauth%2Fsso%2Fcallback&scope=openid+profile+email&state=Kb88FxxyxIDCf6cU
+HTTP 302
+Content-Length: 453
+Content-Type: text/html; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:19 GMT
+Location: http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/callback?code=ZunLTq5vix-WkVD0T1mQYg&state=Kb88FxxyxIDCf6cU
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/callback?code=ZunLTq5vix-WkVD0T1mQYg&amp;state=Kb88FxxyxIDCf6cU">http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/callback?code=ZunLTq5vix-WkVD0T1mQYg&amp;state=Kb88FxxyxIDCf6cU</a>. If not, click the link.

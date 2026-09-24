@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "pwn",
+  "category_display": "pwn",
+  "challenge_id": "f0fbe464-59b4-4696-99a1-fd5e5f6b73a3",
+  "connection": "",
+  "description": "a bit flipped me off",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "bitdebit3.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/bitdebit3_49e68929e8cf5355.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T12:29:41Z",
+      "flag_id": "ce9f56f1-b977-4644-80b3-892f91a94395",
+      "points": 141,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "bitdebit\u00b3",
+  "points": 141,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{this_is_probably_getting_solved_by_AI_but_so_be_it_i_thought_it_was_cool}",
+      "flag_id": null,
+      "recorded": "2026-09-05T12:28:25Z",
+      "submitted": true
+    }
+  ],
+  "slug": "bitdebit",
+  "solved": true,
+  "solves": 107,
+  "status": "solved"
+}

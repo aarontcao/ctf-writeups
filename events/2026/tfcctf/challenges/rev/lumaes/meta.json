@@ -1,0 +1,42 @@
+{
+  "author": "Livian",
+  "category": "rev",
+  "category_display": "reverse",
+  "challenge_id": "4269e582-4842-4953-8ab0-513c40dc183e",
+  "connection": "",
+  "description": "I heard CTF players love obfuscation!",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "challenge",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_b3e8e9af7611e524"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:13:10Z",
+      "flag_id": "3f8b9d52-1eb4-4786-874f-ce0e1dc3dbd6",
+      "points": 91,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "lumaes",
+  "points": 91,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{5kr_5kr_wh173b0x_435_15_k1nd4_fun_095dfj2kpf9}",
+      "flag_id": null,
+      "recorded": "2026-09-05T11:12:50Z",
+      "submitted": true
+    }
+  ],
+  "slug": "lumaes",
+  "solved": true,
+  "solves": 143,
+  "status": "solved"
+}

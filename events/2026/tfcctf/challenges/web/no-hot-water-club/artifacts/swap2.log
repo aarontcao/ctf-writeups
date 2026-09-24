@@ -1,0 +1,10 @@
+(200, '{"ok":true}')
+[claim 0] 201 {"data":"no-hot-water-team","deploymentName":"no-hot-water-team-c6c787430650b4b3"}
+Traceback (most recent call last):
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/mgr.py", line 106, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/web/no-hot-water-club/solve/mgr.py", line 90, in main
+    name = body.get("name") or body.get("deploymentName")
+           ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'

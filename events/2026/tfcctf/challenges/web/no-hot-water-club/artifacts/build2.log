@@ -1,0 +1,68 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 678B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/13] FROM docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+#4 resolve docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 806B done
+#5 DONE 0.0s
+
+#6 [ 6/13] COPY brain/main.py ./main.py
+#6 CACHED
+
+#7 [11/13] COPY public ./public
+#7 CACHED
+
+#8 [ 3/13] WORKDIR /brain
+#8 CACHED
+
+#9 [ 4/13] COPY brain/requirements.txt ./requirements.txt
+#9 CACHED
+
+#10 [ 5/13] RUN pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch==2.5.1     && pip install --no-cache-dir -r requirements.txt
+#10 CACHED
+
+#11 [ 8/13] COPY package.json package-lock.json ./
+#11 CACHED
+
+#12 [10/13] COPY src ./src
+#12 CACHED
+
+#13 [12/13] COPY start.sh /usr/local/bin/no-hot-water-club
+#13 CACHED
+
+#14 [ 2/13] RUN apt-get update     && apt-get install -y --no-install-recommends nodejs npm     && rm -rf /var/lib/apt/lists/*
+#14 CACHED
+
+#15 [ 7/13] WORKDIR /app
+#15 CACHED
+
+#16 [ 9/13] RUN npm ci --omit=dev
+#16 CACHED
+
+#17 [13/13] RUN chmod +x /usr/local/bin/no-hot-water-club
+#17 CACHED
+
+#18 exporting to image
+#18 exporting layers
+#18 exporting layers 81.7s done
+#18 exporting manifest sha256:e9bfb8b720dd8913c881dfc1624be3a8b09dd49635b993d506d352b51124c20a 0.0s done
+#18 exporting config sha256:8aeccc0644ce7c9d80038f4f3958957ec4ec326b9c59f9d1ef4c002c0e267f27 0.0s done
+#18 exporting attestation manifest sha256:28ab7adfb199c3d7cab45bdeb5141e33524f5a0c8b9a8332969166e418a33e21 0.0s done
+#18 exporting manifest list sha256:f8935a4f82db9bbaa359747f1feb4e99f45fdc0968cf7af453538f2d674753ba 0.0s done
+#18 naming to docker.io/library/nohotwater:local done
+#18 unpacking to docker.io/library/nohotwater:local
+#18 unpacking to docker.io/library/nohotwater:local 30.9s done
+#18 DONE 112.8s

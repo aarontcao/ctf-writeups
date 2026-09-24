@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>Vaultkeeper · Restore console</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head><body>
+<div class="wrap">
+  <header class="bar"><span class="logo">▤ Vaultkeeper</span><span class="tag">restore console</span></header>
+
+  <section class="card">
+    <h1>Restore session <code>235283a8fcbaabe9a13d022a</code></h1>
+    <table class="kv">
+      <tr><td>Job</td><td>#6</td></tr>
+      <tr><td>Source</td><td>vk-bf2f28</td></tr>
+      <tr><td>Status</td><td><span class="pill">files-restored</span></td></tr>
+      <tr><td>Scope</td><td><span class="pill op">operator</span></td></tr>
+    </table>
+  </section>
+
+  <div class="notice">File tree restored (1 objects); checkpoint resumed.</div>
+  <section class="card">
+    <h2>1 · Upload backup bundle</h2>
+    <p class="muted">Accepted format: Vaultkeeper bundle (<code>.vkb</code>) — an uncompressed archive
+       containing <code>database.sql</code> and the site file tree.</p>
+    <form method="post" enctype="multipart/form-data">
+      <input type="hidden" name="action" value="upload_bundle">
+      <input type="file" name="bundle" required>
+      <button>Upload bundle</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>2 · Import database manifest</h2>
+    <p class="muted">Replays <code>database.sql</code> into the restore schema and reconciles staging tables.</p>
+    <form method="post"><input type="hidden" name="action" value="import_db"><button>Import database</button></form>
+  </section>
+
+  <section class="card">
+    <h2>3 · Restore file tree <span class="op-only">operator</span></h2>
+    <p class="muted">Extracts the bundle's file entries onto the appliance. Requires operator scope.</p>
+    <form method="post"><input type="hidden" name="action" value="system_restore"><button>Run system restore</button></form>
+  </section>
+</div>
+</body></html>
+TFC{04d4c11ea3641f2ec562b657ea6428b4}

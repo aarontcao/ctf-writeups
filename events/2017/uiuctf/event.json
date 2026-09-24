@@ -1,0 +1,31 @@
+{
+  "slug": "2017/uiuctf",
+  "name": "UIUCTF 2017",
+  "api_base": "",
+  "site": "https://sigpwny.github.io/ctf.html",
+  "ctftime": "https://ctftime.org/event/453",
+  "flag_regex": "flag\\{[^}\\n]{1,256}\\}",
+  "live": false,
+  "start_utc": "2017-04-29T00:00:00Z",
+  "end_utc": "2017-04-30T12:00:00Z",
+  "scoring": "jeopardy, static point values",
+  "backfill": true,
+  "backfill_note": "Written in 2026 from Michael Zhang's contemporaneous writeup at https://mzhang.io/posts/2017-05-01_uiuctf-2017-writeups/, because the account holding my own notes is gone. Each challenge README says what is reconstructed and what is recorded.",
+  "sources": {
+    "michael_writeup": "https://medium.com/michaels-blog/uiuctf-2017-writeups-a53aabe1bc56",
+    "michael_writeup_mirror": "https://mzhang.io/posts/2017-05-01_uiuctf-2017-writeups/",
+    "harekaze_writeup": "https://st98.github.io/diary/posts/2017-05-01-uiuctf-2017.html",
+    "th3g3ntl3man_writeup": "https://hgarrereyn.gitbooks.io/th3g3ntl3man-ctf-writeups/content/2017/UIUCTF/",
+    "challenge_generators": "https://github.com/incertia/uiuctf2017",
+    "handout_bucket": "https://nightshade-files.s3.amazonaws.com/"
+  },
+  "result": {
+    "place": 23,
+    "points_banked": 1300,
+    "teams_scoring": 163,
+    "teams_note": "163 scoring teams is st98's figure from the Harekaze writeup, which puts that team 13th on 1750 points. CTFtime lists 68 registered teams, which counts CTFtime registrations rather than the scoreboard.",
+    "documented": 1000,
+    "documented_note": "The 7 challenges here account for 1000 of the 1300. There's a missing 200 from the LSLol reverse engineering challenge and a missing 100 from another recon challenge (I remember was built around the Instagram account @knobsondoors). Neither are on the CTFtime task list."
+  },
+  "readme_preamble": "2017-04-29 to 2017-04-30, 36 hours, run by SIGPwny at the University of\nIllinois at Urbana-Champaign and sponsored by Trail of Bits. Challenges\nserved off challenge.uiuc.tf, and the whole event was Taylor Swift themed.\n\nA backfill. Most of the 2017 writing is Michael Zhang's, reproduced here\nfor archiving, so check where a challenge says its content came from\nbefore trusting a detail.\n"
+}

@@ -1,0 +1,27 @@
+case                               N(prx) M(gun)  verdict
+01 CL exact                           120    120  AGREE
+02 CL then TE chunked                   0   None  proxoxy forwarded nothing (dropped/closed)
+03 TE chunked then CL                   0   None  proxoxy forwarded nothing (dropped/closed)
+04 dup CL identical                   140   None  gunicorn: InvalidHeader: Invalid HTTP Header: 'CONTENT-LENGTH'
+05 dup CL conflicting                   0   None  proxoxy forwarded nothing (dropped/closed)
+06 CL leading plus                      0   None  proxoxy forwarded nothing (dropped/closed)
+07 CL leading zeros                   123    123  AGREE
+08 CL surrounded by SP                122    122  AGREE
+09 CL hex-looking                       0   None  proxoxy forwarded nothing (dropped/closed)
+10 CL trailing char                     0   None  proxoxy forwarded nothing (dropped/closed)
+11 CL larger than sent                  0   None  proxoxy forwarded nothing (dropped/closed)
+12 CL comma list equal                123   None  gunicorn: InvalidHeader: Invalid HTTP Header: 'CONTENT-LENGTH'
+13 TE gzip,chunked                      0   None  proxoxy forwarded nothing (dropped/closed)
+14 TE chunked,gzip                      0   None  proxoxy forwarded nothing (dropped/closed)
+15 TE foo,chunked                       0   None  proxoxy forwarded nothing (dropped/closed)
+16 TE two lines gzip+chunked            0   None  proxoxy forwarded nothing (dropped/closed)
+17 chunk ext                          147    147  AGREE
+18 chunk size leading zeros           142    142  AGREE
+19 chunk size upper hex               139    139  AGREE
+20 last chunk no final CRLF             0   None  proxoxy forwarded nothing (dropped/closed)
+21 trailing bytes after 0CRLFCRLF     139    139  AGREE
+22 obs-fold in CL                       0   None  proxoxy forwarded nothing (dropped/closed)
+23 CONTROL pipelined pair              51     51  AGREE
+24 CONTROL plain benign                51     51  AGREE
+
+rows where the boundaries disagree with a BREVSKI request 2: 0

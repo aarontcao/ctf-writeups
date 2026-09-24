@@ -1,0 +1,43 @@
+{
+  "author": "Sagi",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "aa78d8ef-15d7-4d4d-bc44-e6e828fd9c01",
+  "connection": "",
+  "description": "Look at my new chat app, Tagger!!!",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "challenge.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_9a9c044df595d53f.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "flag_id": "4e3c4e36-d175-420b-9cf7-94b265320ac6",
+      "points": 132,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Tagger",
+  "points": 132,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{Tagg3r_m15C0muN1cA710n}",
+      "flag_id": null,
+      "recorded": "2026-09-05T12:08:46Z",
+      "submitted": true,
+      "submitted_at": "2026-09-05T12:14:52Z",
+      "submitted_by": "human via web UI"
+    }
+  ],
+  "slug": "tagger",
+  "solved": true,
+  "solves": 113,
+  "status": "solved"
+}

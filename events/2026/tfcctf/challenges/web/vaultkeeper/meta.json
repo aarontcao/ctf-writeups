@@ -1,0 +1,42 @@
+{
+  "author": "skyv3il",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "0ccaa358-54b0-4872-a4fd-083db11f9937",
+  "connection": "",
+  "description": "Self-hosted backup & restore appliance,schedule snapshots, ship them anywhere,roll a site back",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [
+    {
+      "name": "vaultkeeper-source.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/vaultkeeper-source_3edaca8d7beb1e55.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T17:13:16Z",
+      "flag_id": "5f89badb-27a1-4084-967c-e2f158d6fa4e",
+      "points": 168,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Vaultkeeper",
+  "points": 168,
+  "recorded_flags": [
+    {
+      "flag": "TFC{04d4c11ea3641f2ec562b657ea6428b4}",
+      "flag_id": null,
+      "recorded": "2026-09-05T17:13:09Z",
+      "submitted": true
+    }
+  ],
+  "slug": "vaultkeeper",
+  "solved": true,
+  "solves": 91,
+  "status": "solved"
+}

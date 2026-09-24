@@ -1,0 +1,42 @@
+{
+  "author": "Hiumee",
+  "category": "misc",
+  "category_display": "misc",
+  "challenge_id": "e5813711-226c-4419-9650-d1fbe8779ba6",
+  "connection": "",
+  "description": "pyjail",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "jail.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/jail_a50fb446c82467f3.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T14:12:46Z",
+      "flag_id": "c820235b-39ae-4dca-9a1f-aa79088453ae",
+      "points": 206,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "The pyjail",
+  "points": 206,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{i_hope_this_is_not_the_last_jail}",
+      "flag_id": null,
+      "recorded": "2026-09-05T14:12:45Z",
+      "submitted": true
+    }
+  ],
+  "slug": "the-pyjail",
+  "solved": true,
+  "solves": 72,
+  "status": "solved"
+}

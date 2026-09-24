@@ -1,0 +1,21 @@
+{
+  "author": "Eric Hennenfent",
+  "category": "recon",
+  "category_display": "recon",
+  "connection": "",
+  "description": "Go stalk the organizers on twitter for a bit and see what you find.",
+  "difficulty": "",
+  "files": [],
+  "name": "Baby's First Recon",
+  "points": 50,
+  "recorded_flags": [
+    {
+      "flag": "flag{71dedc47f69e66164f7a32da27b7a660}",
+      "submitted": true
+    }
+  ],
+  "slug": "babys-first-recon",
+  "solved": true,
+  "solves": 28,
+  "status": "solved"
+}

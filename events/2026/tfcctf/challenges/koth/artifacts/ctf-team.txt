@@ -1,0 +1,17 @@
+{
+  "name": "Kessoku Band",
+  "country": "US",
+  "division": "open",
+  "banned": false,
+  "team_captain_id": "baec9edc-b5d8-4ffe-b476-0f421834b1a7",
+  "invite_token": "<present, 64 chars, redacted>",
+  "users": [
+    {
+      "id": "baec9edc-b5d8-4ffe-b476-0f421834b1a7",
+      "username": "aarontcao"
+    }
+  ]
+}
+
+To use the invite token without printing it:
+  ctf team --invite-to-pass    (stores it at secrets/tfcctf/invite)

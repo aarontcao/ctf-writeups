@@ -1,0 +1,117 @@
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)
+INFO  Using log config file: jar:file:$HOME/ctf-tools/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (2115 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (4732 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Decompiler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/8051/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FunctionID/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PyGhidra/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/Atmel/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/PIC/ghidra_scripts
+    $HOME/ctf-tools/ghidra-scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/DATA/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/JVM/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BSim/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PDB/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/VersionTracking/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Base/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating temporary project: /tmp/tmp.N5uCsxM4f3/tmp (HeadlessAnalyzer)  
+INFO  Creating project: /tmp/tmp.N5uCsxM4f3/tmp (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /tmp/tmp.N5uCsxM4f3/tmp (HeadlessAnalyzer)  
+INFO  IMPORTING: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/handout/rivers (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:64:default:gcc (ProgramLoader)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (ProgramLoader)  
+INFO  Additional info:
+Loading file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/handout/rivers?MD5=1d9cd4c9f770ad15df17bfbfef996f8b...
+Setting block .tdata to read-only
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .data.rel.ro to read-only
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/handout/rivers (HeadlessAnalyzer)  
+INFO  DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=5c8b9545340985c29f8369581e46b8c133490403, objectType=DEBUGINFO, extra=null] (ExternalDebugFileSectionProvider)  
+INFO  Unable to find DWARF information, skipping DWARF analysis (DWARFAnalyzer)  
+WARN  Decompiling 00429840, pcode error at 004d6f49: Unable to resolve constructor at 004d6f49 (DecompileCallback)  
+WARN  Decompiling 004a3770: Unable to read bytes at ram:004c9eb8 (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae1aa: Unable to resolve constructor at 004ae1aa (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae218: Unable to resolve constructor at 004ae218 (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae1a4: Unable to resolve constructor at 004ae1a4 (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae1c3: Unable to resolve constructor at 004ae1c3 (DecompileCallback)  
+INFO  Packed database cache: /var/tmp/ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: generic_clib_64 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              1.240 secs
+    Apply Data Archives                        0.295 secs
+    Call Convention ID                         0.029 secs
+    Call-Fixup Installer                       0.035 secs
+    Create Address Tables                      0.474 secs
+    Create Address Tables - One Time           0.152 secs
+    Create Function                            0.157 secs
+    DWARF                                      0.018 secs
+    Data Reference                             0.446 secs
+    Decompiler Switch Analysis                20.374 secs
+    Demangler GNU                              0.461 secs
+    Disassemble                                0.292 secs
+    Disassemble Entry Points                   7.332 secs
+    ELF Scalar Operand References              2.794 secs
+    Embedded Media                             0.054 secs
+    External Entry References                  0.000 secs
+    Function ID                                2.249 secs
+    Function Start Pre Search                  0.051 secs
+    Function Start Search                      0.186 secs
+    Function Start Search After Code           0.081 secs
+    Function Start Search After Data           0.074 secs
+    GCC Exception Handlers                     4.399 secs
+    Non-Returning Functions - Discovered      20.117 secs
+    Non-Returning Functions - Known            0.002 secs
+    Reference                                  0.659 secs
+    Shared Return Calls                        0.705 secs
+    Stack                                     13.420 secs
+    Subroutine References                      0.381 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer           13.590 secs
+-----------------------------------------------------
+     Total Time   90 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/handout/rivers (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DecompileAll.java '$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/artifacts/rivers.c'  (HeadlessAnalyzer)  
+INFO  SCRIPT: $HOME/ctf-tools/ghidra-scripts/DecompileAll.java (HeadlessAnalyzer)  
+WARN  Decompiling 00429840, pcode error at 004d6f49: Unable to resolve constructor at 004d6f49 (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae1aa: Unable to resolve constructor at 004ae1aa (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae218: Unable to resolve constructor at 004ae218 (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae1a4: Unable to resolve constructor at 004ae1a4 (DecompileCallback)  
+WARN  Decompiling 004683a0, pcode error at 004ae1c3: Unable to resolve constructor at 004ae1c3 (DecompileCallback)  
+WARN  Decompiling 004a3770: Unable to read bytes at ram:004c9eb8 (DecompileCallback)  
+INFO  ANALYZING changes made by post scripts: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/handout/rivers (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/handout/rivers (HeadlessAnalyzer)  
+INFO  /rivers: file created (user) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /rivers (tmp:/rivers) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

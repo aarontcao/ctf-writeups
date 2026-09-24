@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "pwn",
+  "category_display": "pwn",
+  "challenge_id": "89fdbeb2-5f0d-49f8-b4f4-be407f8a14bc",
+  "connection": "",
+  "description": "should be easy? now in pwn",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [
+    {
+      "name": "unbrevable.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/unbrevable_a1986f1376fb9e38.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:04:13Z",
+      "flag_id": "2b5f836a-103a-4224-9d1f-4ad9f4dd6515",
+      "points": 119,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "unbrevable",
+  "points": 119,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{well_known_technique_brudda}",
+      "flag_id": null,
+      "recorded": "2026-09-05T10:51:45Z",
+      "submitted": true
+    }
+  ],
+  "slug": "unbrevable",
+  "solved": true,
+  "solves": 122,
+  "status": "solved"
+}

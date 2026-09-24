@@ -1,0 +1,141 @@
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)
+INFO  Using log config file: jar:file:$HOME/ctf-tools/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: $HOME/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (1874 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (4496 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Decompiler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/8051/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FunctionID/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PyGhidra/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/Atmel/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Debug/Debugger/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/PIC/ghidra_scripts
+    $HOME/ctf-tools/ghidra-scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/DATA/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Processors/JVM/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/BSim/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/PDB/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/VersionTracking/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/Base/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    $HOME/ctf-tools/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating temporary project: /tmp/tmp.WPVkmTUbgj/tmp (HeadlessAnalyzer)  
+INFO  Creating project: /tmp/tmp.WPVkmTUbgj/tmp (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /tmp/tmp.WPVkmTUbgj/tmp (HeadlessAnalyzer)  
+INFO  IMPORTING: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/unbrevable/scratch/vuln_patched (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:64:default:gcc (ProgramLoader)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (ProgramLoader)  
+INFO  Additional info:
+Loading file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/unbrevable/scratch/vuln_patched?MD5=1d9bdf6cf9d446b77c979f857e187c85...
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104020 (Symbol = stdout) - Runtime copy not supported (8-bytes)
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104030 (Symbol = stdin) - Runtime copy not supported (8-bytes)
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104040 (Symbol = stderr) - Runtime copy not supported (8-bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block segment_7.3 to read-only
+------------------------------------------------
+
+Linking the External Programs of 'vuln_patched' to imported libraries...
+  [libseccomp.so.2] -> not found in project
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/vuln_patched] - 22 unresolved symbols, no external libraries configured - skipping
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/unbrevable/scratch/vuln_patched (HeadlessAnalyzer)  
+INFO  DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=3ccc98a8dc58e71365a4142c12955551b2ede158, objectType=DEBUGINFO, extra=null] (ExternalDebugFileSectionProvider)  
+INFO  Unable to find DWARF information, skipping DWARF analysis (DWARFAnalyzer)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+WARN  Decompiling 001011f0, pcode error at 00107068: Unable to disassemble EXTERNAL block location: 00107068 (DecompileCallback)  
+WARN  Decompiling 001011c0, pcode error at 00107010: Unable to disassemble EXTERNAL block location: 00107010 (DecompileCallback)  
+INFO  Packed database cache: /var/tmp/ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: generic_clib_64 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              0.878 secs
+    Apply Data Archives                        0.562 secs
+    Call Convention ID                         0.307 secs
+    Call-Fixup Installer                       0.004 secs
+    Create Address Tables                      0.012 secs
+    Create Function                            0.016 secs
+    DWARF                                      0.023 secs
+    Data Reference                             0.008 secs
+    Decompiler Switch Analysis                 0.050 secs
+    Decompiler Switch Analysis - One Time      0.916 secs
+    Demangler GNU                              0.069 secs
+    Disassemble                                0.015 secs
+    Disassemble Entry Points                   0.090 secs
+    ELF Scalar Operand References              0.012 secs
+    Embedded Media                             0.007 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.177 secs
+    Function Start Pre Search                  0.018 secs
+    Function Start Search                      0.081 secs
+    Function Start Search After Code           0.002 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.127 secs
+    Non-Returning Functions - Discovered       0.004 secs
+    Non-Returning Functions - Known            0.005 secs
+    Reference                                  0.024 secs
+    Shared Return Calls                        0.015 secs
+    Stack                                      0.060 secs
+    Subroutine References                      0.008 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.118 secs
+-----------------------------------------------------
+     Total Time   3 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/unbrevable/scratch/vuln_patched (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DecompileAll.java '$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/unbrevable/artifacts/vuln.c'  (HeadlessAnalyzer)  
+INFO  SCRIPT: $HOME/ctf-tools/ghidra-scripts/DecompileAll.java (HeadlessAnalyzer)  
+WARN  Decompiling 00107000, pcode error at 00107000: Unable to disassemble EXTERNAL block location: 00107000 (DecompileCallback)  
+WARN  Decompiling 00107008, pcode error at 00107008: Unable to disassemble EXTERNAL block location: 00107008 (DecompileCallback)  
+WARN  Decompiling 00107010, pcode error at 00107010: Unable to disassemble EXTERNAL block location: 00107010 (DecompileCallback)  
+WARN  Decompiling 00107018, pcode error at 00107018: Unable to disassemble EXTERNAL block location: 00107018 (DecompileCallback)  
+WARN  Decompiling 00107020, pcode error at 00107020: Unable to disassemble EXTERNAL block location: 00107020 (DecompileCallback)  
+WARN  Decompiling 00107028, pcode error at 00107028: Unable to disassemble EXTERNAL block location: 00107028 (DecompileCallback)  
+WARN  Decompiling 00107030, pcode error at 00107030: Unable to disassemble EXTERNAL block location: 00107030 (DecompileCallback)  
+WARN  Decompiling 00107038, pcode error at 00107038: Unable to disassemble EXTERNAL block location: 00107038 (DecompileCallback)  
+WARN  Decompiling 00107040, pcode error at 00107040: Unable to disassemble EXTERNAL block location: 00107040 (DecompileCallback)  
+WARN  Decompiling 00107048, pcode error at 00107048: Unable to disassemble EXTERNAL block location: 00107048 (DecompileCallback)  
+WARN  Decompiling 00107050, pcode error at 00107050: Unable to disassemble EXTERNAL block location: 00107050 (DecompileCallback)  
+WARN  Decompiling 00107058, pcode error at 00107058: Unable to disassemble EXTERNAL block location: 00107058 (DecompileCallback)  
+WARN  Decompiling 00107060, pcode error at 00107060: Unable to disassemble EXTERNAL block location: 00107060 (DecompileCallback)  
+WARN  Decompiling 00107068, pcode error at 00107068: Unable to disassemble EXTERNAL block location: 00107068 (DecompileCallback)  
+WARN  Decompiling 00107070, pcode error at 00107070: Unable to disassemble EXTERNAL block location: 00107070 (DecompileCallback)  
+WARN  Decompiling 00107078, pcode error at 00107078: Unable to disassemble EXTERNAL block location: 00107078 (DecompileCallback)  
+WARN  Decompiling 00107080, pcode error at 00107080: Unable to disassemble EXTERNAL block location: 00107080 (DecompileCallback)  
+WARN  Decompiling 00107088, pcode error at 00107088: Unable to disassemble EXTERNAL block location: 00107088 (DecompileCallback)  
+WARN  Decompiling 00107090, pcode error at 00107090: Unable to disassemble EXTERNAL block location: 00107090 (DecompileCallback)  
+WARN  Decompiling 00107098, pcode error at 00107098: Unable to disassemble EXTERNAL block location: 00107098 (DecompileCallback)  
+WARN  Decompiling 001070a0, pcode error at 001070a0: Unable to disassemble EXTERNAL block location: 001070a0 (DecompileCallback)  
+WARN  Decompiling 001070a8, pcode error at 001070a8: Unable to disassemble EXTERNAL block location: 001070a8 (DecompileCallback)  
+WARN  Decompiling 001070b0, pcode error at 001070b0: Unable to disassemble EXTERNAL block location: 001070b0 (DecompileCallback)  
+WARN  Decompiling 001070b8, pcode error at 001070b8: Unable to disassemble EXTERNAL block location: 001070b8 (DecompileCallback)  
+WARN  Decompiling 001070c0, pcode error at 001070c0: Unable to disassemble EXTERNAL block location: 001070c0 (DecompileCallback)  
+INFO  ANALYZING changes made by post scripts: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/unbrevable/scratch/vuln_patched (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file://$HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/pwn/unbrevable/scratch/vuln_patched (HeadlessAnalyzer)  
+INFO  /vuln_patched: file created (user) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /vuln_patched (tmp:/vuln_patched) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

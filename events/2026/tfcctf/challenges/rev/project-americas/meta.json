@@ -1,0 +1,42 @@
+{
+  "author": "thek0der",
+  "category": "rev",
+  "category_display": "reverse",
+  "challenge_id": "47eef538-f63f-4080-b227-660bfff9fb78",
+  "connection": "",
+  "description": "GTA VI L33k!!!",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "challenge.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_2b32c7401938b95f.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:13:11Z",
+      "flag_id": "ca37b686-55bc-477f-9613-462bd966bb4d",
+      "points": 98,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Project Americas",
+  "points": 98,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{a_vm_dreams_in_galois_fields_6e91c2}",
+      "flag_id": null,
+      "recorded": "2026-09-05T11:13:03Z",
+      "submitted": true
+    }
+  ],
+  "slug": "project-americas",
+  "solved": true,
+  "solves": 138,
+  "status": "solved"
+}

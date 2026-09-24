@@ -1,0 +1,33 @@
+{
+  "author": "mcsky23",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "ccac51b4-8594-4842-aa04-4ca7f1f3b5d1",
+  "connection": "",
+  "description": "I got the cheese, burrito fill it with beans.\n<br>\nalso rev",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "mccrab3.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/mccrab3_0d6352ad82fa224a.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "flag_id": "96c22786-ef95-4361-8e9d-2bdcf11c5a25",
+      "points": 466,
+      "question": "",
+      "solved": false,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "mccrab3",
+  "points": 466,
+  "slug": "mccrab3",
+  "solved": false,
+  "solves": 5,
+  "status": "new"
+}

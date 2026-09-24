@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "crypto",
+  "category_display": "crypto",
+  "challenge_id": "364bd809-0d39-4596-9661-cabd249e82dc",
+  "connection": "",
+  "description": "Br Ba",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "chall.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/chall_832664c16adb5ace.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T10:56:53Z",
+      "flag_id": "874b3d6c-b606-4470-8d0a-b2e228307127",
+      "points": 50,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "math or meth?",
+  "points": 50,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{this_is_a_very_very_long_flag_for_a_short_ctf_chall_ggs}",
+      "flag_id": null,
+      "recorded": "2026-09-05T10:56:50Z",
+      "submitted": true
+    }
+  ],
+  "slug": "math-or-meth",
+  "solved": true,
+  "solves": 215,
+  "status": "solved"
+}

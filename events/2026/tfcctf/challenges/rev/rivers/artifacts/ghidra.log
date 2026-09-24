@@ -1,0 +1,4 @@
+ghidra-decompile: this takes minutes, not seconds. A 465 KB Rust binary
+ghidra-decompile: measured 15 minutes. Run it with run_in_background.
+ghidra-decompile: progress log $HOME/github/ctf-writeups/events/2026-09-tfcctf/challenges/rev/rivers/artifacts/ghidra-rivers.log
+DONE

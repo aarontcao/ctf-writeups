@@ -1,0 +1,11 @@
+# TE whose last coding is not chunked : dropped by proxoxy
+# --- request bytes ---
+POST /flag HTTP/1.1
+Host: special.thefewchosen.com:30494
+Transfer-Encoding: identity
+brevski: george
+Connection: close
+
+
+# --- response bytes ---
+<connection closed with no response: proxoxy dropped it>

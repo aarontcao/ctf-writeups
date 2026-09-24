@@ -1,0 +1,14 @@
+# GET /api/partner-apps
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/partner-apps
+HTTP 200
+Content-Length: 12
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:20:21 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"apps":[]}

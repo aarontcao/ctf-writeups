@@ -1,0 +1,81 @@
+{
+  "T1": {
+    "event": "maintenance.probe",
+    "ok": true,
+    "rendered": "node-a",
+    "tokens": [
+      "event",
+      "appliance",
+      "node",
+      "job",
+      "source",
+      "status",
+      "when",
+      "workspace",
+      "config"
+    ]
+  },
+  "T2": {
+    "event,appliance,node,job,source,status,when,workspace": [
+      "restore.failed",
+      "vault.x",
+      "seal.x",
+      "cap.x",
+      "key.x",
+      "keyring.x",
+      "unseal.x",
+      "admin.x",
+      "debug.x",
+      "diag.x",
+      "internal.x",
+      "operator.x",
+      "maintainer.x",
+      "system.x",
+      "checkpoint.x",
+      "appliance.x",
+      "node.x",
+      "cluster.x",
+      "support.x",
+      "service.x",
+      "backup.x",
+      "snapshot.x",
+      "audit.x",
+      "config.x",
+      "secret.x"
+    ],
+    "event,appliance,node,job,source,status,when,workspace,config": [
+      "maintenance.x",
+      "maintenance.debug",
+      "maintenance.internal",
+      "maintenance.full",
+      "maintenance.cap",
+      "maintenance.key",
+      "maintenance.seal"
+    ]
+  },
+  "T2_novel": [],
+  "T2b": {
+    "cap_mask": "[redacted]",
+    "retention_days": "30",
+    "cluster_node": "node-a",
+    "version": "4.2.1"
+  },
+  "T3": [
+    [
+      "status/viewer",
+      "I7QROZJPtZRI3GN9SRrJBSnA8R/isFOvmF+rfrdTxZAFo/HyWOKKBV1+ujQ="
+    ],
+    [
+      "status/viewer",
+      "XjA7nnJly2dyKpkTa0YmRT7KdfvHJ49QCHoXJhfYMoq7gG83cW71Q1pn+m4="
+    ],
+    [
+      "request_restore/guest",
+      "eIKEOCJbMxrFg8wWtMtVk+ZaXkbNEjZE7zvLCq4WovMkH3xtP78CEb7EhnM="
+    ],
+    [
+      "request_restore/guest",
+      "KpCcnySFdhwZq13oRaIFD8j8ldCj+YWEpXJfQqFIHQ8ljvi5JFTfKZjdF8E="
+    ]
+  ]
+}
