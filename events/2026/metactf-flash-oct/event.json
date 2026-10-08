@@ -1,0 +1,16 @@
+{
+  "slug": "2026/metactf-flash-oct",
+  "name": "MetaCTF October 2026 Flash CTF",
+  "site": "https://compete.metactf.com/683/",
+  "platform": "metactf",
+  "flag_regex": "MetaCTF\\{[^}\\n]{1,256}\\}",
+  "live": false,
+  "start_utc": "2026-10-29T00:00:00Z",
+  "end_utc": "2026-10-30T12:00:00Z",
+  "times_note": "Placeholder window that covers the whole US day. Replace start_utc and end_utc with the real times from the event page.",
+  "scoring": "jeopardy, 5 or more challenges, 2 hours",
+  "team": {
+    "name": "aarontcao / Palo Alto Networks",
+    "members": 1
+  }
+}

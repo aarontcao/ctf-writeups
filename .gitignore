@@ -1,6 +1,10 @@
 # A pattern with an internal slash is anchored to this file's directory, so
 # anything meant to match inside events/<year>/<event>/ needs a **/ prefix.
 
+# Private writeups live in their own nested repo without a remote. This tree
+# must never be tracked here, and the pre-commit and pre-push hooks refuse it too.
+/private/
+
 # messy scratchwork
 scratch/
 !**/scratch/.gitkeep
