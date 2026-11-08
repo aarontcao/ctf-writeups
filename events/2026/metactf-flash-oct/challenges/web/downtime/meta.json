@@ -1,0 +1,26 @@
+{
+  "author": "",
+  "category": "web",
+  "challenge_id": "manual-downtime",
+  "connection": "https://20493c1948078af6.live.sbhost.io",
+  "description": "The maintenance window was supposed to last an hour, but a week has passed and we're still not back online...\nService HTTPS: https://20493c1948078af6.live.sbhost.io\nHandout: downtime.zip",
+  "difficulty": "",
+  "files": [],
+  "first_seen": "2026-10-29T21:25:15Z",
+  "flags": [
+    {
+      "flag_id": "manual-downtime-0",
+      "points": 400,
+      "question": "",
+      "solved": false,
+      "solves": 0
+    }
+  ],
+  "last_sync": "2026-10-29T21:25:15Z",
+  "name": "Downtime",
+  "points": 400,
+  "slug": "downtime",
+  "solved": false,
+  "solves": 4,
+  "status": "partial"
+}

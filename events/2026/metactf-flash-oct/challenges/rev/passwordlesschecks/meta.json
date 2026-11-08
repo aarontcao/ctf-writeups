@@ -1,0 +1,35 @@
+{
+  "author": "",
+  "category": "rev",
+  "challenge_id": "manual-passwordlesschecks",
+  "connection": "",
+  "description": "This challenge was definitely not made just to announce the fact I got a new Xbox controller.\nHandout: passwordless-checks.zip",
+  "difficulty": "",
+  "files": [],
+  "first_seen": "2026-10-29T21:25:15Z",
+  "flags": [
+    {
+      "flag_id": "manual-passwordlesschecks-0",
+      "points": 300,
+      "question": "",
+      "solved": true,
+      "solves": 0
+    }
+  ],
+  "last_sync": "2026-10-29T21:25:15Z",
+  "name": "PasswordlessChecks",
+  "points": 300,
+  "recorded_flags": [
+    {
+      "flag": "MetaCTF{Nbu8W32GsvbSNSNS}",
+      "flag_id": null,
+      "recorded": "2026-10-29T21:57:05Z",
+      "submitted": true,
+      "accepted": true
+    }
+  ],
+  "slug": "passwordlesschecks",
+  "solved": true,
+  "solves": 119,
+  "status": "solved"
+}

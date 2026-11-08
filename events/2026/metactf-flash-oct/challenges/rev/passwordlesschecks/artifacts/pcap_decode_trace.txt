@@ -1,0 +1,26 @@
+Device VID 045e PID 0b12 = Xbox Wireless Controller; GIP input report type 0x20.
+byte4 = face buttons (0x10=A frame, 0x40=X select/confirm); byte5 = D-pad bits.
+Map001 Autorun -> C303 Name Input (actor 1, max 16, default name empty).
+Cursor starts at index 0 on Window_NameInput ENGLISH grid (10 cols x 9 rows).
+
+  [A] frame button (ignored)
+  SELECT @ idx 23 -> 'N'   (moves: DOWN DOWN RIGHT RIGHT RIGHT)
+  SELECT @ idx  6 -> 'b'   (moves: UP UP RIGHT RIGHT RIGHT)
+  SELECT @ idx 45 -> 'u'   (moves: DOWN DOWN DOWN DOWN LEFT)
+  SELECT @ idx 82 -> '8'   (moves: DOWN DOWN DOWN DOWN LEFT LEFT LEFT)
+  SELECT @ idx 42 -> 'W'   (moves: UP UP UP UP)
+  SELECT @ idx 72 -> '3'   (moves: DOWN DOWN DOWN)
+  SELECT @ idx 71 -> '2'   (moves: LEFT)
+  SELECT @ idx 11 -> 'G'   (moves: RIGHT UP UP UP UP UP RIGHT RIGHT LEFT LEFT LEFT UP)
+  SELECT @ idx 38 -> 's'   (moves: RIGHT RIGHT RIGHT RIGHT RIGHT RIGHT RIGHT DOWN DOWN)
+  SELECT @ idx 46 -> 'v'   (moves: LEFT LEFT DOWN)
+  SELECT @ idx  6 -> 'b'   (moves: LEFT UP UP UP UP RIGHT)
+  SELECT @ idx 33 -> 'S'   (moves: DOWN DOWN DOWN LEFT LEFT LEFT)
+  SELECT @ idx 23 -> 'N'   (moves: UP)
+  SELECT @ idx 33 -> 'S'   (moves: DOWN)
+  SELECT @ idx 23 -> 'N'   (moves: UP)
+  SELECT @ idx 33 -> 'S'   (moves: DOWN)
+  [A] frame button (ignored)
+
+DECODED NAME: Nbu8W32GsvbSNSNS
+FLAG: MetaCTF{Nbu8W32GsvbSNSNS}

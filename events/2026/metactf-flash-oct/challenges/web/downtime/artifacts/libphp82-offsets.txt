@@ -1,0 +1,4 @@
+PHP 8.2.34 libphp.so offsets (unstripped, nm-derived)
+0000000000490430 T zend_hash_destroy
+0000000000392e40 t zif_system
+000000000047c590 T zval_ptr_dtor

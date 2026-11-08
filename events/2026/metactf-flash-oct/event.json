@@ -1,0 +1,16 @@
+{
+  "slug": "2026/metactf-flash-oct",
+  "name": "MetaCTF October 2026 Flash CTF",
+  "site": "https://compete.metactf.com/683/",
+  "platform": "metactf",
+  "flag_regex": "(?:MetaCTF|Skill[Bb]it)\\{[^}\\n]{1,256}\\}",
+  "live": false,
+  "start_utc": "2026-10-29T21:00:00Z",
+  "end_utc": "2026-10-29T23:00:00Z",
+  "times_note": "The event page said 5:00 PM to 7:00 PM US Eastern (UTC-4).",
+  "scoring": "jeopardy, 5 or more challenges, 2 hours",
+  "team": {
+    "name": "aarontcao",
+    "members": 1
+  }
+}

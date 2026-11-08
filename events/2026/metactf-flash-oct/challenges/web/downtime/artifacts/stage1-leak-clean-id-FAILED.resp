@@ -1,0 +1,40 @@
+HTTP/1.1 503 Service Unavailable
+Date: Thu, 29 Oct 2026 22:14:21 GMT
+Server: Apache/2.4.68 (Debian)
+X-Powered-By: PHP/8.2.34
+Set-Cookie: PHPSESSID=2142afadb80b426d7cf07d42df430793; path=/
+Retry-After: 3600
+Content-Length: 832
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Down for maintenance</title>
+<style>
+  body {
+    margin: 0;
+    padding: 2.75rem 1.25rem;
+    background: #ffffff;
+    color: #1b1b1b;
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 37rem; margin: 0 auto; }
+  h1 { margin: 0 0 1rem; font-size: 1.35rem; font-weight: 600; }
+  hr { border: 0; border-top: 1px solid #dcdcdc; margin: 0 0 1.5rem; }
+  p { margin: 0 0 1rem; }
+  .small { margin-top: 1.75rem; font-size: .82rem; color: #666; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Down for maintenance</h1>
+    <hr>
+    <p>We will be back up soon.</p>
+    <p class="small">Powered by PHP 8.2.34</p>
+  </div>
+</body>
+</html>

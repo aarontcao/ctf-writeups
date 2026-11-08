@@ -1,0 +1,36 @@
+{
+  "author": "",
+  "category": "crypto",
+  "challenge_id": "manual-rrsa",
+  "connection": "",
+  "description": "Putting the R in RRSA.\nHandout: rrsa.zip",
+  "difficulty": "",
+  "files": [],
+  "first_seen": "2026-10-29T21:25:15Z",
+  "flags": [
+    {
+      "flag_id": "manual-rrsa-0",
+      "points": 200,
+      "question": "",
+      "solved": false,
+      "solves": 0
+    }
+  ],
+  "last_sync": "2026-10-29T21:25:15Z",
+  "name": "RRSA",
+  "points": 200,
+  "recorded_flags": [
+    {
+      "flag": "SkillBit{aLLLways_th3_w4yy}",
+      "flag_id": null,
+      "recorded": "2026-10-29T21:29:25Z",
+      "submitted": true,
+      "submitted_at": "2026-10-29T21:34:56Z",
+      "accepted": true
+    }
+  ],
+  "slug": "rrsa",
+  "solved": true,
+  "solves": 246,
+  "status": "solved"
+}

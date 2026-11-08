@@ -1,0 +1,76 @@
+/lib64/ld-linux-x86-64.so.2
+__cxa_finalize
+__printf_chk
+__libc_start_main
+__fprintf_chk
+strtol
+setvbuf
+stdout
+getenv
+stderr
+__errno_location
+fwrite
+__stack_chk_fail
+libc.so.6
+GLIBC_2.3.4
+GLIBC_2.4
+GLIBC_2.34
+GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+AVAUATUSH
+D$8dH+
+[]A\A]A^A_
+D$(dH+
+*CLUNK* The locked compartment swings open and a full-size bar drops out.
+svc 09/14: slot 3 coil jams on gummy worms, reseat before restock
+svc 10/02: restock panel moved off the keypad label, KEY=6767
+svc 10/20: coin mech disabled for Halloween night, treats are free
+  THE NEIGHBORHOOD TREAT DISPENSER
+  Trick or treat! A little something for everyone.
+  (The good candy stays locked away.)
+The keypad only takes numbers.
+*clunk* %s drops into the tray.
+The wrapper reads: %s
+DISPENSER_SVC_LOG
+         \\
+    .-'```^```'-.
+   /   /\ __ /\  \
+   |   ^^ \/ ^^  |
+   \   \_.__._/  /
+    `'-.......-'`
+  1) Candy corn
+  2) Gummy worms
+  3) Peanut butter cup
+  4) Caramel apple pop
+  0) Walk away
+Happy Halloween!
+That slot is empty.
+a handful of candy corn
+a pack of gummy worms
+a mini peanut butter cup
+a caramel apple pop
+GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+.shstrtab
+.interp
+.note.gnu.property
+.note.gnu.build-id
+.note.ABI-tag
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.plt.got
+.plt.sec
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.comment

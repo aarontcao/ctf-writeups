@@ -1,0 +1,35 @@
+{
+  "author": "",
+  "category": "pwn",
+  "challenge_id": "manual-doyounow",
+  "connection": "9f11c4c4eb427e3a.live.sbhost.io:1337",
+  "description": "Who is the better ring forger?\nService TCP (enable TLS): 9f11c4c4eb427e3a.live.sbhost.io:1337\nThis is not a standard TCP connection, TLS must be explicitly enabled. Not HTTP.\nHandout: doyounow.zip",
+  "difficulty": "",
+  "files": [],
+  "first_seen": "2026-10-29T21:25:15Z",
+  "flags": [
+    {
+      "flag_id": "manual-doyounow-0",
+      "points": 350,
+      "question": "",
+      "solved": false,
+      "solves": 0
+    }
+  ],
+  "last_sync": "2026-10-29T21:25:15Z",
+  "name": "doyounow",
+  "points": 350,
+  "recorded_flags": [
+    {
+      "flag": "SkillBit{simplememoryheresimplememorytheregivesoverflow}",
+      "flag_id": null,
+      "recorded": "2026-10-29T22:14:16Z",
+      "submitted": true,
+      "accepted": true
+    }
+  ],
+  "slug": "doyounow",
+  "solved": true,
+  "solves": 31,
+  "status": "solved"
+}

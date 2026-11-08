@@ -1,0 +1,19 @@
+GDB: PS(id) Set-Cookie leak is structurally closed on PHP 8.2.34 (downtime)
+
+Break at php_session_decode during A1 (9bie mk_a1 --big 78). Exactly ONE call:
+  [decode #0] len=0  (empty data read by s_read for a fresh upload_progress session)
+That single call takes the FAILURE path:
+  php_session_decode[cold] -> php_session_cancel_decode -> php_session_destroy
+  -> php_rshutdown_session_globals sets ps_globals.id = 0  (mid-request)
+
+So every upload_progress session-start self-destructs here: serializer->decode
+returns FAILURE, the session is destroyed, and ps.id is nulled BEFORE any OOM.
+The app never calls session_start, so the only session trigger is the pre-RINIT
+rfc1867 upload_progress path. Supplying valid session-file data to make decode
+succeed needs a pre-existing write to the session file, which needs code
+execution first (circular). Therefore the PS(id) -> cookie disclosure cannot be
+armed on this build.
+
+Confirms CVE-2026-109618 / CVE-2026-109619 is the correct vuln (OOM foothold
+proven local+remote), but the specific in-band PS(id) leak variant that 9bie /
+alvarodh5 use on 8.4.26 / 8.5.11 does not port to 8.2.34's session path.

@@ -1,0 +1,60 @@
+Downtime - porting 3em0/php2shell to the 8.2.34 + 128M target
+================================================================
+Date: 2026-10-29
+Local replica: PHP 8.2.34, Apache 2.4.68
+Tool: 3em0/php2shell exploit.py + chunked OOM patch
+
+Why 3em0 matters
+----------------
+3em0/php2shell is a mature, HTTP-only php2shell chain for Apache mod_php
+prefork, no session_start on the target page. Verified by its author on
+php:8.3.35/8.4.26/8.5.11-apache. Same SAPI and scenario as Downtime.
+
+Its support matrix lists 8.2.35-apache as "stage 1 never leaks". That test
+was on 8.2.35, which is the PATCHED build (the 8.2-branch fix shipped in
+8.2.35). The Downtime target is 8.2.34, the LAST VULNERABLE 8.2 release, so
+their result does not prove 8.2.34 is closed.
+
+Chunked OOM integration
+-----------------------
+3em0 OOMs with a 12MB Content-Length field (its lab had memory_limit=8M).
+This target has memory_limit=128M and post_max_size=8M, so a plain large body
+is rejected before it can OOM. Patched Target.post to send any body over 6MB
+as Transfer-Encoding: chunked, which skips the post_max_size gate and lets the
+multipart parser exhaust the 128M limit. OOM field bumped to 150MB.
+
+Empirical results on 8.2.34
+---------------------------
+1. A (OOM-arming) request through 3em0's exact field layout, sent chunked:
+     stage1 A resp 696B OOM=True status=HTTP/1.1 200 OK
+   -> chunked OOM fires through the real chain layout; child survives the
+      longjmp bailout (display_errors=On shows the fatal in a 200 body).
+
+2. B (leak) request after A: no Set-Cookie, 1721B (the 503 page).
+   -> with 3em0's 8.3+ grooming (stage1_n=841), no over-read cookie forms.
+
+3. Isolated upload_progress behavior on a clean 8.2.34 worker:
+     upload_progress + file part   -> NO Set-Cookie
+     upload_progress + no file part-> clean 32-byte PHPSESSID cookie
+   -> session init + php_session_send_cookie DO work on 8.2.34; the cookie is
+      emitted on the no-file path.
+
+4. session.serialize_handler => php (default). The empty-decode theory based on
+   a non-default (php_serialize) handler is ruled out for this build.
+
+Conclusion
+----------
+Foothold is solid: chunked OOM is confirmed on 8.2.34 locally and remotely.
+8.2.34 is vulnerable (3 teams solved Downtime). 3em0's grooming is calibrated
+for the 8.3+ allocator with an 8M memory_limit, so the heap state at the 128M
+OOM point differs and the dangling-PS(id) -> reoccupy leak does not reproduce
+with its constants. Porting requires re-grooming for the 128M OOM point on the
+8.2.x allocator: recalibrate the filler field count / sizes so A leaves PS(id)
+dangling and B reoccupies the freed slot with a forged long zend_string.
+
+NEXT (re-grooming, multi-turn): recreate a SYS_PTRACE replica, gdb the chunked-
+OOM A request (break php_session_send_cookie / watch ps_globals.id), confirm
+whether A's bailout leaves PS(id) dangling at the 128M OOM point, then sweep
+stage1_n / OOM size until B's Set-Cookie over-reads (>32 bytes). Offsets already
+known: zif_system=0x392e40, zval_ptr_dtor=0x47c590 (libphp82.so). htdata_offset
+for 8.2.34 still to be derived for stage 3.

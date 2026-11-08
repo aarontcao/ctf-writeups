@@ -1,0 +1,51 @@
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)
+INFO  IMPORTING: dispenser (HeadlessAnalyzer)
+INFO  Using Loader: Executable and Linking Format (ELF) (ProgramLoader)
+INFO  Using Language/Compiler: x86:LE:64:default:gcc (ProgramLoader)
+INFO  Additional info:
+Loading dispenser?MD5=39fd00513eebac47b97a115829d4a1af...
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104020 (Symbol = stdout) - Runtime copy not supported (8-bytes)
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104030 (Symbol = stdin) - Runtime copy not supported (8-bytes)
+ELF Relocation Failure: R_X86_64_COPY (5, 0x5) at 00104040 (Symbol = stderr) - Runtime copy not supported (8-bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .data.rel.ro to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'dispenser' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/dispenser] - 12 unresolved symbols, no external libraries configured - skipping
+ (ProgramLoader)
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)
+INFO  ANALYZING all memory and code: dispenser (HeadlessAnalyzer)
+INFO  DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=88176a0ee5737362b9d9d55e3043efe312d33980, objectType=DEBUGINFO, extra=null] (ExternalDebugFileSectionProvider)
+INFO  Unable to find DWARF information, skipping DWARF analysis (DWARFAnalyzer)
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)
+WARN  Decompiling 00101480, pcode error at 00105068: Unable to disassemble EXTERNAL block location: 00105068 (DecompileCallback)
+WARN  Decompiling 00101450, pcode error at 00105018: Unable to disassemble EXTERNAL block location: 00105018 (DecompileCallback)
+INFO  Applied data type archive: generic_clib_64 (ApplyDataArchiveAnalyzer)
+INFO  REPORT: Analysis succeeded for file: dispenser (HeadlessAnalyzer)
+INFO  REPORT: Execute script: DecompileAll.java 'dispenser.c'  (HeadlessAnalyzer)
+WARN  Decompiling 00105000, pcode error at 00105000: Unable to disassemble EXTERNAL block location: 00105000 (DecompileCallback)
+WARN  Decompiling 00105008, pcode error at 00105008: Unable to disassemble EXTERNAL block location: 00105008 (DecompileCallback)
+WARN  Decompiling 00105010, pcode error at 00105010: Unable to disassemble EXTERNAL block location: 00105010 (DecompileCallback)
+WARN  Decompiling 00105018, pcode error at 00105018: Unable to disassemble EXTERNAL block location: 00105018 (DecompileCallback)
+WARN  Decompiling 00105020, pcode error at 00105020: Unable to disassemble EXTERNAL block location: 00105020 (DecompileCallback)
+WARN  Decompiling 00105028, pcode error at 00105028: Unable to disassemble EXTERNAL block location: 00105028 (DecompileCallback)
+WARN  Decompiling 00105030, pcode error at 00105030: Unable to disassemble EXTERNAL block location: 00105030 (DecompileCallback)
+WARN  Decompiling 00105038, pcode error at 00105038: Unable to disassemble EXTERNAL block location: 00105038 (DecompileCallback)
+WARN  Decompiling 00105040, pcode error at 00105040: Unable to disassemble EXTERNAL block location: 00105040 (DecompileCallback)
+WARN  Decompiling 00105048, pcode error at 00105048: Unable to disassemble EXTERNAL block location: 00105048 (DecompileCallback)
+WARN  Decompiling 00105050, pcode error at 00105050: Unable to disassemble EXTERNAL block location: 00105050 (DecompileCallback)
+WARN  Decompiling 00105058, pcode error at 00105058: Unable to disassemble EXTERNAL block location: 00105058 (DecompileCallback)
+WARN  Decompiling 00105060, pcode error at 00105060: Unable to disassemble EXTERNAL block location: 00105060 (DecompileCallback)
+WARN  Decompiling 00105068, pcode error at 00105068: Unable to disassemble EXTERNAL block location: 00105068 (DecompileCallback)
+WARN  Decompiling 00105070, pcode error at 00105070: Unable to disassemble EXTERNAL block location: 00105070 (DecompileCallback)
+INFO  ANALYZING changes made by post scripts: dispenser (HeadlessAnalyzer)
+INFO  REPORT: Post-analysis succeeded for file: dispenser (HeadlessAnalyzer)
+INFO  REPORT: Save succeeded for: /dispenser (tmp:/dispenser) (HeadlessAnalyzer)
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)

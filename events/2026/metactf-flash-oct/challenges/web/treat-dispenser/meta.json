@@ -1,0 +1,36 @@
+{
+  "author": "",
+  "category": "web",
+  "challenge_id": "manual-treat-dispenser",
+  "connection": "",
+  "description": "Trick or treat!\nThe neighborhood's new Treat Dispenser promises a little something for everyone.\nThe good candy is locked away, of course. Figure out how to get your hands on it.\nHandout: treat-dispenser.zip",
+  "difficulty": "",
+  "files": [],
+  "first_seen": "2026-10-29T21:25:15Z",
+  "flags": [
+    {
+      "flag_id": "manual-treat-dispenser-0",
+      "points": 100,
+      "question": "",
+      "solved": false,
+      "solves": 0
+    }
+  ],
+  "last_sync": "2026-10-29T21:25:15Z",
+  "name": "Treat Dispenser",
+  "points": 100,
+  "recorded_flags": [
+    {
+      "flag": "SkillBit{fu11_s1z3_tr34t_unl0ck3d}",
+      "flag_id": null,
+      "recorded": "2026-10-29T21:31:28Z",
+      "submitted": true,
+      "submitted_at": "2026-10-29T21:34:56Z",
+      "accepted": true
+    }
+  ],
+  "slug": "treat-dispenser",
+  "solved": true,
+  "solves": 297,
+  "status": "solved"
+}

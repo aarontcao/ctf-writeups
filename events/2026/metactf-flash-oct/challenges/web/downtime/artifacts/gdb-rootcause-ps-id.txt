@@ -1,0 +1,16 @@
+GDB root cause: PS(id) never dangles on PHP 8.2.34 (downtime)
+libphp base (one worker instance) = 0x7f69de249000
+ps_globals = base + 0xf2b120 ; php_ps_globals.id at +0x10
+php_session_reset_id = base + 0x33f670
+
+Hardware watchpoint on ps_globals.id during A1 (mk_a1 --big 78):
+  ps.id := 0x7f69d5336000   php_session_initialize
+    <- php_session_rfc1867_callback <- rfc1867_post_handler <- sapi_handle_post
+  ps.id := 0                php_rshutdown_session_globals
+    <- php_session_destroy <- php_session_cancel_decode <- php_session_decode[cold]
+
+=> upload_progress decode-failure path destroys the session and NULLs ps.id
+   mid-request, before the OOM. mk_a1 END-cleanup arming cannot dangle PS(id).
+
+/proc sweep (no gdb), mk_a1 --big in {60,78,100,130,170,220,300,420}:
+  ps.id == 0 after every A1; worker survives. No dangling window via --big.

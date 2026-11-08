@@ -1,0 +1,35 @@
+{
+  "author": "",
+  "category": "misc",
+  "challenge_id": "manual-hatevibe",
+  "connection": "",
+  "description": "One of our YARA rules flagged a suspicious file uploaded to VirusTotal. Upon further analysis, the file appears to be a draft version of a diplomatic engagement statement. Embedded within this seemingly benign document is a malicious macro that prompts users to enable execution. Once activated, the macro initiates a chain of events compromising a server.\nYour target is to investigate the file, identify the malicious payload, and uncover the attacker's objectives.\nHandout: hatevibe.zip",
+  "difficulty": "",
+  "files": [],
+  "first_seen": "2026-10-29T21:25:15Z",
+  "flags": [
+    {
+      "flag_id": "manual-hatevibe-0",
+      "points": 250,
+      "question": "",
+      "solved": true,
+      "solves": 0
+    }
+  ],
+  "last_sync": "2026-10-29T21:25:15Z",
+  "name": "Hatevibe",
+  "points": 250,
+  "recorded_flags": [
+    {
+      "flag": "MetaCTF{East_or_West_h0m3_1S_b3st}",
+      "flag_id": null,
+      "recorded": "2026-10-29T21:35:01Z",
+      "submitted": true,
+      "accepted": true
+    }
+  ],
+  "slug": "hatevibe",
+  "solved": true,
+  "solves": 159,
+  "status": "solved"
+}

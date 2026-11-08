@@ -1,0 +1,31 @@
+# Recon transcripts for Downtime (2026-10-29T21:44:20Z)
+
+## GET /
+HTTP/2 503 
+content-type: text/html; charset=UTF-8
+date: Thu, 29 Oct 2026 21:44:20 GMT
+retry-after: 3600
+server: Apache/2.4.68 (Debian)
+x-powered-by: PHP/8.2.34
+content-length: 832
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+## GET /flag.txt
+HTTP/2 404 
+content-type: text/html; charset=iso-8859-1
+date: Thu, 29 Oct 2026 21:44:20 GMT
+server: Apache/2.4.68 (Debian)
+content-length: 333
+
+
+## GET /..%2fflag.txt
+HTTP/2 404 
+content-type: text/html; charset=iso-8859-1
+date: Thu, 29 Oct 2026 21:44:20 GMT
+server: Apache/2.4.68 (Debian)
+content-length: 333
+

@@ -1,0 +1,36 @@
+{
+  "author": "",
+  "category": "misc",
+  "challenge_id": "manual-gifted",
+  "connection": "",
+  "description": "Someone left you a mysterious digital gift. It came with no card and no sender. Unwrap it and recover the message inside.\nHandout: gifted.zip",
+  "difficulty": "",
+  "files": [],
+  "first_seen": "2026-10-29T21:25:15Z",
+  "flags": [
+    {
+      "flag_id": "manual-gifted-0",
+      "points": 150,
+      "question": "",
+      "solved": false,
+      "solves": 0
+    }
+  ],
+  "last_sync": "2026-10-29T21:25:15Z",
+  "name": "GIFted",
+  "points": 150,
+  "recorded_flags": [
+    {
+      "flag": "Skillbit{the_wrapping_was_more_interesting_than_the_gift}",
+      "flag_id": null,
+      "recorded": "2026-10-29T21:30:57Z",
+      "submitted": true,
+      "submitted_at": "2026-10-29T21:34:56Z",
+      "accepted": true
+    }
+  ],
+  "slug": "gifted",
+  "solved": true,
+  "solves": 291,
+  "status": "solved"
+}

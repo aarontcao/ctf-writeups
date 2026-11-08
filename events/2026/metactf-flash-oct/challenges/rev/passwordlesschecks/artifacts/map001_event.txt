@@ -1,0 +1,13 @@
+Game.rgss2a is an RGSS2A (RPG Maker VX) archive, decrypted with the v1 scheme
+(key 0xDEADCAFE, key = key*7+3). It yields Data/*.rvdata (Ruby marshal).
+
+Data/Map001.rvdata, event 1, page 0:
+    trigger = 3  (Autorun)
+    command list:
+        C303 [1, 16]   -> "Name Input Processing", actor id 1, max 16 chars
+
+Data/Actors.rvdata:
+    actor 1 name = ""  (empty default)
+
+There is no comparison or Show Text anywhere in the events: the game just opens
+the name-input keyboard. The flag body is the 16-character name in the capture.
