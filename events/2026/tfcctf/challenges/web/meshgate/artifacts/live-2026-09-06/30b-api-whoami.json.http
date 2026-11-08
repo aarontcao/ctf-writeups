@@ -1,0 +1,14 @@
+# session used for this pass
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/whoami
+HTTP 200
+Content-Length: 113
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:21:07 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"authenticated":true,"email":"capture0906b@corp.local","role":"user","source":"oidc","username":"capture0906b"}

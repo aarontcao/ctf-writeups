@@ -1,0 +1,21 @@
+{
+  "author": "",
+  "category": "rev",
+  "category_display": "reverse",
+  "connection": "nc challenge.uiuc.tf 11340",
+  "description": "",
+  "difficulty": "",
+  "files": [],
+  "name": "Taylor's Magical Flag Oracle",
+  "points": 150,
+  "recorded_flags": [
+    {
+      "flag": "flag{trchrus}",
+      "submitted": true
+    }
+  ],
+  "slug": "taylors-magical-flag-oracle",
+  "solved": true,
+  "solves": null,
+  "status": "solved"
+}

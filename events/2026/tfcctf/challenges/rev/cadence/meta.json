@@ -1,0 +1,42 @@
+{
+  "author": "thek0der",
+  "category": "rev",
+  "category_display": "reverse",
+  "challenge_id": "4b6fe26a-f5d0-4086-b426-cd2b3616eabb",
+  "connection": "",
+  "description": "Winamp who?",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [
+    {
+      "name": "cadence",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/cadence_2fb892dc7c804ae9"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:46:18Z",
+      "flag_id": "5196af6f-a04e-46a5-b6ab-333c9186d98a",
+      "points": 119,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Cadence",
+  "points": 119,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{the_encore_resonates_over_gf2_7c4e91ab}",
+      "flag_id": null,
+      "recorded": "2026-09-05T11:46:03Z",
+      "submitted": true
+    }
+  ],
+  "slug": "cadence",
+  "solved": true,
+  "solves": 122,
+  "status": "solved"
+}

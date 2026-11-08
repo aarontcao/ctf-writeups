@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "rev",
+  "category_display": "reverse",
+  "challenge_id": "225277b6-5f36-4299-a83a-f0218d0b9276",
+  "connection": "",
+  "description": "a game",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "minigame",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/minigame_4aaf356ca3c9ba57"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:04:54Z",
+      "flag_id": "f3cce99f-4629-404d-8f2a-b614d45f9ab6",
+      "points": 50,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "minigame",
+  "points": 50,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{r3dst0n3_c1rcu1t_v4ult_unl0ck3d}",
+      "flag_id": null,
+      "recorded": "2026-09-05T11:03:22Z",
+      "submitted": true
+    }
+  ],
+  "slug": "minigame",
+  "solved": true,
+  "solves": 191,
+  "status": "solved"
+}

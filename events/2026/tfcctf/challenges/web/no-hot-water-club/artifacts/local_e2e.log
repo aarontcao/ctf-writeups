@@ -1,0 +1,80 @@
+[*] target http://127.0.0.1:13002
+[+] pool of 22 principals ready
+[*] slot V1, 6 candidates
+    round 0: winner 'verificat' gap 0.197s
+    round 1: winner 'verificat' gap 0.175s
+[+] V1 = 'verificat'
+    context so far: "Mira's continuity note: Curierul Caca a verificat "
+[*] slot O1, 21 candidates
+    round 0: winner 'cheia de alamă' gap 0.205s
+    round 1: winner 'cheia de alamă' gap 0.189s
+[+] O1 = 'cheia de alamă'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă "
+[*] slot L1, 18 candidates
+    round 0: winner 'sub afișul rupt al circului' gap 0.185s
+    round 1: winner 'sub afișul rupt al circului' gap 0.213s
+[+] L1 = 'sub afișul rupt al circului'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului "
+[*] slot T1, 9 candidates
+    round 0: winner 'în timp ce portarul citea ziarul de seară' gap 0.208s
+    round 1: winner 'în timp ce portarul citea ziarul de seară' gap 0.197s
+[+] T1 = 'în timp ce portarul citea ziarul de seară'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a "
+[*] slot V2, 6 candidates
+    round 0: winner 'schimbat' gap 0.194s
+    round 1: winner 'schimbat' gap 0.163s
+[+] V2 = 'schimbat'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat "
+[*] slot I2, 11 candidates
+    round 0: winner 'o cheie ruginită' gap 0.215s
+    round 1: winner 'o cheie ruginită' gap 0.186s
+[+] I2 = 'o cheie ruginită'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită "
+[*] slot L2, 18 candidates
+    round 0: winner 'la observatorul inundat' gap 0.238s
+    round 1: winner 'la observatorul inundat' gap 0.191s
+[+] L2 = 'la observatorul inundat'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat "
+[*] slot O2, 21 candidates
+    round 0: winner 'nasturele albastru' gap 0.214s
+    round 1: winner 'nasturele albastru' gap 0.204s
+[+] O2 = 'nasturele albastru'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru "
+[*] slot T2, 9 candidates
+    round 0: winner 'după miezul nopții' gap 0.402s
+    round 1: winner 'după miezul nopții' gap 0.211s
+[+] T2 = 'după miezul nopții'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru după miezul nopții. La final a "
+[*] slot V3, 6 candidates
+    round 0: winner 'schimbat' gap 0.186s
+    round 1: winner 'schimbat' gap 0.171s
+[+] V3 = 'schimbat'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru după miezul nopții. La final a schimbat "
+[*] slot O3, 21 candidates
+    round 0: winner 'harta udă' gap 0.183s
+    round 1: winner 'harta udă' gap 0.193s
+[+] O3 = 'harta udă'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru după miezul nopții. La final a schimbat harta udă "
+[*] slot L3, 18 candidates
+    round 0: winner 'la ceainăria cu ferestre albastre' gap 0.200s
+    round 1: winner 'la ceainăria cu ferestre albastre' gap 0.243s
+[+] L3 = 'la ceainăria cu ferestre albastre'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru după miezul nopții. La final a schimbat harta udă la ceainăria cu ferestre albastre și a lăsat "
+[*] slot I3, 11 candidates
+    round 0: winner 'o cutie de chibrituri' gap 0.187s
+    round 1: winner 'o cutie de chibrituri' gap 0.198s
+[+] I3 = 'o cutie de chibrituri'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru după miezul nopții. La final a schimbat harta udă la ceainăria cu ferestre albastre și a lăsat o cutie de chibrituri "
+[*] slot T3, 9 candidates
+    round 0: winner 'după ce au sunat trei clopote' gap 0.211s
+    round 1: winner 'după ce au sunat trei clopote' gap 0.201s
+[+] T3 = 'după ce au sunat trei clopote'
+    context so far: "Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru după miezul nopții. La final a schimbat harta udă la ceainăria cu ferestre albastre și a lăsat o cutie de chibrituri după ce au sunat trei clopote."
+tokens 137 digest 53a6f4b7ac84b74f9e0f7b8cb131cf96834a76440fcdeb3000359a1398c3f0c5
+recorded on no-hot-water-club. Submit with: ctf submit no-hot-water-club --yes
+[+] recovered context:
+Mira's continuity note: Curierul Caca a verificat cheia de alamă sub afișul rupt al circului în timp ce portarul citea ziarul de seară. Apoi a schimbat o cheie ruginită la observatorul inundat și a păstrat nasturele albastru după miezul nopții. La final a schimbat harta udă la ceainăria cu ferestre albastre și a lăsat o cutie de chibrituri după ce au sunat trei clopote.
+[+] tokens 137 digest 53a6f4b7ac84b74f9e0f7b8cb131cf96834a76440fcdeb3000359a1398c3f0c5
+200 {"reply":"Heat restoration code recovered: TFCCTF{local_only_do_not_submit}"}
+
+[+] FLAG: TFCCTF{local_only_do_not_submit}

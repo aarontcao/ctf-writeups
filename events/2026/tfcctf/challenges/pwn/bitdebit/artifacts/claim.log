@@ -1,0 +1,19 @@
+12:28:18 list 200 {"data":[{"name":"bitdebit3-chal-b0f6ac6588df78e5","expiresAt":"2026-09-05T12:31:15Z"},{"name":"no-hot-water-team-fe4748a40aae15e3","expiresAt":"2026-09-05T13:16:42Z"}]}
+12:28:21 CLAIMED {"data":"bitdebit3-chal","deploymentName":"bitdebit3-chal-b0f6ac6588df78e5"}
+TARGET bitdebit3-chal-b0f6ac6588df78e5.challs.ctf.thefewchosen.com 1337
+[+] libc base 0x7dd6f5d27000
+[+] flip bit 2 of 0x7dd6f5f41ae1 (global bit 10, delta 0x400)
+See you around traveler
+TFCCTF{this_is_probably_getting_solved_by_AI_but_so_be_it_i_thought_it_was_cool}TFCCTF{this_is_probably_getting_solved_by_AI_but_so_be_it_i_thought_it_was_cool}total 6760
+drwxr-x--- 1 pwn  pwn     4096 Aug 30 23:17 .
+drwxr-xr-x 1 root root    4096 Aug 19 07:15 ..
+-rw-r--r-- 1 pwn  pwn      220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 pwn  pwn     3771 Mar 31  2024 .bashrc
+-rw-r--r-- 1 pwn  pwn      807 Mar 31  2024 .profile
+-r-xr-xr-x 1 pwn  pwn    24592 Aug 30 23:15 bitdebitÂ³_patched
+-r--r--r-- 1 pwn  pwn       80 Aug 30 23:12 flag
+-r-xr-xr-x 1 pwn  pwn   240936 Aug 30 23:15 ld-2.35.so
+-r-xr-xr-x 1 pwn  pwn  6623416 Aug 30 23:15 libc.so.6
+
+FLAG TFCCTF{this_is_probably_getting_solved_by_AI_but_so_be_it_i_thought_it_was_cool}
+GOT FLAG TFCCTF{this_is_probably_getting_solved_by_AI_but_so_be_it_i_thought_it_was_cool}

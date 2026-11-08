@@ -1,0 +1,106 @@
+# the in-app API reference
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/help
+HTTP 200
+Content-Length: 13817
+Content-Type: text/html; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:18 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+<!doctype html><html lang=en><meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Meshgate</title>
+    <style>
+    :root{
+      --bg:#0d1117; --panel:#161b22; --panel-2:#1b2230; --panel-3:#212a38;
+      --edge:rgba(255,255,255,.06); --edge-2:rgba(255,255,255,.10);
+      --text:#e6edf3; --muted:#9198a3; --accent:#3b82f6; --accent-2:#2563eb;
+      --danger-bg:#3a1720; --danger-edge:#6f2233;
+      --r-lg:16px; --r-md:11px; --r-sm:8px; --pad:1.15rem;
+      --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 1px 2px rgba(0,0,0,.45),0 12px 30px -16px rgba(0,0,0,.7);
+      --shadow-hi:0 1px 0 rgba(255,255,255,.06) inset,0 2px 6px rgba(0,0,0,.5),0 18px 40px -18px rgba(0,0,0,.8);
+    }
+    *{box-sizing:border-box}
+    html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+    body{margin:0;font-family:ui-sans-serif,system-ui,'Segoe UI',Roboto,sans-serif;
+         background:radial-gradient(1200px 600px at 70% -10%,#182233 0,var(--bg) 60%) fixed,var(--bg);
+         color:var(--text);line-height:1.5;text-wrap:pretty;letter-spacing:.1px}
+    .wrap{max-width:900px;margin:0 auto;padding:1.5rem 1.4rem 3rem}
+    h1,h2,h3{text-wrap:balance;letter-spacing:-.01em;margin:.2rem 0 .6rem}
+    h2{font-size:1.28rem}h3{font-size:1.02rem}
+    .bar{display:flex;gap:.6rem;align-items:center;padding:.2rem 0 1rem;margin-bottom:1.2rem;
+         border-bottom:1px solid var(--edge)}
+    .logo{font-weight:800;font-size:1.05rem;
+          background:linear-gradient(92deg,#8ab4ff,#6ea8fe 60%,#a78bfa);
+          -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .tag{font-size:.7rem;color:var(--muted);border:1px solid var(--edge-2);border-radius:999px;
+         padding:.12rem .6rem;font-variant-numeric:tabular-nums}
+    .card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--edge);
+          border-radius:var(--r-lg);padding:var(--pad) calc(var(--pad) + .2rem);margin:1rem 0;
+          box-shadow:var(--shadow);animation:rise .34s cubic-bezier(.2,.7,.2,1) both}
+    .card h2:first-child,.card h3:first-child{margin-top:0}
+    a{color:#7db1ff;text-decoration:none;border-radius:var(--r-sm);
+      transition:color .12s,background-color .12s}
+    a:hover{color:#a9caff;text-decoration:underline}
+    code{background:#0b0f14;border:1px solid var(--edge);border-radius:var(--r-sm);
+         padding:.08rem .4rem;font-size:.86em;font-variant-numeric:tabular-nums}
+    .muted{color:var(--muted);font-size:.9rem}
+    .pill{background:var(--panel-3);border:1px solid var(--edge-2);border-radius:999px;
+          padding:.12rem .62rem;font-size:.76rem;font-variant-numeric:tabular-nums}
+    input,button,select{font:inherit}
+    input,select{background:#0b0f14;border:1px solid var(--edge-2);border-radius:var(--r-md);
+         color:var(--text);padding:.55rem .7rem;min-height:40px;outline:none;
+         transition:border-color .12s,box-shadow .12s,background-color .12s}
+    input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.25)}
+    button{background:linear-gradient(180deg,#3b82f6,var(--accent-2));border:0;color:#fff;
+           border-radius:var(--r-md);padding:.55rem 1.05rem;min-height:40px;cursor:pointer;font-weight:600;
+           box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 2px 8px -2px rgba(37,99,235,.6);
+           transition:transform .12s,box-shadow .12s,background-color .12s}
+    button:hover{box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 6px 16px -4px rgba(37,99,235,.75)}
+    button:active{transform:scale(.96)}
+    button[type=button]{background:linear-gradient(180deg,var(--panel-3),#1a2230);
+           box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 2px 8px -3px rgba(0,0,0,.6)}
+    nav{display:flex;flex-wrap:wrap;gap:.15rem;align-items:center}
+    nav a,nav b{display:inline-flex;align-items:center;min-height:34px;padding:.25rem .6rem;
+                border-radius:var(--r-sm);color:var(--muted);font-weight:500}
+    nav b{color:var(--text);background:var(--panel-3)}
+    nav a:hover{background:var(--panel-2);text-decoration:none;color:var(--text)}
+    table{width:100%;border-collapse:collapse;font-size:.92rem}
+    th{text-align:left;color:var(--muted);font-weight:600;padding:.35rem .4rem;border-bottom:1px solid var(--edge)}
+    td{padding:.4rem;border-bottom:1px solid var(--edge);font-variant-numeric:tabular-nums;vertical-align:top}
+    tr:last-child td{border-bottom:0}
+    .avatar{border-radius:50%;outline:1px solid rgba(255,255,255,.1);vertical-align:middle}
+    .err{background:var(--danger-bg);border:1px solid var(--danger-edge);border-radius:var(--r-md);
+         padding:.7rem 1rem;margin:.7rem 0}
+    ol,ul{padding-left:1.2rem}ol li,ul li{margin:.25rem 0}
+    @keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+    .wrap>*:nth-child(2){animation-delay:.04s}.wrap>*:nth-child(3){animation-delay:.10s}
+    .wrap>*:nth-child(4){animation-delay:.16s}.wrap>*:nth-child(5){animation-delay:.22s}
+    .wrap>*:nth-child(6){animation-delay:.28s}.wrap>*:nth-child(7){animation-delay:.34s}
+    @media (prefers-reduced-motion:reduce){.card{animation:none}}
+    </style>
+    <div class=wrap><div class=bar><span class=logo>▤ Meshgate</span><span class=tag>gateway 3.2</span>
+    <span style="margin-left:auto" class=muted></span></div>
+      <div class=card><h2>API reference</h2>
+        <p class=muted>Meshgate Gateway 3.2.1 · build 2026.03.4.
+           Endpoints require a signed-in session unless noted; admin endpoints
+           require an administrator account.</p>
+        
+        <table style="width:100%;border-collapse:collapse;font-size:.9rem">
+          <thead><tr><th style="text-align:left;color:#8b95a5">Method</th>
+            <th style="text-align:left;color:#8b95a5">Path</th>
+            <th style="text-align:left;color:#8b95a5">Description</th></tr></thead>
+          <tbody><tr><td><span class=pill>GET</span></td><td><code>/api/whoami</code></td><td class=muted>current session identity</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/users?q=</code></td><td class=muted>directory autocomplete (share targets)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/directory</code></td><td class=muted>people directory</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/folders</code></td><td class=muted>folder tree</td></tr><tr><td><span class=pill>POST</span></td><td><code>/api/folders</code></td><td class=muted>create a folder</td></tr><tr><td><span class=pill>POST</span></td><td><code>/api/files/<id>/move</code></td><td class=muted>move a file between folders</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/files/<id>/versions</code></td><td class=muted>file version history</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/files/<id>/comments</code></td><td class=muted>file comments</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/files/<id>/tags</code></td><td class=muted>file tags</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/activity</code></td><td class=muted>workspace activity feed</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/devices</code></td><td class=muted>your sync devices</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/sessions</code></td><td class=muted>your active sessions</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/notifications</code></td><td class=muted>in-app notifications</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/usage</code></td><td class=muted>storage usage</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/stats</code></td><td class=muted>workspace counters</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/policies</code></td><td class=muted>active governance policies</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/channels</code></td><td class=muted>release channels</td></tr><tr><td><span class=pill>POST</span></td><td><code>/auth/sso/federated</code></td><td class=muted>activate a service capability from an attested Corp SSO token</td></tr><tr><td><span class=pill>POST</span></td><td><code>/api/release/stage</code></td><td class=muted>stage a signed vendor release (release-publish capability)</td></tr><tr><td><span class=pill>POST</span></td><td><code>/api/share</code></td><td class=muted>mint a share link</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/webhooks</code></td><td class=muted>outbound webhooks</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/profile</code></td><td class=muted>your directory profile</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/reports</code></td><td class=muted>usage/directory export jobs</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/reports/<id></code></td><td class=muted>fetch a generated report</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/unfurl?url=</code></td><td class=muted>link preview / unfurl</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/partner-apps</code></td><td class=muted>registered partner deep-links</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/workspaces</code></td><td class=muted>workspaces you belong to</td></tr><tr><td><span class=pill>POST</span></td><td><code>/api/workspaces/<id>/members</code></td><td class=muted>add a workspace member</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/billing/plan</code></td><td class=muted>workspace plan & entitlements</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/billing/invoices</code></td><td class=muted>workspace invoices</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/tokens</code></td><td class=muted>personal access tokens</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/token/whoami</code></td><td class=muted>introspect a bearer token</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/experiments</code></td><td class=muted>preview experiment opt-ins</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/exports</code></td><td class=muted>workspace export jobs</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/exports/<id>/entry</code></td><td class=muted>download an export manifest entry</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/threads</code></td><td class=muted>team discussion threads</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/integrations</code></td><td class=muted>outbound chat/status integrations</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/support/bundle</code></td><td class=muted>redacted support bundle</td></tr><tr><td><span class=pill>GET</span></td><td><code>/wopi/files/<id></code></td><td class=muted>legacy office viewer metadata card</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/automations</code></td><td class=muted>workspace event → action rules</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/analytics/summary</code></td><td class=muted>workspace analytics roll-up</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/events</code></td><td class=muted>calendar events & reminders</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/templates</code></td><td class=muted>document template gallery</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/inbox</code></td><td class=muted>in-app notification inbox</td></tr><tr><td><span class=pill>GET</span></td><td><code>/api/legal-holds</code></td><td class=muted>active legal holds</td></tr><tr><td><span class=pill>GET</span></td><td><code>/status</code></td><td class=muted>public system status page</td></tr><tr><td><span class=pill>GET</span></td><td><code>/status/banner</code></td><td class=muted>operator status banner (edge-cached, placeholder substitution)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/status/health</code></td><td class=muted>admin console health surface (edge-cached, worker-revalidated)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/session/adopt</code></td><td class=muted>adopt an admin console session from a bootstrap token (?t=)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/retention</code></td><td class=muted>retention & legal holds (admin)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/updates</code></td><td class=muted>update center (admin)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/channels</code></td><td class=muted>release channels & history (admin)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/policies</code></td><td class=muted>data governance (admin)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/connectors</code></td><td class=muted>identity connectors (admin)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/admin/groups</code></td><td class=muted>directory groups (admin)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/scim/v2/Users</code></td><td class=muted>SCIM users (admin)</td></tr><tr><td><span class=pill>GET</span></td><td><code>/scim/v2/Groups</code></td><td class=muted>SCIM groups (admin)</td></tr></tbody></table>
+      </div>
+      <div class=card><h3>Admin runbook</h3>
+        <ol class=muted>
+          <li>Point the appliance at your release mirror in the update center.</li>
+          <li>Review release channels and history before rolling out a new build.</li>
+          <li>Manage staff and groups from the directory console.</li>
+          <li>Set data-governance policies for your workspace.</li>
+        </ol>
+      </div></div>

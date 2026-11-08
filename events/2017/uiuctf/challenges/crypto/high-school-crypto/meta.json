@@ -1,0 +1,28 @@
+{
+  "author": "",
+  "category": "crypto",
+  "category_display": "crypto",
+  "connection": "",
+  "description": "Bulljog isn't much harder than this one.",
+  "difficulty": "",
+  "files": [
+    {
+      "name": "encrypt.py"
+    },
+    {
+      "name": "encryptme.txt.out"
+    }
+  ],
+  "name": "High School Crypto",
+  "points": 100,
+  "recorded_flags": [
+    {
+      "flag": "flag{st8_0f_grac3}",
+      "submitted": true
+    }
+  ],
+  "slug": "high-school-crypto",
+  "solved": true,
+  "solves": null,
+  "status": "solved"
+}

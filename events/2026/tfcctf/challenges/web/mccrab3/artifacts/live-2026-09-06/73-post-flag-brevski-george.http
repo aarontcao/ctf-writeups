@@ -1,0 +1,11 @@
+# POST /flag with brevski: george : proxoxy rule (b) blocks it. This is the wall the whole challenge is about.
+# --- request bytes ---
+POST /flag HTTP/1.1
+Host: special.thefewchosen.com:30494
+brevski: george
+Content-Length: 0
+Connection: close
+
+
+# --- response bytes ---
+<connection closed with no response: proxoxy dropped it>

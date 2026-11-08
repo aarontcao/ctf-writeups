@@ -1,0 +1,15 @@
+# robots disallows /admin/
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/robots.txt
+HTTP 200
+Content-Length: 49
+Content-Type: text/plain; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:19 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+User-agent: *
+Disallow: /admin/
+Disallow: /scim/

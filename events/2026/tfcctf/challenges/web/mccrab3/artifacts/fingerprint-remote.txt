@@ -1,0 +1,13 @@
+baseline           resp=1 bytes=160    0cd759b0   b'HTTP/1.1 200 OK'
+404 page           resp=1 bytes=373    54e1eb4b   b'HTTP/1.1 404 NOT FOUND'
+405 page           resp=1 bytes=355    877b6c69   b'HTTP/1.1 405 METHOD NOT ALLOWED'
+1.0 no Host        resp=1 bytes=155    434f36c6   b'HTTP/1.0 200 OK'
+X_Foo underscore   resp=1 bytes=160    0cd759b0   b'HTTP/1.1 200 OK'
+Transfer_Enc       resp=0 bytes=0      e3b0c442   b'(closed, zero bytes)'
+space before :     resp=0 bytes=0      e3b0c442   b'(closed, zero bytes)'
+obs-fold           resp=0 bytes=0      e3b0c442   b'(closed, zero bytes)'
+TE identity        resp=0 bytes=0      e3b0c442   b'(closed, zero bytes)'
+dup CL equal       resp=1 bytes=261    db44bd5c   b'HTTP/1.1 400 Bad Request'
+CL 5,5             resp=1 bytes=261    db44bd5c   b'HTTP/1.1 400 Bad Request'
+smuggle CL0        resp=2 bytes=515    a5d8e183   b'HTTP/1.1 405 METHOD NOT ALLOWED'
+SIGNATURE 0cd759b0-54e1eb4b-877b6c69-434f36c6-0cd759b0-e3b0c442-e3b0c442-e3b0c442-e3b0c442-db44bd5c-db44bd5c-a5d8e183

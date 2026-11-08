@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "pwn",
+  "category_display": "pwn",
+  "challenge_id": "e3596b9b-617e-4ac0-9e94-97ffe1dda47d",
+  "connection": "",
+  "description": "the sun is a deadly laser",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "motor_v8.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/motor_v8_5761a02bd6ec3629.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T11:09:53Z",
+      "flag_id": "34be39a5-0dfb-474c-9449-330bfbd9d6ed",
+      "points": 181,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "V8 motor",
+  "points": 181,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{dacia_logan_motor_v8_vroom_vroom_cfb841a}",
+      "flag_id": null,
+      "recorded": "2026-09-05T11:08:58Z",
+      "submitted": true
+    }
+  ],
+  "slug": "v8-motor",
+  "solved": true,
+  "solves": 84,
+  "status": "solved"
+}

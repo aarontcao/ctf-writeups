@@ -1,0 +1,169 @@
+/lib64/ld-linux-x86-64.so.2
+dladdr
+__cxa_finalize
+__libc_start_main
+strtoul
+strtoull
+setvbuf
+stdout
+stderr
+__stack_chk_fail
+printf
+libc.so.6
+GLIBC_2.4
+GLIBC_2.2.5
+GLIBC_2.34
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+dlsym failed
+dladdr failed
+libc base: %p
+puts@libc: %p
+I'm feeling generous today, have 1
+ bits. Thank me later.
+first addr
+first bit
+What was your name? I didnt get it
+See you around traveler
+GCC: (Ubuntu 13.1.0-8ubuntu1~22.04) 13.1.0
+printf
+__off_t
+_IO_read_ptr
+_chain
+prompt
+size_t
+uintptr_t
+_shortbuf
+dli_sname
+_IO_buf_base
+long long unsigned int
+long long int
+dladdr
+_fileno
+_IO_read_end
+_flags
+_IO_buf_end
+_cur_column
+final_buf
+_IO_codecvt
+_old_offset
+dli_fbase
+_IO_marker
+_freeres_buf
+GNU C17 13.1.0 -mtune=generic -march=x86-64 -g -O0 -fasynchronous-unwind-tables -fstack-protector-strong -fstack-clash-protection -fcf-protection
+_IO_write_ptr
+Dl_info
+short unsigned int
+_IO_save_base
+_flags2
+stdout
+_IO_write_end
+_IO_lock_t
+_IO_FILE
+__uint64_t
+_markers
+unsigned char
+short int
+_IO_wide_data
+_vtable_offset
+strtoull
+leak_libc_base
+dli_saddr
+__off64_t
+_IO_read_base
+_IO_save_end
+__pad5
+_unused2
+stderr
+strtoul
+real_puts
+dli_fname
+_IO_backup_base
+setvbuf
+_freeres_list
+read_u64_line
+_IO_write_base
+pipi2.c
+/home/linuxvb/temp/stdin_crazy_fsop_testing
+/usr/lib/gcc/x86_64-linux-gnu/13/include
+/usr/include/x86_64-linux-gnu/bits
+/usr/include/x86_64-linux-gnu/bits/types
+/usr/include
+stddef.h
+types.h
+struct_FILE.h
+stdio.h
+stdint-uintn.h
+stdint.h
+dlfcn.h
+stdlib.h
+Scrt1.o
+__abi_tag
+crtstuff.c
+deregister_tm_clones
+__do_global_dtors_aux
+completed.0
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+pipi2.c
+read_u64_line
+leak_libc_base
+__FRAME_END__
+_DYNAMIC
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_start_main@GLIBC_2.34
+_ITM_deregisterTMCloneTable
+stdout@GLIBC_2.2.5
+stdin@GLIBC_2.2.5
+_edata
+__stack_chk_fail@GLIBC_2.4
+dladdr@GLIBC_2.34
+printf@GLIBC_2.2.5
+fputs@GLIBC_2.2.5
+fgets@GLIBC_2.2.5
+strtoull@GLIBC_2.2.5
+__data_start
+__gmon_start__
+__dso_handle
+_IO_stdin_used
+__bss_start
+setvbuf@GLIBC_2.2.5
+dlsym@GLIBC_2.34
+strtoul@GLIBC_2.2.5
+exit@GLIBC_2.2.5
+__TMC_END__
+_ITM_registerTMCloneTable
+__cxa_finalize@GLIBC_2.2.5
+stderr@GLIBC_2.2.5
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.gnu.property
+.note.gnu.build-id
+.note.ABI-tag
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.plt.got
+.plt.sec
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.dynamic
+.comment
+.debug_aranges
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+.debug_line_str

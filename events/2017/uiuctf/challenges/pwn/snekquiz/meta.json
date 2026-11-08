@@ -1,0 +1,21 @@
+{
+  "author": "",
+  "category": "pwn",
+  "category_display": "pwn",
+  "connection": "nc challenge.uiuc.tf 11343",
+  "description": "",
+  "difficulty": "",
+  "files": [],
+  "name": "snekquiz",
+  "points": 200,
+  "recorded_flags": [
+    {
+      "flag": "flag{remember_remember_the_16th_of_july}",
+      "submitted": true
+    }
+  ],
+  "slug": "snekquiz",
+  "solved": true,
+  "solves": null,
+  "status": "solved"
+}

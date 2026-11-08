@@ -1,0 +1,42 @@
+{
+  "author": "Hiumee",
+  "category": "misc",
+  "category_display": "misc",
+  "challenge_id": "03db043b-94b1-4018-849d-007ea64d0692",
+  "connection": "https://android.koth.pro/\">https://android.koth.pro/</a>",
+  "description": "They can throw away your package! Be careful<br>\n---<br>\nChallenge detail: You app will be installed using <code>adb install -g path</code> and the flag will be a shipment <code>am start -n me.ship/.MainActivity --eu package 'shipme://cargo/?name=FAKE_FLAG_HERE&origin=challenge</code><br>\n<a href=\"https://android.koth.pro/\">https://android.koth.pro/</a>",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "shipme-release.apk",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/shipme-release_4626b2084c58128c.apk"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T13:40:57Z",
+      "flag_id": "84ba11fb-6766-48fa-833b-61620ed7e45c",
+      "points": 217,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Ship Me",
+  "points": 217,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{parcelables_are_safer_not_safe}",
+      "flag_id": null,
+      "recorded": "2026-09-05T13:40:56Z",
+      "submitted": true
+    }
+  ],
+  "slug": "ship-me",
+  "solved": true,
+  "solves": 67,
+  "status": "solved"
+}

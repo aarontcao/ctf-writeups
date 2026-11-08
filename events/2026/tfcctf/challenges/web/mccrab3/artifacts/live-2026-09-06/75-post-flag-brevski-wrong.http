@@ -1,0 +1,11 @@
+# brevski: notgeorge : DROPPED. The rule is a substring match, so any value containing george is blocked, not just the exact string.
+# --- request bytes ---
+POST /flag HTTP/1.1
+Host: special.thefewchosen.com:30494
+brevski: notgeorge
+Content-Length: 0
+Connection: close
+
+
+# --- response bytes ---
+<connection closed with no response: proxoxy dropped it>

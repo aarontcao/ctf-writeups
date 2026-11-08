@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFC - Android Platform</title>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="/static/favicon.ico">
+</head>
+
+<body>
+    <div class="container" x-data="app()" x-init="init()">
+        <!-- Login Screen -->
+        <template x-if="!isAuthenticated">
+            <div class="login-screen">
+                <div class="login-form">
+                    <h2 class="login-title">Authentication Required</h2>
+                    <input type="text" class="auth-input" x-model="teamToken" placeholder="Team Token"
+                        @keyup.enter="login()" style="width:100%;margin-bottom:15px;">
+                    <button class="btn btn-primary" @click="login()" :disabled="loading" style="width:100%;">
+                        <span x-show="!loading">Login</span>
+                        <span x-show="loading">Logging in...</span>
+                    </button>
+                    <p style="text-align: center; color: var(--text-muted); margin-top: 20px;">
+                        Enter team invite token to access the platform
+                    </p>
+                </div>
+            </div>
+        </template>
+
+        <!-- Main Application (only if authenticated) -->
+        <template x-if="isAuthenticated">
+            <div>
+                <!-- Header -->
+                <div class="header">
+                    <div class="header-left">
+                        <div>
+                            <h1 class="title">TFC CTF - Android Platform</h1>
+                        </div>
+                    </div>
+                    <div class="auth-section">
+                        <span style="color: var(--text-muted);">Welcome, <span x-text="username"
+                                style="font-weight: 500; color: var(--text-main);"></span></span>
+                        <button class="btn btn-danger" @click="logout()">Logout</button>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Challenge Form Section -->
+                    <div class="challenge-section">
+                        <h2 class="section-title">Start New Challenge</h2>
+
+                        <form @submit.prevent="provisionSession">
+                            <div class="form-group">
+                                <label class="form-label">Select Challenge</label>
+                                <div class="dropdown" x-data="{ open: false }" :class="{ 'open': open }">
+                                    <button type="button" class="dropdown-toggle" @click="open = !open"
+                                        @blur="setTimeout(() => open = false, 100)" :aria-expanded="open">
+                                        <span x-text="selectedChallenge ? selectedChallenge : 'Choose a challenge...'"
+                                            :style="selectedChallenge ? 'color: inherit;' : 'color: var(--text-muted);'"></span>
+                                        <span class="dropdown-arrow">▼</span>
+                                    </button>
+                                    <div class="dropdown-menu" x-show="open" @mousedown.prevent>
+                                        <template x-for="challenge in challenges" :key="challenge.name">
+                                            <div class="dropdown-option"
+                                                :class="{ 'active': selectedChallenge === challenge.name }"
+                                                @click="selectedChallenge = challenge.name; open = false"
+                                                x-text="challenge.name"></div>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                <div x-show="selectedChallenge" class="challenge-download">
+                                    <button type="button" class="download-btn"
+                                        @click="downloadChallenge(selectedChallenge)">
+                                        Download Challenge APK
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Upload APK File</label>
+                                <div class="file-input-wrapper">
+                                    <input type="file" class="file-input"
+                                        @change="selectedFile = $event.target.files[0]" accept=".apk" required>
+                                    <label class="file-input-label"
+                                        x-text="selectedFile ? selectedFile.name : 'Choose APK file...'"></label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn" :disabled="loading || rateLimited"
+                                :class="{ 'rate-limited': rateLimited }"
+                                x-text="loading ? 'Provisioning...' : rateLimited ? 'Rate Limited' : 'Start Challenge'"></button>
+                        </form>
+                    </div>
+
+                    <!-- Active Runs Section -->
+                    <div class="runs-section" x-show="activeSessions.length > 0">
+                        <h2 class="runs-title">Active Runs</h2>
+                        <div class="runs-grid">
+                            <template x-for="session in activeSessions" :key="session.session_id">
+                                <div class="run-tile" :class="session.status" @click="openSessionDetails(session)">
+                                    <div class="run-header">
+                                        <div class="run-status">
+                                            <div class="status-marker" :class="session.status"></div>
+                                            <span class="status-text" x-text="session.status"></span>
+                                        </div>
+                                        <div class="run-time" x-text="formatDate(session.created_at)"></div>
+                                    </div>
+                                    <div class="run-details">
+                                        <div class="run-challenge" x-text="session.challenge"></div>
+                                        <div class="run-id" x-text="session.session_id"></div>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"
+                                            :style="`width: ${getProgressWidth(session.status)}%`"></div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Past Runs Section -->
+                    <div class="runs-section" x-show="finishedSessions.length > 0">
+                        <h2 class="runs-title">Past Runs</h2>
+                        <div class="runs-grid">
+                            <template x-for="session in finishedSessions" :key="session.session_id">
+                                <div class="run-tile" :class="session.status" @click="openSessionDetails(session)">
+                                    <div class="run-header">
+                                        <div class="run-status">
+                                            <div class="status-marker" :class="session.status"></div>
+                                            <span class="status-text" x-text="session.status"></span>
+                                        </div>
+                                        <div class="run-time" x-text="formatDate(session.created_at)"></div>
+                                    </div>
+                                    <div class="run-details">
+                                        <div class="run-challenge" x-text="session.challenge"></div>
+                                        <div class="run-id" x-text="session.session_id"></div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="empty-state" x-show="sessions.length === 0 && !loading">
+                        <div class="empty-text">No sessions yet</div>
+                    </div>
+                </div>
+
+                <!-- Session Details Modal -->
+                <div class="modal-overlay" x-show="selectedSession" @click.self="closeSessionDetails">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Session Details</h3>
+                            <button class="close-btn" @click="closeSessionDetails">×</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="session-info">
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label">Session ID</div>
+                                        <div class="info-value" x-text="selectedSession?.session_id"></div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">Challenge</div>
+                                        <div class="info-value" x-text="selectedSession?.challenge"></div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">Status</div>
+                                        <div class="info-value" x-text="selectedSession?.status"></div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">Created</div>
+                                        <div class="info-value" x-text="formatDate(selectedSession?.created_at)"></div>
+                                    </div>
+                                    <div class="info-item" x-show="selectedSession?.acquired_at">
+                                        <div class="info-label">Acquired</div>
+                                        <div class="info-value" x-text="formatDate(selectedSession?.acquired_at)"></div>
+                                    </div>
+                                    <div class="info-item" x-show="selectedSession?.finished_at">
+                                        <div class="info-label">Finished</div>
+                                        <div class="info-value" x-text="formatDate(selectedSession?.finished_at)"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="logs-container">
+                                <template x-for="log in sessionLogs" :key="log.timestamp + log.message">
+                                    <div class="log-entry" x-text="log.message"></div>
+                                </template>
+                                <div x-show="sessionLogs.length === 0"
+                                    style="color: var(--text-muted); text-align: center; padding: 20px;">
+                                    No logs available
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Welcome Modal -->
+        <template x-if="showWelcomeModal">
+            <div class="welcome-modal" x-show="showWelcomeModal" @click.self="closeWelcomeModal">
+                <div class="welcome-content">
+                    <div class="welcome-header">
+                        <div class="welcome-title">
+                            🎯 Welcome to the TFC CTF Android Platform
+                        </div>
+                        <button class="welcome-close-btn" @click="closeWelcomeModal">×</button>
+                    </div>
+                    <div class="welcome-body">
+                        <div class="instruction-section">
+                            <div class="instruction-title">
+                                📱 What is this?
+                            </div>
+                            <div class="instruction-text">
+                                This platform is used for hosting Android challenges. You can upload your solution APK
+                                and it will be run in an isolated Android emulator environment. You can also view the
+                                logs of the session to see the progress of your exploit.
+                            </div>
+                        </div>
+
+                        <div class="instruction-section">
+                            <div class="instruction-title">
+                                🚀 Challenge selection and APK upload
+                            </div>
+                            <div class="instruction-text">
+                                You can select a challenge from the dropdown menu. Each challenge can be downloaded
+                                using the button below the dropdown.
+                                Upload your <span class="highlight">solution APK</span> that exploits the target
+                                application,
+                                and a new session will be created.
+                                Make sure your APK is properly signed (if not in Debug mode) and ready for testing.
+                            </div>
+                        </div>
+
+                        <div class="instruction-section">
+                            <div class="instruction-title">
+                                📊 Real-time Logs
+                            </div>
+                            <div class="instruction-text">
+                                The real-time logging mechanism is used to track the progress of your exploit.
+                                It only filters out the logs that are marked with the <span
+                                    class="highlight">TFCCTF</span> tag.
+                                In order to see the logs, the log message should have the format <span
+                                    class="highlight">Log.i("TFCCTF", "your message");</span>
+                            </div>
+                        </div>
+
+                        <div class="instruction-section">
+                            <div class="instruction-title">
+                                ⚠️ Disclaimer
+                            </div>
+                            <div class="instruction-text">
+                                This platfom is not intended to be attacked. If any malicious activity is detected,
+                                you will be disqualified from the competition.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Floating Info Button -->
+        <div class="floating-info-btn" @click="showWelcomeModal = true" x-show="isAuthenticated">
+            <div class="info-icon">i</div>
+            <span class="info-tooltip">Help & Information</span>
+        </div>
+    </div>
+
+    <!-- Floating Error Banner -->
+
+    <!-- Toast container -->
+    <div class="toast-wrapper" x-data x-cloak>
+        <template x-for="note in $store.app.notifications" :key="note.id">
+            <div class="toast" x-text="note.msg" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4">
+            </div>
+        </template>
+    </div>
+
+    <script>
+        // Alpine store so the toast wrapper can read notifications without prop drilling
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('app', { notifications: [] });
+        });
+
+        function app() {
+            return {
+                // Auth state
+                isAuthenticated: false,
+                username: '',
+                teamToken: '',
+
+                // UI state
+                loading: false,
+                error: '',
+                rateLimited: false,
+                selectedChallenge: '',
+                selectedFile: null,
+                sessions: [],
+                selectedSession: null,
+                sessionLogs: [],
+                websockets: {},
+                initialized: false,
+                showWelcomeModal: false, // Initialize to false, only show after login
+
+                get activeSessions() {
+                    return this.sessions
+                        .filter(s => s && !['finished', 'failed', 'timeout'].includes(s.status))
+                        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); // newest first
+                },
+
+                get finishedSessions() {
+                    return this.sessions
+                        .filter(s => s && ['finished', 'failed', 'timeout'].includes(s.status))
+                        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); // newest first
+                },
+
+                pushToast(msg) {
+                    const id = Date.now() + Math.random();
+                    Alpine.store('app').notifications = [
+                        ...Alpine.store('app').notifications,
+                        { id, msg }
+                    ];
+                    setTimeout(() => {
+                        Alpine.store('app').notifications = Alpine.store('app').notifications.filter(n => n.id !== id);
+                    }, 5000);
+                },
+
+                async init() {
+                    if (this.initialized) return;
+                    this.initialized = true;
+
+                    this.$watch('error', (val) => {
+                        if (val) {
+                            this.pushToast(val);
+                            this.error = '';
+                        }
+                    });
+
+                    // Check for hash-based challenge selection
+                    this.checkHashChallenge();
+
+                    // Check if already authenticated
+                    const teamToken = localStorage.getItem('ctf_team_token');
+                    if (teamToken) {
+                        this.teamToken = teamToken;
+                        await this.checkAuth();
+                    }
+                },
+
+                checkHashChallenge() {
+                    const hash = window.location.hash.substring(1);
+                    if (hash) {
+                        // Try to find a challenge that matches the hash
+                        this.$nextTick(() => {
+                            if (this.challenges && this.challenges.length > 0) {
+                                const challenge = this.challenges.find(c =>
+                                    c.name.toLowerCase().includes(hash.toLowerCase()) ||
+                                    c.name.toLowerCase().replace(/[^a-z0-9]/g, '') === hash.toLowerCase()
+                                );
+                                if (challenge) {
+                                    this.selectedChallenge = challenge.name;
+                                }
+                            }
+                        });
+                    }
+                },
+
+                async checkAuth() {
+                    try {
+                        const response = await fetch('/login', {
+                            headers: { 'X-Auth': this.teamToken }
+                        });
+                        if (response.ok) {
+                            const userData = await response.json();
+                            this.isAuthenticated = true;
+                            this.username = userData.name;
+                            localStorage.setItem('ctf_team_token', this.teamToken);
+                            this.error = '';
+
+                            await this.loadChallenges();
+                            await this.loadSessions();
+                            this.checkHashChallenge();
+                        } else {
+                            this.isAuthenticated = false;
+                            localStorage.removeItem('ctf_team_token');
+                        }
+                    } catch (e) {
+                        this.isAuthenticated = false;
+                        localStorage.removeItem('ctf_team_token');
+                        console.error('Auth error:', e);
+                    }
+                },
+
+                async login() {
+                    this.loading = true;
+                    this.error = '';
+                    try {
+                        const response = await fetch('/login', {
+                            headers: { 'X-Auth': this.teamToken }
+                        });
+                        if (response.ok) {
+                            const userData = await response.json();
+                            this.isAuthenticated = true;
+                            this.username = userData.name;
+                            localStorage.setItem('ctf_team_token', this.teamToken);
+
+                            await this.loadChallenges();
+                            await this.loadSessions();
+                            this.checkHashChallenge();
+
+                            // ⚡ ensure modal appears after DOM update
+                            this.$nextTick(() => {
+                                this.showWelcomeModal = true;
+                            });
+                        } else {
+                            this.error = 'Invalid credentials';
+                        }
+                    } catch (e) {
+                        this.error = 'Connection error';
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+
+                logout() {
+                    this.isAuthenticated = false;
+                    this.username = '';
+                    this.teamToken = '';
+                    localStorage.removeItem('ctf_team_token');
+                    this.sessions = [];
+                    this.challenges = [];
+                    this.closeAllWebsockets();
+                },
+
+                async loadChallenges() {
+                    try {
+                        const response = await fetch('/challenges');
+                        if (response.ok) {
+                            const data = await response.json();
+                            this.challenges = data.challenges || [];
+                        } else {
+                            console.error('Failed to load challenges:', response.status, response.statusText);
+                            this.challenges = [];
+                        }
+                    } catch (e) {
+                        console.error('Failed to load challenges:', e);
+                        this.challenges = [];
+                    }
+                },
+
+                async loadSessions() {
+                    console.log('Loading sessions...');
+                    try {
+                        const response = await fetch('/sessions', {
+                            headers: {
+                                'X-Auth': this.teamToken
+                            }
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            this.sessions = data.sessions || [];
+                            console.log('Sessions loaded:', this.sessions.length);
+                            this.connectToActiveSessions();
+                        } else {
+                            console.error('Failed to load sessions:', response.status, response.statusText);
+                            this.sessions = [];
+                        }
+                    } catch (e) {
+                        console.error('Failed to load sessions:', e);
+                        this.sessions = [];
+                    }
+                },
+
+                connectToActiveSessions() {
+                    console.log('Connecting to active sessions:', this.activeSessions);
+                    this.activeSessions.forEach(session => {
+                        const sessionId = session.session_id;
+                        if (session && sessionId && !this.websockets[sessionId]) {
+                            console.log('Connecting to session:', sessionId);
+                            this.connectWebSocket(sessionId);
+                        }
+                    });
+                },
+
+                connectWebSocket(sessionId) {
+                    if (!sessionId) {
+                        console.error('Cannot connect to WebSocket: sessionId is undefined');
+                        return;
+                    }
+
+                    console.log(`[connectWebSocket] Attempting to connect WebSocket for session ${sessionId}`);
+                    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                    const wsUrl = `${protocol}//${window.location.host}/ws/${sessionId}`;
+                    console.log(`[connectWebSocket] WebSocket URL: ${wsUrl}`);
+
+                    const ws = new WebSocket(wsUrl);
+
+                    ws.onopen = () => {
+                        console.log(`[connectWebSocket] WebSocket connected for session ${sessionId}`);
+                        const authMessage = JSON.stringify({ type: 'auth', token: this.teamToken });
+                        console.log(`[connectWebSocket] Sending auth message: ${authMessage}`);
+                        ws.send(authMessage);
+                    };
+
+                    ws.onmessage = (event) => {
+                        try {
+                            console.log(`[connectWebSocket] WebSocket message for session ${sessionId}:`, event.data);
+                            const data = JSON.parse(event.data);
+
+                            if (data.log) {
+                                // Handle log message
+                                console.log('Received log message:', data);
+
+                                // Always add to session logs if this session is selected
+                                if (this.selectedSession && this.selectedSession.session_id === sessionId) {
+                                    this.sessionLogs.push({
+                                        timestamp: data.timestamp,
+                                        message: data.log
+                                    });
+                                    console.log('Added log to session logs:', data.log);
+                                }
+
+                                // Also update the session in the list if it exists
+                                const sessionIndex = this.sessions.findIndex(s => s && s.session_id === sessionId);
+                                if (sessionIndex !== -1) {
+                                    // Ensure the session has a logs array
+                                    if (!this.sessions[sessionIndex].logs) {
+                                        this.sessions[sessionIndex].logs = [];
+                                    }
+                                    this.sessions[sessionIndex].logs.push({
+                                        timestamp: data.timestamp,
+                                        message: data.log
+                                    });
+
+                                }
+                            } else if (data.event) {
+                                // Handle status update event
+                                console.log('Received event:', data.event);
+                                const sessionIndex = this.sessions.findIndex(s => s && s.session_id === sessionId);
+                                if (sessionIndex !== -1) {
+                                    // Update the session state based on the event
+                                    const session = this.sessions[sessionIndex];
+                                    const previousStatus = session.status;
+                                    session.status = data.event;
+
+                                    // Update timestamps based on event
+                                    if (data.event === 'acquired') {
+                                        session.acquired_at = data.timestamp;
+                                    } else if (['finished', 'failed', 'timeout'].includes(data.event)) {
+                                        session.finished_at = data.timestamp;
+                                    }
+
+                                    console.log('Updated session state:', session);
+
+                                    // Close WebSocket if session just finished
+                                    if (['finished', 'failed', 'timeout'].includes(data.event) &&
+                                        !['finished', 'failed', 'timeout'].includes(previousStatus)) {
+                                        console.log(`Session ${sessionId} finished, closing WebSocket`);
+                                        if (this.websockets[sessionId]) {
+                                            this.websockets[sessionId].close();
+                                            delete this.websockets[sessionId];
+                                        }
+                                    }
+                                } else {
+                                    console.warn('Session not found in list for event update:', sessionId);
+                                }
+                            } else {
+                                console.warn('Unknown WebSocket message format:', data);
+                            }
+                        } catch (e) {
+                            console.error(`[connectWebSocket] Error parsing WebSocket message:`, e, 'Raw data:', event.data);
+                        }
+                    };
+
+                    ws.onclose = async (event) => {
+                        console.log(`[connectWebSocket] WebSocket closed for session ${sessionId}, code: ${event.code}, reason: ${event.reason}`);
+
+                        if (event.code === 4004) {
+                            // Session not found: check status from backend
+                            console.log(`[connectWebSocket] 4004 received, checking session status for ${sessionId}`);
+                            try {
+                                const response = await fetch(`/session/${sessionId}/status`, {
+                                    headers: { 'X-Auth': this.teamToken }
+                                });
+                                if (response.ok) {
+                                    const sessionData = await response.json();
+                                    console.log(`[connectWebSocket] Session status for ${sessionId}:`, sessionData);
+                                    // Update session in UI
+                                    const idx = this.sessions.findIndex(s => s.session_id === sessionId);
+                                    if (idx !== -1) {
+                                        this.sessions[idx].status = sessionData.status;
+                                        this.sessions[idx].acquired_at = sessionData.acquired_at;
+                                        this.sessions[idx].finished_at = sessionData.finished_at;
+                                    }
+                                } else {
+                                    console.warn(`[connectWebSocket] Could not fetch session status for ${sessionId}`);
+                                }
+                            } catch (e) {
+                                console.error(`[connectWebSocket] Error fetching session status for ${sessionId}:`, e);
+                            }
+                            delete this.websockets[sessionId];
+                            return;
+                        }
+
+                        if (event.code === 4009) {
+                            // Session completed - don't retry
+                            console.log(`[connectWebSocket] Session ${sessionId} completed, not retrying`);
+                            delete this.websockets[sessionId];
+                            return;
+                        }
+
+                        // For all other errors, try to reconnect if session is still active
+                        console.log(`[connectWebSocket] WebSocket closed with code ${event.code}, attempting to reconnect in 5 seconds`);
+                        delete this.websockets[sessionId];
+                        setTimeout(() => {
+                            const session = this.sessions.find(s => s && s.session_id === sessionId);
+                            const sessionState = session ? session.status : null;
+                            console.log(`[connectWebSocket] Checking if should reconnect to session ${sessionId}, state: ${sessionState}`);
+                            if (session && sessionState && !['finished', 'failed', 'timeout'].includes(sessionState)) {
+                                console.log(`[connectWebSocket] Attempting to reconnect to session ${sessionId}`);
+                                this.connectWebSocket(sessionId);
+                            } else {
+                                console.log(`[connectWebSocket] Not reconnecting to session ${sessionId}, state: ${sessionState}`);
+                            }
+                        }, 5000);
+                    };
+
+                    ws.onerror = (error) => {
+                        console.error(`[connectWebSocket] WebSocket error for session ${sessionId}:`, error);
+                    };
+
+                    this.websockets[sessionId] = ws;
+                },
+
+                closeAllWebsockets() {
+                    Object.values(this.websockets).forEach(ws => {
+                        if (typeof ws === 'object' && ws.close) {
+                            ws.close();
+                        }
+                    });
+                    this.websockets = {};
+                },
+
+                async provisionSession() {
+                    this.loading = true;
+                    this.error = '';
+
+                    try {
+                        const formData = new FormData();
+                        formData.append('challenge', this.selectedChallenge);
+                        formData.append('file', this.selectedFile);
+
+                        const response = await fetch('/provision', {
+                            method: 'POST',
+                            headers: {
+                                'X-Auth': this.teamToken
+                            },
+                            body: formData
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            const sessionId = data.session_id;
+
+                            // Add the new session to the list immediately
+                            const newSession = {
+                                session_id: sessionId,
+                                status: 'pending',
+                                challenge: this.selectedChallenge,
+                                created_at: new Date().toISOString()
+                            };
+                            this.sessions.unshift(newSession);
+
+                            console.log('[provisionSession] New session added:', newSession);
+                            // Connect to the WebSocket immediately
+                            console.log('[provisionSession] Connecting WebSocket for session:', sessionId);
+                            this.connectWebSocket(sessionId);
+
+                            this.selectedChallenge = '';
+                            this.selectedFile = null;
+                            // Clear file input
+                            const fileInput = document.querySelector('input[type="file"]');
+                            if (fileInput) fileInput.value = '';
+                        } else {
+                            const error = await response.json();
+                            if (response.status === 429) {
+                                this.error = 'Rate limit exceeded. Please wait before trying again.';
+                                this.rateLimited = true;
+                                // Reset rate limited state
+                                setTimeout(() => {
+                                    this.rateLimited = false;
+                                }, 30000);
+                            } else {
+                                this.error = error.detail || 'Failed to provision session';
+                            }
+                        }
+                    } catch (e) {
+                        this.error = e.detail || 'Connection error';
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+                downloadChallenge(challengeName) {
+                    const challenge = this.challenges.find(c => c.name === challengeName);
+                    if (challenge) {
+                        const link = document.createElement('a');
+                        link.href = `/challenges/${challenge.apk_file}`;
+                        link.download = `${challenge.name}.apk`;
+                        link.click();
+                    }
+                },
+
+                async openSessionDetails(session) {
+                    const sessionId = session.session_id;
+                    if (!session || !sessionId) {
+                        console.error('Cannot open session details: session or session.session_id is undefined');
+                        return;
+                    }
+
+                    this.selectedSession = session;
+                    this.sessionLogs = [];
+
+                    // Determine if session is finished
+                    const sessionState = session.status;
+                    const isFinished = ['finished', 'failed', 'timeout'].includes(sessionState);
+
+                    console.log('Opening session details:', sessionId, 'State:', sessionState, 'Finished:', isFinished);
+
+                    if (isFinished) {
+                        // For finished sessions, only load from database
+                        console.log('Loading logs from database for finished session');
+                        try {
+                            const response = await fetch(`/session/${sessionId}/logs`, {
+                                headers: {
+                                    'X-Auth': this.teamToken
+                                }
+                            });
+
+                            if (response.ok) {
+                                const data = await response.json();
+                                const dbLogs = data.logs || [];
+                                console.log('Loaded database logs:', dbLogs.length);
+
+                                // Convert database logs to the same format as WebSocket logs
+                                const dbLogObjects = [];
+                                dbLogs.forEach(dbLog => {
+                                    // Parse the database log format "timestamp: message"
+                                    // Split only on the first occurrence of ': ' to handle messages with colons
+                                    const firstColonIndex = dbLog.indexOf(': ');
+                                    if (firstColonIndex !== -1) {
+                                        const timestamp = dbLog.substring(0, firstColonIndex);
+                                        const message = dbLog.substring(firstColonIndex + 2); // +2 to skip ': '
+                                        dbLogObjects.push({
+                                            timestamp: timestamp,
+                                            message: message,
+                                            source: 'database'
+                                        });
+                                    }
+                                });
+
+                                // Sort by timestamp (oldest first) - database logs come in reverse order
+                                dbLogObjects.sort((a, b) => {
+                                    const dateA = new Date(a.timestamp);
+                                    const dateB = new Date(b.timestamp);
+                                    return dateA - dateB;
+                                });
+
+                                this.sessionLogs = dbLogObjects;
+                                console.log('Total database logs loaded:', this.sessionLogs.length);
+                            }
+                        } catch (e) {
+                            console.error('Failed to load database logs:', e);
+                        }
+                    } else {
+                        // For running sessions, only use WebSocket logs (in-memory)
+                        console.log('Using WebSocket logs for running session');
+                        const wsLogs = session.logs || [];
+                        wsLogs.forEach(log => {
+                            log.source = 'websocket';
+                        });
+
+                        this.sessionLogs = [...wsLogs];
+                        console.log('Total WebSocket logs loaded:', this.sessionLogs.length);
+                    }
+                },
+
+                closeSessionDetails() {
+                    this.selectedSession = null;
+                    this.sessionLogs = [];
+                },
+
+                formatDate(dateString) {
+                    if (!dateString) return '';
+                    return new Date(dateString).toLocaleString();
+                },
+
+                getProgressWidth(status) {
+                    switch (status) {
+                        case 'pending': return 20;
+                        case 'acquired': return 40;
+                        case 'setting_up': return 60;
+                        case 'ready': return 80;
+                        case 'finished': return 100;
+                        case 'failed': return 100;
+                        case 'timeout': return 100;
+                        default: return 0;
+                    }
+                },
+
+                closeWelcomeModal() {
+                    this.showWelcomeModal = false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+# GET /admin/session/adopt as role=user, the wall we never cleared
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/admin/session/adopt
+HTTP 400
+Content-Length: 70
+Content-Type: text/html; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:30 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+provide ?t=<console bootstrap token> to adopt an admin console session

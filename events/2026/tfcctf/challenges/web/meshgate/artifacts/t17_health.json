@@ -1,0 +1,1 @@
+{"build":{"build":"2026.03.4","channel":"stable","version":"3.2.1"},"issuer":"http://localhost:8083/idp","nodes":[{"id":"sync-a","status":"healthy"},{"id":"sync-b","status":"healthy"},{"id":"sync-c","status":"draining"}],"python":"3.12.14","status":"ok","uptime_hint":1788659869}

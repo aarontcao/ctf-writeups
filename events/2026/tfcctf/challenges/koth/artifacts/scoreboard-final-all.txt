@@ -1,0 +1,29 @@
+TFC CTF 2026 FINAL SCOREBOARD  scope=all  1017 teams
+captured 2026-09-06T13:21:32Z from GET /leaderboard?scope=all  (contest closed 2026-09-06T10:00:00Z)
+score = jeopardy/max_jeopardy*80 + koth/max_koth*20     max_jeopardy=4290  max_koth=1542.606
+
+  #  TEAM                             JEOP    KOTH    J/80    K/20   TOTAL
+  -- -------------------------------- ------ ------- ------- ------ -------
+   1 maimai                             3824  1542.6   71.31  20.00  91.310 
+   2 Cosmic Bit Flip                    3840  1326.8   71.61  17.20  88.810 
+   3 L.A.R.P.                           3840  1082.0   71.61  14.03  85.636 
+   4 TeamH4C                            4290   257.5   80.00   3.34  83.339 
+   5 W4llz                              4290   252.9   80.00   3.28  83.279 
+   6 fedcamp                            3840   559.6   71.61   7.26  78.863 
+   7 krauq                              3467   898.9   64.65  11.65  76.307 
+   8 CheongA                            3824   285.7   71.31   3.70  75.014 
+   9 Squid Proxy Lovers                 3374   737.2   62.92   9.56  72.477 
+  10 seojin fan club                    3374   686.2   62.92   8.90  71.815 
+  ...
+  33 WillHackForBeer                    3017    72.8   56.26   0.94  57.205 
+  34 Dunderpatrullen                    3017    45.5   56.26   0.59  56.851 
+  35 ctrl_alt_del                       3017    42.9   56.26   0.56  56.818 
+  36 Shellskapsresan                    3017     5.0   56.26   0.07  56.326 
+  37 4rthur.ai                          3017     0.0   56.26   0.00  56.261 
+  38 Kessoku Band                       2873   142.2   53.58   1.84  55.420 <<<
+  39 hu/prod/random                     2873   137.3   53.58   1.78  55.355 
+  40 Selfwash                           2873   133.8   53.58   1.73  55.311 
+  41 Hexadecimal                        2873   120.4   53.58   1.56  55.137 
+  42 sudoaza                            2909    57.5   54.25   0.75  54.993 
+  43 DCBA                               2873    83.3   53.58   1.08  54.656 
+  44 TRX                                2811    84.8   52.42   1.10  53.520 

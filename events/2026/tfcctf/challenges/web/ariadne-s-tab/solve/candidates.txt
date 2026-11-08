@@ -1,0 +1,18 @@
+# Candidate flag-document ids for solve.py.
+#
+# HONESTY: these are GUESSES, not derived. Document ids are
+# `before_create { self.id ||= SecureRandom.uuid }`, and the `||=` is the only
+# reason to think a seeder might pass a chosen id. If the seeder used
+# documents/create the id is a random v4 and no list here can win.
+# Each probe costs 8.55 s of iframe time and lanes run in parallel, so about
+# 40 candidates fit in one 55 s emulator session at lanes=16.
+00000000-0000-0000-0000-000000000000
+00000000-0000-0000-0000-000000000001
+11111111-1111-1111-1111-111111111111
+ffffffff-ffff-ffff-ffff-ffffffffffff
+deadbeef-dead-beef-dead-beefdeadbeef
+cafebabe-cafe-babe-cafe-babecafebabe
+c0ffee00-c0ff-ee00-c0ff-ee00c0ffee00
+12345678-1234-1234-1234-123456789012
+aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+01234567-89ab-cdef-0123-456789abcdef

@@ -1,0 +1,18 @@
+# IdP credential post, issues the code
+POST http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/callback?code=ZunLTq5vix-WkVD0T1mQYg&state=Kb88FxxyxIDCf6cU
+HTTP 405
+Allow: HEAD, OPTIONS, GET
+Content-Length: 153
+Content-Type: text/html; charset=utf-8
+Date: Sun, 06 Sep 2026 13:20:20 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+<!doctype html>
+<html lang=en>
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>

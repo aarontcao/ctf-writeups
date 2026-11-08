@@ -1,0 +1,6 @@
+12:09:27 0 <urlopen error [Errno 111] Connection refused>
+12:09:33 409 {"error":"Max 3 running instances per team allowed"}
+12:09:37 409 {"error":"Max 3 running instances per team allowed"}
+12:09:49 201 {"data":"bitdebit3-chal","deploymentName":"bitdebit3-chal-e800c1521f6a8197"}
+INSTANCE {"data": "bitdebit3-chal", "deploymentName": "bitdebit3-chal-e800c1521f6a8197"}
+could not parse connection, do it by hand

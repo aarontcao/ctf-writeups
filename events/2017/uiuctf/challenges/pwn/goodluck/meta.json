@@ -1,0 +1,25 @@
+{
+  "author": "",
+  "category": "pwn",
+  "category_display": "pwn",
+  "connection": "nc challenge.uiuc.tf 11342",
+  "description": "",
+  "difficulty": "",
+  "files": [
+    {
+      "name": "goodluck"
+    }
+  ],
+  "name": "goodluck",
+  "points": 200,
+  "recorded_flags": [
+    {
+      "flag": "flag{always_give_110%}",
+      "submitted": true
+    }
+  ],
+  "slug": "goodluck",
+  "solved": true,
+  "solves": null,
+  "status": "solved"
+}

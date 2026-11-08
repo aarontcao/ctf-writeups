@@ -1,0 +1,306 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fluxion — workflow observability</title>
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#0a0e16; --bg-elev:#0f1420; --panel:#121826; --panel-2:#161d2e;
+    --ink:#e7ecf4; --ink-dim:#9aa4b8; --ink-faint:#697088;
+    --line:rgba(255,255,255,.06); --line-soft:rgba(255,255,255,.04);
+    --accent:#6ea0ff; --accent-dim:#31456e;
+    --ok:#57e39a; --ok-bg:rgba(60,190,120,.14);
+    --warn:#f2b761; --warn-bg:rgba(200,150,60,.15);
+    --bad:#ff7a90; --bad-bg:rgba(220,80,110,.15);
+    /* concentric radii: each outer = inner + its padding */
+    --pad:14px; --r-inner:8px; --r-mid:12px; --r-outer:calc(var(--r-mid) + var(--pad));
+    --shadow-1:0 1px 2px rgba(0,0,0,.45), 0 6px 18px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.04);
+    --shadow-2:0 2px 6px rgba(0,0,0,.5), 0 16px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+  body{margin:0;background:
+        radial-gradient(1100px 520px at 78% -8%, rgba(80,120,220,.12), transparent 60%),
+        radial-gradient(900px 500px at 6% 4%, rgba(60,200,140,.06), transparent 55%),
+        var(--bg);
+       color:var(--ink);line-height:1.55;
+       font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:1.6rem 1.4rem 3rem}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+  p,.muted,td{text-wrap:pretty}
+  h1,h2,.kpi b{text-wrap:balance}
+
+  /* header */
+  header{display:flex;align-items:center;gap:.7rem;padding:.2rem 0 1.1rem;margin-bottom:1.3rem;
+         border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:.55rem}
+  .mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+        background:linear-gradient(160deg,#2b3d66,#16203a);
+        box-shadow:var(--shadow-1);outline:1px solid rgba(255,255,255,.10);outline-offset:-1px}
+  .mark svg{display:block;transform:translateY(.5px)} /* optical centering */
+  .logo{font-weight:700;font-size:1.12rem;letter-spacing:.2px}
+  .env{font-size:.68rem;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;
+       padding:.14rem .6rem;background:var(--bg-elev)}
+  .spacer{margin-left:auto}
+  .live{display:inline-flex;align-items:center;gap:.42rem;font-size:.74rem;color:var(--ink-dim);
+        border:1px solid var(--line);border-radius:999px;padding:.2rem .62rem;background:var(--bg-elev)}
+  .live .dot{width:8px;height:8px;border-radius:999px;background:var(--ink-faint);
+             box-shadow:0 0 0 0 rgba(87,227,154,.5);transition:background-color .2s}
+  .live.on .dot{background:var(--ok);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(87,227,154,.45)}70%{box-shadow:0 0 0 7px rgba(87,227,154,0)}100%{box-shadow:0 0 0 0 rgba(87,227,154,0)}}
+
+  .hero h1{font-size:1.72rem;margin:.4rem 0 .3rem;letter-spacing:-.01em}
+  .hero p{color:var(--ink-dim);max-width:60ch;margin:.2rem 0 0}
+
+  /* controls */
+  .toolbar{display:flex;align-items:center;gap:.5rem;margin:1.4rem 0 .2rem;flex-wrap:wrap}
+  .chip{appearance:none;border:1px solid var(--line);background:var(--bg-elev);color:var(--ink-dim);
+        border-radius:999px;padding:.34rem .8rem;font:inherit;font-size:.8rem;cursor:pointer;
+        min-height:34px;display:inline-flex;align-items:center;gap:.4rem;
+        transition:transform .12s ease, box-shadow .12s ease, background-color .12s ease, color .12s ease, border-color .12s ease}
+  .chip:hover{background:var(--panel-2);color:var(--ink);box-shadow:var(--shadow-1)}
+  .chip:active{transform:scale(.96)}
+  .chip[aria-pressed="true"]{color:var(--ink);border-color:var(--accent-dim);
+        background:linear-gradient(180deg,rgba(110,160,255,.16),rgba(110,160,255,.06))}
+  .icon-btn{appearance:none;border:1px solid var(--line);background:var(--bg-elev);color:var(--ink-dim);
+        border-radius:var(--r-inner);font:inherit;cursor:pointer;position:relative;
+        width:40px;height:40px;display:grid;place-items:center;
+        transition:transform .12s ease, box-shadow .12s ease, background-color .12s ease, color .12s ease}
+  .icon-btn::after{content:"";position:absolute;inset:-4px}         /* extend hit area ≥48px */
+  .icon-btn:hover{background:var(--panel-2);color:var(--ink);box-shadow:var(--shadow-1)}
+  .icon-btn:active{transform:scale(.96)}
+  .icon-btn.spin svg{animation:rot .7s ease}
+  @keyframes rot{to{transform:rotate(360deg)}}
+
+  /* kpi row */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--pad);margin:1rem 0}
+  .kpi{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line-soft);
+       border-radius:var(--r-mid);padding:1rem 1.15rem;box-shadow:var(--shadow-1);
+       transition:transform .12s ease, box-shadow .12s ease}
+  .kpi:hover{transform:translateY(-2px);box-shadow:var(--shadow-2)}
+  .kpi b{display:block;font-size:1.72rem;font-weight:700;color:#f3f6fc;letter-spacing:-.01em}
+  .kpi span{font-size:.72rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.05em}
+
+  /* panels */
+  .panel{background:linear-gradient(180deg,var(--panel-2),var(--panel));
+         border:1px solid var(--line-soft);border-radius:var(--r-outer);padding:var(--pad) calc(var(--pad) + 4px);
+         margin-top:var(--pad);box-shadow:var(--shadow-1)}
+  .panel > .head{display:flex;align-items:baseline;gap:.6rem;margin:.1rem 0 .8rem}
+  .panel h2{font-size:1.03rem;margin:0;font-weight:650}
+  .panel .sub{font-size:.78rem;color:var(--ink-faint)}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .stat{background:var(--bg-elev);border:1px solid var(--line-soft);border-radius:var(--r-inner);
+        padding:.75rem .9rem}
+  .stat b{display:block;font-size:1.3rem;color:#eef2fb}
+  .stat span{font-size:.7rem;color:var(--ink-dim)}
+
+  table{width:100%;border-collapse:separate;border-spacing:0;font-size:.88rem}
+  th,td{text-align:left;padding:.55rem .6rem}
+  thead th{color:var(--ink-faint);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+           border-bottom:1px solid var(--line)}
+  tbody tr{transition:background-color .12s ease}
+  tbody tr:hover{background:rgba(255,255,255,.025)}
+  tbody td{border-bottom:1px solid var(--line-soft)}
+  tbody tr:last-child td{border-bottom:0}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--bg-elev);
+       border:1px solid var(--line-soft);border-radius:6px;padding:.05rem .38rem;font-size:.82em;color:#cdd6ea}
+  .pill{display:inline-flex;align-items:center;gap:.34rem;border-radius:var(--r-inner);
+        padding:.12rem .55rem;font-size:.74rem;background:var(--bg-elev);color:var(--ink-dim);border:1px solid var(--line-soft)}
+  .pill .d{width:7px;height:7px;border-radius:999px;background:currentColor}
+  .pill.completed{color:var(--ok);background:var(--ok-bg);border-color:transparent}
+  .pill.failed,.pill.rejected,.pill.canceled{color:var(--bad);background:var(--bad-bg);border-color:transparent}
+  .pill.awaiting-approval,.pill.awaiting-webhook,.pill.paused,.pill.resumed,.pill.queued,.pill.running,.pill.draining{color:var(--warn);background:var(--warn-bg);border-color:transparent}
+
+  .bars{display:flex;align-items:flex-end;gap:5px;height:54px;margin-top:.2rem}
+  .bars .b{flex:1;min-width:4px;background:linear-gradient(180deg,var(--accent),var(--accent-dim));
+           border-radius:4px 4px 2px 2px;opacity:.85;transition:height .3s ease}
+  .muted{color:var(--ink-dim);font-size:.86rem}
+  .empty{color:var(--ink-faint);font-size:.84rem;padding:.7rem .2rem}
+
+  footer{color:var(--ink-faint);font-size:.75rem;text-align:center;margin-top:2.2rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+  footer a{color:var(--ink-dim);text-decoration:none}
+
+  /* staggered enter */
+  .rise{opacity:0;transform:translateY(10px);animation:rise .5s cubic-bezier(.22,.61,.36,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}
+    .kpi:hover,.chip:active,.icon-btn:active{transform:none}}
+  @media (max-width:720px){.grid,.stat-row{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<div class="wrap">
+  <header class="rise" style="animation-delay:0ms">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#a9c2ff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12a8 8 0 0 1 13.7-5.6M20 12a8 8 0 0 1-13.7 5.6"/><path d="M17 3v4h-4M7 21v-4h4"/>
+        </svg>
+      </span>
+      <span class="logo">Fluxion</span>
+      <span class="env">engine&nbsp;1.4</span>
+    </div>
+    <span class="spacer"></span>
+    <span class="live" id="live"><span class="dot"></span><span id="live-txt">connecting…</span></span>
+    <button class="icon-btn" id="refresh" title="Refresh now" aria-label="Refresh now">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v5h-5"/>
+      </svg>
+    </button>
+  </header>
+
+  <section class="hero rise" style="animation-delay:60ms">
+    <h1>Durable workflows, fully observable.</h1>
+    <p>Long-running workflows that survive restarts, pause on external signals, and resume exactly
+       where they left off — every run, step, and hook streamed to this console as it happens.</p>
+  </section>
+
+  <div class="grid rise" style="animation-delay:120ms">
+    <div class="kpi"><b class="num" id="k-total">—</b><span>tracked runs</span></div>
+    <div class="kpi"><b class="num" id="k-active">—</b><span>waiting on a signal</span></div>
+    <div class="kpi"><b class="num" id="k-done">—</b><span>completed</span></div>
+  </div>
+
+  <div class="toolbar rise" style="animation-delay:170ms" id="filters" role="group" aria-label="Filter runs by status">
+    <button class="chip" data-f="all" aria-pressed="true">All runs</button>
+    <button class="chip" data-f="awaiting" aria-pressed="false">Awaiting</button>
+    <button class="chip" data-f="completed" aria-pressed="false">Completed</button>
+    <button class="chip" data-f="failed" aria-pressed="false">Failed</button>
+  </div>
+
+  <div class="panel rise" style="animation-delay:210ms">
+    <div class="head"><h2>Runs</h2><span class="sub" id="runs-sub">live queue &amp; history</span></div>
+    <table id="runs"><thead>
+      <tr><th>Run</th><th>Workflow</th><th>Started</th><th>Status</th></tr>
+    </thead><tbody><tr><td colspan="4" class="empty">Loading runs…</td></tr></tbody></table>
+  </div>
+
+  <div class="panel rise" style="animation-delay:260ms">
+    <div class="head"><h2>Latency &amp; throughput</h2><span class="sub">estimated step durations across tracked runs</span></div>
+    <div class="stat-row">
+      <div class="stat"><b class="num" id="m-p50">—</b><span>p50 duration (ms)</span></div>
+      <div class="stat"><b class="num" id="m-p90">—</b><span>p90 duration (ms)</span></div>
+      <div class="stat"><b class="num" id="m-p99">—</b><span>p99 duration (ms)</span></div>
+    </div>
+    <div class="bars" id="timeline" aria-hidden="true"></div>
+  </div>
+
+  <div class="panel rise" style="animation-delay:310ms">
+    <div class="head"><h2>Alert rules</h2><span class="sub">thresholds evaluated against live metrics</span></div>
+    <table id="alerts"><thead>
+      <tr><th>Rule</th><th>Metric</th><th>Value</th><th>State</th></tr>
+    </thead><tbody><tr><td colspan="4" class="empty">Loading rules…</td></tr></tbody></table>
+  </div>
+
+  <div class="panel rise" style="animation-delay:360ms">
+    <div class="head"><h2>Workflow definitions</h2><span class="sub">versioned graphs and their schedules</span></div>
+    <table id="defs"><thead>
+      <tr><th>Workflow</th><th>Versions</th><th>Scheduled</th></tr>
+    </thead><tbody><tr><td colspan="3" class="empty">Loading definitions…</td></tr></tbody></table>
+  </div>
+
+  <footer>© 2026 Fluxion · durable workflow engine 1.4 · <a href="/api/version">status</a></footer>
+</div>
+<script>
+async function rpc(method, params){
+  const r = await fetch('/api/rpc', {method:'POST', headers:{'Content-Type':'application/json'},
+                                     body: JSON.stringify({method, params: params||{}})});
+  return (await r.json()).result;
+}
+const $ = (id) => document.getElementById(id);
+function fmt(ms){ return new Date(ms).toISOString().replace('T',' ').replace('.000Z','').slice(0,19) + ' UTC'; }
+let filter = 'all';
+let lastRuns = [];
+
+function renderRuns(){
+  const rows = lastRuns.filter(r => filter==='all' ? true : String(r.status).startsWith(filter));
+  const tb = document.querySelector('#runs tbody'); tb.innerHTML='';
+  $('runs-sub').textContent = rows.length + ' of ' + lastRuns.length + ' runs';
+  if(!rows.length){ tb.innerHTML = '<tr><td colspan="4" class="empty">No runs match this filter yet.</td></tr>'; return; }
+  for(const r of rows){
+    const tr=document.createElement('tr');
+    tr.innerHTML = `<td><code>${r.runId}</code></td><td>${r.workflowName}</td>`+
+                   `<td class="num">${fmt(r.startedAt)}</td>`+
+                   `<td><span class="pill ${r.status}"><span class="d"></span>${r.status}</span></td>`;
+    tb.appendChild(tr);
+  }
+}
+async function loadRuns(){
+  const runs = await rpc('fetchRuns'); lastRuns = runs;
+  $('k-total').textContent  = runs.length;
+  $('k-active').textContent = runs.filter(r=>String(r.status).startsWith('awaiting')).length;
+  $('k-done').textContent   = runs.filter(r=>r.status==='completed').length;
+  renderRuns();
+}
+async function loadMetrics(){
+  try{
+    const m = (await rpc('runMetrics')).metrics;
+    $('m-p50').textContent = m.duration.p50;
+    $('m-p90').textContent = m.duration.p90;
+    $('m-p99').textContent = m.duration.p99;
+    const tl = (await rpc('runTimeline', {buckets:16})).buckets || [];
+    const max = Math.max(1, ...tl.map(b=>b.count));
+    const el = $('timeline'); el.innerHTML='';
+    for(const b of tl){ const d=document.createElement('div'); d.className='b';
+      d.style.height = (10 + Math.round(90*(b.count/max))) + '%';
+      d.title = b.count + ' run(s)'; el.appendChild(d); }
+  }catch(e){}
+}
+async function loadAlerts(){
+  try{
+    const rows = (await rpc('evaluateAlerts')).results || [];
+    const tb = document.querySelector('#alerts tbody'); tb.innerHTML='';
+    if(!rows.length){ tb.innerHTML='<tr><td colspan="4" class="empty">No alert rules configured.</td></tr>'; return; }
+    for(const a of rows){
+      const st = a.state==='firing' ? 'failed' : (a.state==='ok' ? 'completed' : 'paused');
+      const tr=document.createElement('tr');
+      tr.innerHTML = `<td>${a.name}</td><td>${a.metric||'—'}</td>`+
+                     `<td class="num">${a.value??'—'}</td>`+
+                     `<td><span class="pill ${st}"><span class="d"></span>${a.state}</span></td>`;
+      tb.appendChild(tr);
+    }
+  }catch(e){}
+}
+async function loadDefs(){
+  try{
+    const defs = (await rpc('listDefinitions')).definitions || [];
+    const scheds = (await rpc('listSchedules')).schedules || [];
+    const byWf = {}; for(const s of scheds){ byWf[s.workflow]=(byWf[s.workflow]||0)+1; }
+    const tb = document.querySelector('#defs tbody'); tb.innerHTML='';
+    if(!defs.length){ tb.innerHTML='<tr><td colspan="3" class="empty">No workflow definitions yet.</td></tr>'; return; }
+    for(const d of defs){
+      const s = byWf[d.name];
+      const tr=document.createElement('tr');
+      tr.innerHTML = `<td>${d.name}</td><td class="num">${d.versions}</td>`+
+                     `<td>${s ? '<span class="pill"><span class="d"></span>'+s+' schedule'+(s>1?'s':'')+'</span>' : '<span class="muted">—</span>'}</td>`;
+      tb.appendChild(tr);
+    }
+  }catch(e){}
+}
+function loadAll(){ loadRuns(); loadMetrics(); loadAlerts(); loadDefs(); }
+
+// status filter chips
+$('filters').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  filter = b.dataset.f;
+  for(const c of document.querySelectorAll('#filters .chip')) c.setAttribute('aria-pressed', String(c===b));
+  renderRuns();
+});
+// manual refresh with a brief spin
+$('refresh').addEventListener('click', () => {
+  const btn = $('refresh'); btn.classList.remove('spin'); void btn.offsetWidth; btn.classList.add('spin');
+  loadAll();
+});
+
+// live indicator via the observability event stream (graceful fallback)
+function connectStream(){
+  try{
+    const es = new EventSource('/api/stream/events');
+    es.addEventListener('hello', () => { $('live').classList.add('on'); $('live-txt').textContent='live'; });
+    es.addEventListener('snapshot', () => { $('live').classList.add('on'); $('live-txt').textContent='live'; });
+    es.onerror = () => { $('live').classList.remove('on'); $('live-txt').textContent='reconnecting…'; };
+  }catch(e){ $('live-txt').textContent='polling'; }
+}
+
+loadAll();
+connectStream();
+setInterval(loadAll, 5000);
+</script>
+</body></html>

@@ -1,0 +1,732 @@
+fbgchadebhcfaged
+te kexpand 32-by
+QXf@33333#j@
+333333
+?333333
+?ffffff
+LINUX_2.INUX_2.6
+@fffff
+?333333
+?333333
+[48;5;1cb
+?ffffff
+? panic: IUUUUU
+?333333
+?333333
+?  POWER 
+?ffffff
+?ffffff
+=IUUUUU
+?333333
+?/lj,D
+LUUUUU
+?333333
+  BLADE 
+@  KILLS 1cb
+333333
+?ffffff
+expand 32-byte kexpand 32-byte k
+Cannot print stack trace: stack tracing is disabled
+thread localhost
+ZIG_PROGRESS=
+/proc/self/fd/
+[38;5;mHP   PICK   ITEM  LEVER 
+INPUT   AIM AT LEVER AND PRESS FM:PICK  BLADE  KILLS  POWER  ITEM 
+airarret
+333333
+@ffffff
+?ffffff
+DirNotEmpty
+PipeBusy
+FileBusy
+DeviceBusy
+OutOfMemory
+ProtocolUnsupportedByAddressFamily
+TODO implement netInterfaceName for linux
+Overflow
+InputOutput
+TODO implement netConnectIpPosix with timeout
+Timeout
+localhost
+NoSpaceLeft
+InvalidDnsPacket
+UnrecognizedFormat
+/etc/hosts
+PathAlreadyExists
+MappingAlreadyExists
+attempts
+FastOpenAlreadyInProgress
+InvalidSyscallParameters
+options
+SystemResources
+NotDir
+nameserver
+InvalidCharacter
+TODO implement dirSetFileOwner
+ConnectionResetByPeer
+SymLinkLoop
+NetworkDown
+UnsupportedOperation
+LockViolation
+/usr/local/bin:/bin/:/usr/bin
+domain
+ProtocolUnsupportedBySystem
+ReadOnlyFileSystem
+EndOfStream
+/dev/null
+BlockedByFirewall
+WindowTooSmall
+SizeTooSmall
+NotATerminal
+NonCanonical
+[?1049l
+NotLink
+WouldBlock
+TODO processSpawnPath
+TODO processReplacePath
+search
+InvalidBatchScriptArg
+StreamTooLong
+NameTooLong
+NotOpenForWriting
+EnvironmentVariableMissing
+SocketNotListening
+Streaming
+ConnectionPending
+NotOpenForReading
+LimitTooBig
+FileTooBig
+/etc/resolv.conf
+0123456789abcdef
+SectionOversize
+MessageOversize
+/proc/self/exe
+InvalidExe
+Incomplete
+AddressInUse
+NameServerFailure
+ProtocolFailure
+HardwareFailure
+UnsupportedReparsePointType
+UnresolvedScope
+BrokenPipe
+UnrecognizedVolume
+__vdso_clock_gettime
+UnknownHostName
+InvalidHostName
+BadPathName
+InvalidName
+TODO implement netWriteFile
+NonResizable
+EntropyUnavailable
+ConcurrencyUnavailable
+AddressUnavailable
+ClockUnavailable
+Unseekable
+HostUnreachable
+PortUnreachable
+NetworkUnreachable
+OutputTooLarge
+AntivirusInterference
+CrossDevice
+NoDevice
+NotTerminalDevice
+InvalidDnsCnameRecord
+InvalidDnsARecord
+InvalidDnsAAAARecord
+ProcessNotFound
+NetworkNotFound
+FileNotFound
+InterfaceNotFound
+SocketNotBound
+InvalidEnd
+AddressFamilyUnsupported
+FileLocksUnsupported
+OptionUnsupported
+OperationUnsupported
+SocketModeUnsupported
+MemoryMappingNotSupported
+ConnectionAborted
+Unimplemented
+Unexpected
+SocketUnconnected
+ConnectionRefused
+Closed
+NoAddressReturned
+ProcessOrphaned
+DetectingNetworkConfigurationFailed
+TerminalWriteFailed
+ResolvConfParseFailed
+ReadFailed
+Canceled
+CurrentDirUnlinked
+AccessDenied
+PermissionDenied
+ResourceLimitReached
+LockedMemoryLimitExceeded
+LinkQuotaExceeded
+ThreadQuotaExceeded
+ProcessFdQuotaExceeded
+SystemFdQuotaExceeded
+InvalidUserId
+InvalidProcessGroupId
+ProcessAlreadyExec
+DiskQuota
+CorruptedData
+]9;4;0
+FORGE SOUL PICK AND BLADE FIRST
+FORGE TIER 3 PICK AND BLADE FIRST
+5  DEFEAT CLOCKWORK MOON TO AUTO OPEN THE FLAG VAULT
+FOLLOW THE COMPASS  DEFEAT THE FINAL BOSS TO OPEN THE FLAG VAULT
+C CRAFTS TORCHES  1 TO 8 SELECT  H HELP  Q QUIT
+WASD MOVE  J L OR ARROWS TURN  Z MINE  X PLACE  F USE / ATTACK  C TORCHES  H HELP  Q QUIT
+WRONG LEVER  SEQUENCE RESET
+Z MINE   F USE / ATTACK   X PLACE   C TORCHES   1 TO 8 SELECT
+ZIG_PROGRESS
+THE WORLD IS YOURS
+FOLLOW THE COMPASS AND MINE THE MARKED ALTARS
+5  DEFEAT CLOCKWORK MOON AND THE FLAG VAULT AUTO OPENS
+THE CAVE GUARDIAN AWAKENS
+THE ALTAR DEMANDS 4 KILLS
+YOUR PICKAXE CANNOT MINE THIS
+THE LORD OF DEPTH RISES
+CRAFTED 5 TORCHES
+THE CLOCKWORK MOON DESCENDS
+HARDMODE UNLEASHED  SOUL ORE SPREADS
+POWER DOOR
+NO_COLOR
+AWAKENING  KILL 4 THEN FIND GREEN ALTAR
+4  FOLLOW COMPASS TO THE CYAN ALTAR
+4  FOLLOW THE COMPASS TO THE CYAN ALTAR
+HARDMODE  MINE SOUL ORE AND FIND CYAN ALTAR
+DESCENT  FORGE TIER 3 GEAR AND FIND RED ALTAR
+FOLLOW THE COLORED COMPASS AND MINE EACH MARKED ALTAR
+PRESS R
+CIPHER PANELS  TOP 4  MID 2  BOT 1  READ L TO R
+J L OR LEFT RIGHT    TURN
+FINAL BOSS  CLOCKWORK MOON
+CIPHER ACCEPTED  VAULT OPEN
+GUARDIAN FALLEN  THE DEPTHS OPEN
+1  KILL 4 ENEMIES THEN GREEN ALTAR AND CAVE GUARDIAN
+BOSS  CAVE GUARDIAN
+CRYSTAL
+DEPTHFORGE TERMINAL TUTORIAL
+DEPTHFORGE TUTORIAL
+Z MINE   X PLACE   F USE / ATTACK
+W S OR UP DOWN       MOVE FORWARD AND BACK
+[?1049h
+BOSS  LORD OF DEPTH
+DEBUGINFOD_CACHE_PATH
+HELLSTONE
+REDSTONE
+XDG_CACHE_HOME
+STATUS UNAVAILABLE
+A D                  STRAFE
+3  RED ALTAR THEN DEFEAT LORD OF DEPTH TO START HARDMODE
+3  RED ALTAR AND LORD OF DEPTH START HARDMODE
+MOVE TO CLOSE   H SHOWS GUIDE
+PRESS ANY MOVEMENT KEY TO PLAY   PRESS H TO HIDE OR SHOW THIS GUIDE
+2  YOU START WITH MAX PICKAXE AND BLADE
+2  YOU ALREADY HAVE THE MAX PICKAXE AND BLADE
+CLICOLOR_FORCE
+MOVE W S OR UP DOWN   STRAFE A D   TURN ARROWS OR Q E
+WORLD LIBERATED
+HARDMODE CONQUERED
+YOU DIED
+PICKAXE UPGRADED
+BLADE UPGRADED
+00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
+InvalidWtf8
+LINUX_2.6
+127.0.0.1
+localhost.
+aborting due to recursive panic
+AWAVAUATSH
+[A\A]A^A_]
+fffff.
+ffffff.
+fffff.
+fffff.
+1ffff.
+fffff.
+fffff.
+[1;97;4H
+[1;93;4H
+[0;93;4H
+AWAVAUATSH
+ffffff.
+AWAVAUATSH
+/H;A(w
+X[A\A]A^A_]
+AWAVAUATSH
+"fffff.
+ffffff.
+6ffff.
+fffff.
+fffff.
+ffffff.
+ffffff.
+ffffff.
+localhosI
+[A\A]A^A_]
+AWAVAUATSH
+t~fff.
+[A\A]A^A_]
+[A\A]A^A_]
+AWAVAUATSH
+H[A\A]A^A_]
+AWAVAUATSPH
+[A\A]A^A_]
+ffffff.
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+ffffff.
+ffffff.
+ffffff.
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+fffff.
+fffff.
+:ffff.
+[A\A]A^A_]
+fffff.
+ffffff.
+AWAVAUATSH
+[A\A]A^A_]
+AWAVSH
+[A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+fffff.
+AWAVAUATSH
+Tffffff.
+([A\A]A^A_]
+AWAVSH
+~HI9~@uWH
+[A^A_]
+AWAVATSH
+ [A\A^A_]
+AWAVSH
+~HI9~@uWH
+[A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+AWAVATSH
+0[A\A^A_]
+AWAVSH
+fffff.
+([A^A_]
+AWAVAUATSH
+fffff.
+x[A\A]A^A_]
+ffffff.
+ffffff.
+AWAVAUATSH
+[A\A]A^A_]
+[A\A]A^A_]
+AWAVAUATSH
+fffff.
+[A\A]A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+AWAVAUATSH
+ffffff.
+ffffff.
+8[A\A]A^A_]
+8[A\A]A^A_]
+ffffff.
+ffffff.
+AWAVAUATSH
+h[A\A]A^A_]
+AWAVSH
+[A^A_]
+AWAVAUATSH
+u!Hc8Ic
+u!Hc>Ic
+t1ffffff.
+u%Ic:H
+u%Ic:H
+[A\A]A^A_]
+u%Ic:H
+u%Ic:H
+u%Ic:H
+u%Ic:H
+AWAVAUATSH
+t1ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+nfffff.
+fffff.
+[A\A]A^A_]
+ffffff.
+AWAVAUATSH
+fffff.
+[A\A]A^A_]
+AWAVAUATSH
+:ZIG_u
+>ZIG_u
+:ZIG_u
+:ZIG_u
+PROGtQE
+fffff.
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+([A\A]A^A_]
+AWAVAUATSH
+fffff.
+[A\A]A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+AWAVATSH
+ffffff.
+[A\A^A_]
+fffff.
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+fffff.
+AWAVATSI
+.ffffff.
+[A\A^A_]
+AWAVAUATSH
+([A\A]A^A_]
+AWAVAUATSH
+ffffff.
+([A\A]A^A_]
+AWAVATSH
+[A\A^A_]
+ffffff.
+AWAVAUATSH
+[A\A]A^A_]
+ffffff.
+AWAVSH
+ffffff.
+8[A^A_]
+fffff.
+ffffff.
+fffff.
+ffffff.
+ffffff.
+fffff.
+AWAVAUATSH
+H[A\A]A^A_]
+fffff.
+fffff.
+ffffff.
+fffff.
+ffffff.
+ffffff.
+ffffff.
+fffff.
+fffff.
+ffffff.
+fffff.
+fffff.
+AWAVAUATSH
+x[A\A]A^A_]
+AWAVAUATSH
+s4Mc^PA
+[A\A]A^A_]
+AWAVAUATSH
+ffffff.
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+AWAVSH
+ffffff.
+[A^A_]
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+AWAVATSH
+[A\A^A_]
+ffffff.
+ffffff.
+AWAVSH
+[A^A_]
+AWAVATSH
+[A\A^A_]
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+Lc6Mc 1
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+ffffff.
+AWAVATSH
+[A\A^A_]
+AWAVAUATSH
+ffffff.
+Ic~ dL
+8[A\A]A^A_]
+AWAVSH
+[A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+fffff.
+AWAVAUATSH
+ffffff.
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+ffffff.
+[A\A]A^A_]
+fffff.
+fffff.
+fffff.
+AWAVAUATSH
+x[A\A]A^A_]
+AWAVATSH
+[A\A^A_]
+fffff.
+AWAVAUATSH
+([A\A]A^A_]
+fffff.
+AWAVSH
+fffff.
+ffffff.
+[A^A_]
+AWAVAUATSH
+fffff.
+8[A\A]A^A_]
+AWAVSH
+fffff.
+[A^A_]
+ffffff.
+AWAVAUATSH
+fffff.
+.fffff.
+[A\A]A^A_]
+ffffff.
+AWAVAUATSH
+[A\A]A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+ffffff.
+AWAVAUATSH
+X[A\A]A^A_]
+AWAVAUATSPH
+fffff.
+[A\A]A^A_]
+ffffff.
+ffffff.
+AWAVAUATSI
+ffffff.
+[A\A]A^A_]
+*fffff.
+AWAVAUATSH
+X[A\A]A^A_]
+AWAVAUATSH
+X[A\A]A^A_]A
+X[A\A]A^A_]
+X[A\A]A^A_]
+AWAVAUATSH
+([A\A]A^A_]
+ffffff.
+AWAVAUATSH
+$ffff.
+[A\A]A^A_]
+AWAVAUATSPI
+[A\A]A^A_]
+[A\A]A^A_]
+AWAVATSH
+[A\A^A_]
+AWAVAUATSI
+[A\A]A^A_]
+ffffff.
+AWAVAUATSPI
+[A\A]A^A_]
+AWAVAUATSH
+h[A\A]A^A_]
+AWAVAUATSH
+h[A\A]A^A_]
+AWAVAUATSH
+fffff.
+ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+ffffff.
+fffff.
+ffffff.
+[A\A]A^A_]
+ffffff.
+fffff.
+ffffff.
+fffff.
+fffff.
+fffff.
+AWAVSH
+ffffff.
+x[A^A_]
+fffff.
+AWAVSH
+ffffff.
+H[A^A_]
+fffff.
+fffff.
+ffffff.
+ffffff.
+ffffff.
+AWAVATSH
+fffff.
+[A\A^A_]
+fffff.
+AWAVAUATSH
+fffff.
+fffff.
+ffffff.
+fffff.
+fffff.
+fffff.
+X[A\A]A^A_]
+AWAVAUATSH
+`fffff.
+ffffff.
+ffffff.
+fffff.
+fffff.
+=4333rB
+@"|$0@
+D;D$pE
+t$ ;t$
+\$ D;\$
+\$ D;\$
+\$ D;\$
+\$ D;\$
+ffffff.
+(ffff.
+!fffff.
+ ffff.
+fffff.
+fffff.
+fffff.
+2ffffff.
+fffff.
+ffffff.
+fffff.
+ffffff.
+fffff.
+0ffffff.
+fffff.
+fffff.
+|$Hffffff.
+(ffff.
+"fffff.
+ffffff.
+ffffff.
+fffff.
+H;D$Xw
+D$`H;D$XrRH
+D$`H;D$XrWH
+H;D$Xw
+wfffff.
+|$Hff.
+'H;D$Xw
+/H;D$Xw
+/H;D$Xw
+ffffff.
+/H;D$Xw
+/H;D$Xw
+[A\A]A^A_]
+ffffff.
+'H;D$Xw
+'H;D$Xw
+ffffff.
+ffffff.
+AWAVAUATSH
+[A\A]A^A_]
+ffffff.
+AWAVAUATSH
+[A\A]A^A_]
+fffff.
+AWAVAUATSL
+[A\A]A^A_]
+Ifffff.
+ffffff.
+AWAVSH
+[A^A_]
+AWAVAUATS
+[A\A]A^A_]
+VUUUUUUUH9
+fffff.
+AWAVAUATSH
+&fffff.
+fffff.
+........
+nfffff.
+fffff.
+nfffff.
+fffff.
+nfffff.
+fffff.
+VVVVVVVVH
+s<ffffff.
+[A\A]A^A_]
+AWAVAUATSH
+`[A\A]A^A_]
+AWAVAUATSH
+h[A\A]A^A_]
+AWAVAUATSH
+([A\A]A^A_]
+AWAVAUATSH
+[A\A]A^A_]
+ffffff.
+AWAVAUATSH
+8[A\A]A^A_]
+AWAVAUATS
+[A\A]A^A_]
+fffff.
+AWAVSH
+h[A^A_]
+AWAVSH
+([A^A_]
+AWAVAUATSH
+/H;C(w
+/H;C(w
+/H;C(w
+/H;C(w
+/H;C(w
+/H;C(w
+/H;C(w
+/H;C(w
+'H;C(w
+C0H;C(r=H
+[A\A]A^A_]
+AWAVAUATSH
+/I;G(w
+draffff.
+/I;G(w
+/I;G(w
+G0I;G(rLH
+/I;G(w
+'I;F(w
+ffffff.
+ffffff.
+AWAVAUATSH
+fffff.
+ffffff.
+&ffff.
+2fffff.
+ffffff.
+ffffff.
+[A\A]A^A_]
+Linker: LLD 21.1.0
+.rodata
+.eh_frame_hdr
+.eh_frame
+.relro_padding
+.comment
+.shstrtab

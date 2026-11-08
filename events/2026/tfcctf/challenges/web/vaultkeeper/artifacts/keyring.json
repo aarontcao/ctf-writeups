@@ -1,0 +1,21 @@
+{
+    "service": "vk-keyring",
+    "node": "node-a",
+    "restore_sessions": [
+        {
+            "id": 6,
+            "session_id": "235283a8fcbaabe9a13d022a"
+        },
+        {
+            "id": 5,
+            "session_id": "c4bae0c43b71a1ed35fac4a0"
+        },
+        {
+            "id": 4,
+            "session_id": "7b9304e79197aba0ac6c80e0"
+        }
+    ],
+    "unseal_ref": "8f973eb18a4b07ac1887e90e",
+    "seal_service": "/api/vault_unseal.php",
+    "issued": 1788628453.339423
+}

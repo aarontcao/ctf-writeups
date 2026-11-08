@@ -1,0 +1,19 @@
+== route + method map via OPTIONS (one request per route) ==
+  OPTIONS /                  HTTP/1.1 404 NOT FOUND       Allow=None
+  OPTIONS /flag              HTTP/1.1 200 OK              Allow=('OPTIONS', 'POST')
+  OPTIONS /health            HTTP/1.1 200 OK              Allow=('GET', 'HEAD', 'OPTIONS')
+  OPTIONS /random_ahh_game   HTTP/1.1 200 OK              Allow=('CHEAT', 'FLAG', 'GET', 'HEAD', 'OPTIONS', 'PLAY', 'RESET', 'STOP')
+  OPTIONS /nope-control      HTTP/1.1 404 NOT FOUND       Allow=None
+== status + body hash for named shapes ==
+  GET /                    54e1eb4b HTTP/1.1 404 NOT FOUND           <!doctype html> <html lang=en> <title>404 Not Found</title> 
+  GET /health              0cd759b0 HTTP/1.1 200 OK                  OK
+  GET /nope-control        54e1eb4b HTTP/1.1 404 NOT FOUND           <!doctype html> <html lang=en> <title>404 Not Found</title> 
+  POST /health (405)       7a938cb9 HTTP/1.1 405 METHOD NOT ALLOWED  <!doctype html> <html lang=en> <title>405 Method Not Allowed
+  POST /flag no header     4978ead8 HTTP/1.1 500 INTERNAL SERVER ERROR <!doctype html> <html lang=en> <title>500 Internal Server Er
+  GET /flag (405/rule1)    e3b0c442 closed                           
+  GET /random_ahh_game     dfc88498 HTTP/1.1 200 OK                  ts ah random ahh game if you get bored. draw numbers, if you
+  BOGUS /random_ahh_game   7a938cb9 HTTP/1.1 405 METHOD NOT ALLOWED  <!doctype html> <html lang=en> <title>405 Method Not Allowed
+  RESET /random_ahh_game   bc64fab4 HTTP/1.1 200 OK                  Game has been reset.
+  CHEAT no game            f2907416 HTTP/1.1 200 OK                  You haven't started a game yet!
+  CHEAT bad ct (415)       f2907416 HTTP/1.1 200 OK                  You haven't started a game yet!
+APP-SIGNATURE 54e1eb4b-0cd759b0-54e1eb4b-7a938cb9-4978ead8-e3b0c442-dfc88498-7a938cb9-bc64fab4-f2907416-f2907416

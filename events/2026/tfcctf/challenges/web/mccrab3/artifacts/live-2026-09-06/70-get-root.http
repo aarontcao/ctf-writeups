@@ -1,0 +1,20 @@
+# GET / : Flask has no route here, so the proxy passes it and Flask 404s
+# --- request bytes ---
+GET / HTTP/1.1
+Host: special.thefewchosen.com:30494
+Connection: close
+
+
+# --- response bytes ---
+HTTP/1.1 404 NOT FOUND
+Server: gunicorn
+Date: Sun, 06 Sep 2026 13:39:12 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 207
+
+<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>

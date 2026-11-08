@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "rev",
+  "category_display": "reverse",
+  "challenge_id": "5f7acdc2-daaa-4ce4-8e08-d719f0da83b6",
+  "connection": "",
+  "description": "now more annoying",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "minigame2",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/minigame2_834b97482a6c136d"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T10:57:35Z",
+      "flag_id": "e04fb15b-c46a-4428-acb1-3dc91f869c6f",
+      "points": 50,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "minigame2",
+  "points": 50,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{a_small_game_now_bigger_hope_it_wasnt_annoying}",
+      "flag_id": null,
+      "recorded": "2026-09-05T10:57:17Z",
+      "submitted": true
+    }
+  ],
+  "slug": "minigame2",
+  "solved": true,
+  "solves": 180,
+  "status": "solved"
+}

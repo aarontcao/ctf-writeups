@@ -1,0 +1,34 @@
+{
+  "author": "Walker",
+  "category": "misc",
+  "category_display": "misc",
+  "challenge_id": "5847c6f9-093d-4aed-91e9-b25271731941",
+  "connection": "",
+  "description": "Not every vessel leaves a clear trail behind.  \n<br><br>\n\nThree years ago, during this same month, one vessel departed from port and eventually began fishing somewhere offshore. The information needed to reconstruct that moment is still out there...  \n<br><br>\n\nFind the following:\n<br>\n\n - the vessel's MMSI\n<br>\n\n - the port of departure\n<br>\n\n - the date when the vessel started fishing\n<br>\n\n - the time when the fishing activity started\n<br>\n\n - the distance, in kilometers, between the departure port and the location where fishing began\n<br>\n\n\n<br>\nFlag Format\n\n\n<br>\nTFCCTF{MMSI_Port Name_DD.MM.YYYY_HH:MM_AM/PM_distance}\n\n\n\nThe time must be provided in UTC, using the 12-hour format with AM or PM.  \n\n\nThe distance must be expressed in kilometers, rounded to one decimal place.\n\n\nPort Name is in lowercase\n\n\nExample flag\nTFCCTF{247363350_bari_07.09.2028_09:45_PM_130.7}",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [
+    {
+      "name": "Fishing.jpeg",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/Fishing_ee23b340ded735c3.jpeg"
+    }
+  ],
+  "first_seen": "2026-09-05T13:31:45Z",
+  "flags": [
+    {
+      "flag_id": "a86f3bfb-a640-4165-a5f6-f53887092220",
+      "points": 144,
+      "question": "",
+      "solved": false,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Fishing not Phishing",
+  "points": 144,
+  "recorded_flags": [],
+  "slug": "fishing-not-phishing",
+  "solved": false,
+  "solves": 105,
+  "status": "new"
+}

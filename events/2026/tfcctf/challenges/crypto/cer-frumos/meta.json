@@ -1,0 +1,42 @@
+{
+  "author": "minipif",
+  "category": "crypto",
+  "category_display": "crypto",
+  "challenge_id": "75c53fad-bcb2-4fa2-ae25-9f43bcd7487d",
+  "connection": "",
+  "description": "A description indeed.",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [
+    {
+      "name": "challenge.zip",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/challenge_dc9bad02a4e5c2cf.zip"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T10:55:25Z",
+      "flag_id": "b098ce8c-b639-4a4c-b412-3630b66401c8",
+      "points": 50,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "cer frumos",
+  "points": 50,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{ursu_ursa_bea_ursus_intrun_urus_verzuliu}",
+      "flag_id": null,
+      "recorded": "2026-09-05T10:55:18Z",
+      "submitted": true
+    }
+  ],
+  "slug": "cer-frumos",
+  "solved": true,
+  "solves": 303,
+  "status": "solved"
+}

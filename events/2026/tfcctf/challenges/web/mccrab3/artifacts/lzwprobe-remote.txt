@@ -1,0 +1,28 @@
+target special.thefewchosen.com:30495
+case                             verdict    first line                     
+G baseline CL0                   DROPPED    HTTP/1.1 200 OK                
+G CE:compress small              DROPPED    HTTP/1.1 200 OK                
+G CE:x-compress small            DROPPED    HTTP/1.1 200 OK                
+G CE:compress BOMB(32M)          CLOSED                                    
+G CE:compress MID(8M)            DROPPED    HTTP/1.1 200 OK                
+G CE:compress TRUNC              DROPPED    HTTP/1.1 200 OK                
+G CE:compress GARBAGE            CLOSED                                    
+G CE:compress NOMAGIC            CLOSED                                    
+G CE:gzip,compress small         CLOSED                                    
+G TE:compress,chunked BOMB       CLOSED                                    
+G TE:compress,chunked small      DROPPED    HTTP/1.1 200 OK                
+G TE:x-compress,chunked BOMB     CLOSED                                    
+G TE:compress (alone) small      CLOSED                                    
+z baseline CL0                   FORWARDED  HTTP/1.1 500 INTERNAL SERVER E 
+z CE:compress small              FORWARDED  HTTP/1.1 500 INTERNAL SERVER E 
+z CE:x-compress small            FORWARDED  HTTP/1.1 500 INTERNAL SERVER E 
+z CE:compress BOMB(32M)          CLOSED                                    
+z CE:compress MID(8M)            FORWARDED  HTTP/1.1 500 INTERNAL SERVER E 
+z CE:compress TRUNC              FORWARDED  HTTP/1.1 500 INTERNAL SERVER E 
+z CE:compress GARBAGE            CLOSED                                    
+z CE:compress NOMAGIC            CLOSED                                    
+z CE:gzip,compress small         CLOSED                                    
+z TE:compress,chunked BOMB       CLOSED                                    
+z TE:compress,chunked small      DROPPED    HTTP/1.1 500 INTERNAL SERVER E 
+z TE:x-compress,chunked BOMB     CLOSED                                    
+z TE:compress (alone) small      CLOSED                                    

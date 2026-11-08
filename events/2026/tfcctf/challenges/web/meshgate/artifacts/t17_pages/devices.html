@@ -1,0 +1,81 @@
+<!doctype html><html lang=en><meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Meshgate</title>
+    <style>
+    :root{
+      --bg:#0d1117; --panel:#161b22; --panel-2:#1b2230; --panel-3:#212a38;
+      --edge:rgba(255,255,255,.06); --edge-2:rgba(255,255,255,.10);
+      --text:#e6edf3; --muted:#9198a3; --accent:#3b82f6; --accent-2:#2563eb;
+      --danger-bg:#3a1720; --danger-edge:#6f2233;
+      --r-lg:16px; --r-md:11px; --r-sm:8px; --pad:1.15rem;
+      --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 1px 2px rgba(0,0,0,.45),0 12px 30px -16px rgba(0,0,0,.7);
+      --shadow-hi:0 1px 0 rgba(255,255,255,.06) inset,0 2px 6px rgba(0,0,0,.5),0 18px 40px -18px rgba(0,0,0,.8);
+    }
+    *{box-sizing:border-box}
+    html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+    body{margin:0;font-family:ui-sans-serif,system-ui,'Segoe UI',Roboto,sans-serif;
+         background:radial-gradient(1200px 600px at 70% -10%,#182233 0,var(--bg) 60%) fixed,var(--bg);
+         color:var(--text);line-height:1.5;text-wrap:pretty;letter-spacing:.1px}
+    .wrap{max-width:900px;margin:0 auto;padding:1.5rem 1.4rem 3rem}
+    h1,h2,h3{text-wrap:balance;letter-spacing:-.01em;margin:.2rem 0 .6rem}
+    h2{font-size:1.28rem}h3{font-size:1.02rem}
+    .bar{display:flex;gap:.6rem;align-items:center;padding:.2rem 0 1rem;margin-bottom:1.2rem;
+         border-bottom:1px solid var(--edge)}
+    .logo{font-weight:800;font-size:1.05rem;
+          background:linear-gradient(92deg,#8ab4ff,#6ea8fe 60%,#a78bfa);
+          -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .tag{font-size:.7rem;color:var(--muted);border:1px solid var(--edge-2);border-radius:999px;
+         padding:.12rem .6rem;font-variant-numeric:tabular-nums}
+    .card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--edge);
+          border-radius:var(--r-lg);padding:var(--pad) calc(var(--pad) + .2rem);margin:1rem 0;
+          box-shadow:var(--shadow);animation:rise .34s cubic-bezier(.2,.7,.2,1) both}
+    .card h2:first-child,.card h3:first-child{margin-top:0}
+    a{color:#7db1ff;text-decoration:none;border-radius:var(--r-sm);
+      transition:color .12s,background-color .12s}
+    a:hover{color:#a9caff;text-decoration:underline}
+    code{background:#0b0f14;border:1px solid var(--edge);border-radius:var(--r-sm);
+         padding:.08rem .4rem;font-size:.86em;font-variant-numeric:tabular-nums}
+    .muted{color:var(--muted);font-size:.9rem}
+    .pill{background:var(--panel-3);border:1px solid var(--edge-2);border-radius:999px;
+          padding:.12rem .62rem;font-size:.76rem;font-variant-numeric:tabular-nums}
+    input,button,select{font:inherit}
+    input,select{background:#0b0f14;border:1px solid var(--edge-2);border-radius:var(--r-md);
+         color:var(--text);padding:.55rem .7rem;min-height:40px;outline:none;
+         transition:border-color .12s,box-shadow .12s,background-color .12s}
+    input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.25)}
+    button{background:linear-gradient(180deg,#3b82f6,var(--accent-2));border:0;color:#fff;
+           border-radius:var(--r-md);padding:.55rem 1.05rem;min-height:40px;cursor:pointer;font-weight:600;
+           box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 2px 8px -2px rgba(37,99,235,.6);
+           transition:transform .12s,box-shadow .12s,background-color .12s}
+    button:hover{box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 6px 16px -4px rgba(37,99,235,.75)}
+    button:active{transform:scale(.96)}
+    button[type=button]{background:linear-gradient(180deg,var(--panel-3),#1a2230);
+           box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 2px 8px -3px rgba(0,0,0,.6)}
+    nav{display:flex;flex-wrap:wrap;gap:.15rem;align-items:center}
+    nav a,nav b{display:inline-flex;align-items:center;min-height:34px;padding:.25rem .6rem;
+                border-radius:var(--r-sm);color:var(--muted);font-weight:500}
+    nav b{color:var(--text);background:var(--panel-3)}
+    nav a:hover{background:var(--panel-2);text-decoration:none;color:var(--text)}
+    table{width:100%;border-collapse:collapse;font-size:.92rem}
+    th{text-align:left;color:var(--muted);font-weight:600;padding:.35rem .4rem;border-bottom:1px solid var(--edge)}
+    td{padding:.4rem;border-bottom:1px solid var(--edge);font-variant-numeric:tabular-nums;vertical-align:top}
+    tr:last-child td{border-bottom:0}
+    .avatar{border-radius:50%;outline:1px solid rgba(255,255,255,.1);vertical-align:middle}
+    .err{background:var(--danger-bg);border:1px solid var(--danger-edge);border-radius:var(--r-md);
+         padding:.7rem 1rem;margin:.7rem 0}
+    ol,ul{padding-left:1.2rem}ol li,ul li{margin:.25rem 0}
+    @keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+    .wrap>*:nth-child(2){animation-delay:.04s}.wrap>*:nth-child(3){animation-delay:.10s}
+    .wrap>*:nth-child(4){animation-delay:.16s}.wrap>*:nth-child(5){animation-delay:.22s}
+    .wrap>*:nth-child(6){animation-delay:.28s}.wrap>*:nth-child(7){animation-delay:.34s}
+    @media (prefers-reduced-motion:reduce){.card{animation:none}}
+    </style>
+    <div class=wrap><div class=bar><span class=logo>▤ Meshgate</span><span class=tag>gateway 3.2</span>
+    <span style="margin-left:auto" class=muted>signed in as <b>zufccd20</b> · <a href=/logout>sign out</a></span></div><nav class=muted style="margin:-.4rem 0 1rem"><a href=/dashboard>Files</a><a href=/shared>Shared</a><a href=/workspaces>Workspaces</a><a href=/threads>Threads</a><a href=/activity>Activity</a><a href=/billing>Billing</a><b>Devices</b><a href=/settings>Settings</a></nav>
+      <div class=card><h2>Your devices</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:.92rem">
+        <thead><tr><th style="text-align:left;color:#8b95a5">Device</th>
+          <th style="text-align:left;color:#8b95a5">Type</th>
+          <th style="text-align:left;color:#8b95a5">Address</th>
+          <th style="text-align:left;color:#8b95a5">Last seen</th></tr></thead>
+        <tbody><tr><td>MeshSync (macOS)</td><td class=muted>desktop</td><td class=muted>10.4.2.11</td><td class=muted>2026-09-06 01:02</td></tr><tr><td>MeshSync (iOS)</td><td class=muted>mobile</td><td class=muted>10.4.9.87</td><td class=muted>2026-09-05 02:02</td></tr></tbody></table></div></div>

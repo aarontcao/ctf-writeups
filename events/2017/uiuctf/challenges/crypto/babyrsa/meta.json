@@ -1,0 +1,25 @@
+{
+  "author": "Will Song (incertia)",
+  "category": "crypto",
+  "category_display": "crypto",
+  "connection": "",
+  "description": "Message intercepted. Break it.",
+  "difficulty": "",
+  "files": [
+    {
+      "name": "babyrsa.zip"
+    }
+  ],
+  "name": "babyrsa",
+  "points": 200,
+  "recorded_flags": [
+    {
+      "flag": "flag{c4n_w3_get_s0m3b0dy_t0_sm1th_some_c0pper_pls}",
+      "submitted": true
+    }
+  ],
+  "slug": "babyrsa",
+  "solved": true,
+  "solves": null,
+  "status": "solved"
+}

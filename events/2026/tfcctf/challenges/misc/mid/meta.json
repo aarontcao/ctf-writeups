@@ -1,0 +1,42 @@
+{
+  "author": "Walker",
+  "category": "misc",
+  "category_display": "misc",
+  "challenge_id": "7f330921-0e25-4653-ae2e-87e0bee5c94d",
+  "connection": "",
+  "description": "Mid means middle, right?",
+  "difficulty": "baby",
+  "difficulty_id": "20fe6dbc-f147-4a9e-8282-f11ffbb8e723",
+  "files": [
+    {
+      "name": "chall.py",
+      "url": "https://api.ctf.thefewchosen.com/challenge-files/chall_7d5a5719a653a9a0.py"
+    }
+  ],
+  "first_seen": "2026-09-05T10:04:25Z",
+  "flags": [
+    {
+      "captured": "2026-09-05T12:38:16Z",
+      "flag_id": "07aee090-806f-4c0f-89bb-de10b62711e0",
+      "points": 73,
+      "question": "",
+      "solved": true,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "Mid",
+  "points": 73,
+  "recorded_flags": [
+    {
+      "flag": "TFCCTF{w3_l0v3_a_g0od_b1nary_se4rch}",
+      "flag_id": null,
+      "recorded": "2026-09-05T12:38:07Z",
+      "submitted": true
+    }
+  ],
+  "slug": "mid",
+  "solved": true,
+  "solves": 159,
+  "status": "solved"
+}

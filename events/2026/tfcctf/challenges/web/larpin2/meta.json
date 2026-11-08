@@ -1,0 +1,28 @@
+{
+  "author": "mcsky23",
+  "category": "web",
+  "category_display": "web",
+  "challenge_id": "4738529f-5339-4351-ae0d-983215d89f53",
+  "connection": "",
+  "description": "we can stay here or we can go larp",
+  "difficulty": "grandpa",
+  "difficulty_id": "d693c1dd-450f-42aa-be57-353b6b45552c",
+  "files": [],
+  "first_seen": "2026-09-05T14:26:24Z",
+  "flags": [
+    {
+      "flag_id": "ddd33470-3bb5-4ece-afac-27bbf78cafae",
+      "points": 450,
+      "question": "",
+      "solved": false,
+      "solves": null
+    }
+  ],
+  "last_sync": "2026-09-06T13:15:25Z",
+  "name": "larpin2",
+  "points": 450,
+  "slug": "larpin2",
+  "solved": false,
+  "solves": 7,
+  "status": "new"
+}

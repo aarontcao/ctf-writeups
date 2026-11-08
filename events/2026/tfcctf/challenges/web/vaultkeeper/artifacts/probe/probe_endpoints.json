@@ -1,0 +1,478 @@
+[
+ {
+  "name": "audit.tail",
+  "data": {
+   "code": 200,
+   "json": {
+    "events": [
+     "{\"ts\":1788612327.383934,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/status.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.388734,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.1/api/status.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.533928,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.1.nip.io/api/status.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.541209,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://[::ffff:127.0.0.1]/api/status.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.54522,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://2130706433/api/status.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.552114,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://0x7f000001/api/status.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.555984,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.1/api/status.php\",\"delivered\":false}}",
+     "{\"ts\":1788612327.564028,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/keyring.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.571702,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/keyring.php%3Fa.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.581249,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/render_template.php\",\"delivered\":true}}",
+     "{\"ts\":1788612327.586309,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/vault_unseal.php%3Fa.php\",\"delivered\":true}}",
+     "{\"ts\":1788612594.709299,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/keyring.php\",\"delivered\":true}}",
+     "{\"ts\":1788612594.719802,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/status.php\",\"delivered\":true}}"
+    ]
+   }
+  },
+  "t": 1788612699.2496545
+ },
+ {
+  "name": "audit.q=mask",
+  "data": {
+   "code": 200,
+   "count": 0,
+   "head": "[]"
+  },
+  "t": 1788612699.6170428
+ },
+ {
+  "name": "audit.q=unseal",
+  "data": {
+   "code": 200,
+   "count": 1,
+   "head": "['{\"ts\":1788612327.586309,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/vault_unseal.php%3Fa.php\",\"delivered\":true}}']"
+  },
+  "t": 1788612699.9941108
+ },
+ {
+  "name": "audit.q=cap",
+  "data": {
+   "code": 200,
+   "count": 0,
+   "head": "[]"
+  },
+  "t": 1788612700.424823
+ },
+ {
+  "name": "audit.q=peer",
+  "data": {
+   "code": 200,
+   "count": 0,
+   "head": "[]"
+  },
+  "t": 1788612700.8293025
+ },
+ {
+  "name": "audit.q=seal",
+  "data": {
+   "code": 200,
+   "count": 1,
+   "head": "['{\"ts\":1788612327.586309,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/vault_unseal.php%3Fa.php\",\"delivered\":true}}']"
+  },
+  "t": 1788612701.184095
+ },
+ {
+  "name": "audit.q=key",
+  "data": {
+   "code": 200,
+   "count": 3,
+   "head": "['{\"ts\":1788612327.564028,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/keyring.php\",\"delivered\":true}}', '{\"ts\":1788612327.571702,\"event\":\"webhook.test\",\"ctx\":{\"url\":\"http://127.0.0.2/api/keyring.php%3Fa.php\",\"delivered\":true}}', '{\"ts\":1788612594.709299,\"event\":\"webhook.test\",\"ctx\":{\"u"
+  },
+  "t": 1788612701.5384395
+ },
+ {
+  "name": "audit.q=handshake",
+  "data": {
+   "code": 200,
+   "count": 0,
+   "head": "[]"
+  },
+  "t": 1788612701.8928597
+ },
+ {
+  "name": "audit.q=node-b",
+  "data": {
+   "code": 200,
+   "count": 0,
+   "head": "[]"
+  },
+  "t": 1788612702.247043
+ },
+ {
+  "name": "peer.noargs",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612702.251131
+ },
+ {
+  "name": "peer.plainpath",
+  "data": {
+   "code": 403,
+   "text": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.56 (Debian) Server at 127.0.0.1 Port 18080</address>\n</body></html>\n"
+  },
+  "t": 1788612702.2538924
+ },
+ {
+  "name": "peer.denied",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "refusing to probe a local or link-local peer",
+    "host": "127.0.0.1"
+   }
+  },
+  "t": 1788612702.6100085
+ },
+ {
+  "name": "peer.gap.127.0.0.2",
+  "data": {
+   "code": 200,
+   "json": {
+    "peer": "http://127.0.0.2/api/status.php",
+    "health": {
+     "ok": true,
+     "status": 200,
+     "version": "4.2.1"
+    }
+   }
+  },
+  "t": 1788612702.9686549
+ },
+ {
+  "name": "peer.gap.keyring",
+  "data": {
+   "code": 200,
+   "json": {
+    "peer": "http://127.0.0.2/api/keyring.php",
+    "health": {
+     "ok": true,
+     "status": 200,
+     "version": "node-a"
+    }
+   }
+  },
+  "t": 1788612703.3268733
+ },
+ {
+  "name": "peer.gap.vault_unseal",
+  "data": {
+   "code": 200,
+   "json": {
+    "peer": "http://127.0.0.2/api/vault_unseal.php",
+    "health": {
+     "ok": true,
+     "status": 404,
+     "version": null
+    }
+   }
+  },
+  "t": 1788612703.6831386
+ },
+ {
+  "name": "peer.gap.unseal.ref",
+  "data": {
+   "code": 200,
+   "json": {
+    "peer": "http://127.0.0.2/api/vault_unseal.php?ref=deadbeef",
+    "health": {
+     "ok": true,
+     "status": 404,
+     "version": null
+    }
+   }
+  },
+  "t": 1788612704.039035
+ },
+ {
+  "name": "peer.param.url",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612704.3949063
+ },
+ {
+  "name": "peer.param.target",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612704.7504401
+ },
+ {
+  "name": "peer.param.node",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612705.1063848
+ },
+ {
+  "name": "peer.param.host",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612705.4628637
+ },
+ {
+  "name": "peer.param.ref",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612705.8185766
+ },
+ {
+  "name": "peer.param.handshake",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612706.1739392
+ },
+ {
+  "name": "peer.param.token",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612706.5296166
+ },
+ {
+  "name": "peer.param.seal",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "peer URL required"
+   }
+  },
+  "t": 1788612706.8853922
+ },
+ {
+  "name": "wh.get",
+  "data": {
+   "code": 405,
+   "json": {
+    "error": "POST only"
+   }
+  },
+  "t": 1788612706.8905365
+ },
+ {
+  "name": "wh.noargs",
+  "data": {
+   "code": 400,
+   "json": {
+    "error": "url or id required"
+   }
+  },
+  "t": 1788612706.8965242
+ },
+ {
+  "name": "wh.denied",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.1/api/status.php",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": false,
+     "error": "refusing to deliver to a local/loopback target"
+    }
+   }
+  },
+  "t": 1788612707.2519076
+ },
+ {
+  "name": "wh.gap.status",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/status.php",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 200,
+     "bytes": 523
+    }
+   }
+  },
+  "t": 1788612707.6099286
+ },
+ {
+  "name": "wh.gap.keyring",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/keyring.php",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 200,
+     "bytes": 959
+    }
+   }
+  },
+  "t": 1788612707.9676204
+ },
+ {
+  "name": "wh.gap.unseal.noref",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/vault_unseal.php",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 404,
+     "bytes": 25
+    }
+   }
+  },
+  "t": 1788612708.324786
+ },
+ {
+  "name": "wh.gap.unseal.ref",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/vault_unseal.php?ref=deadbeef",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 404,
+     "bytes": 25
+    }
+   }
+  },
+  "t": 1788612708.6823268
+ },
+ {
+  "name": "wh.unseal.handshake=1",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/vault_unseal.php?ref=deadbeef&handshake=1",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 404,
+     "bytes": 25
+    }
+   }
+  },
+  "t": 1788612709.3886974
+ },
+ {
+  "name": "wh.unseal.peer=node-b",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/vault_unseal.php?ref=deadbeef&peer=node-b",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 404,
+     "bytes": 25
+    }
+   }
+  },
+  "t": 1788612710.09509
+ },
+ {
+  "name": "wh.unseal.unmask=1",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/vault_unseal.php?ref=deadbeef&unmask=1",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 404,
+     "bytes": 25
+    }
+   }
+  },
+  "t": 1788612710.8025246
+ },
+ {
+  "name": "wh.unseal.reveal=1",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/vault_unseal.php?ref=deadbeef&reveal=1",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 404,
+     "bytes": 25
+    }
+   }
+  },
+  "t": 1788612711.5102892
+ },
+ {
+  "name": "wh.unseal.slot=maintainer",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/vault_unseal.php?ref=deadbeef&slot=maintainer",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 404,
+     "bytes": 25
+    }
+   }
+  },
+  "t": 1788612712.2170956
+ },
+ {
+  "name": "wh.gap.peer_probe",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/peer_probe.php",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 400,
+     "bytes": 36
+    }
+   }
+  },
+  "t": 1788612712.5747883
+ },
+ {
+  "name": "wh.gap.fetch_source",
+  "data": {
+   "code": 200,
+   "json": {
+    "target": "http://127.0.0.2/api/fetch_source.php",
+    "event": "maintenance.x",
+    "result": {
+     "delivered": true,
+     "status": 400,
+     "bytes": 39
+    }
+   }
+  },
+  "t": 1788612712.93242
+ }
+]

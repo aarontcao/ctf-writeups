@@ -1,0 +1,33 @@
+== is the brevski rule value-scoped or name-only? ==
+  POST /flag  brevski: X                   george=closed       zzz=500 INTERNAL SERVER ERRO blocked
+== path scoping ==
+  POST /flag  brevski: X                   george=closed       zzz=500 INTERNAL SERVER ERRO blocked
+  POST /health  brevski: X                 george=closed       zzz=405 METHOD NOT ALLOWED blocked
+  POST /  brevski: X                       george=closed       zzz=404 NOT FOUND blocked
+  POST /random_ahh_game  brevski: X        george=closed       zzz=405 METHOD NOT ALLOWED blocked
+  POST /fl%61g  brevski: X                 george=closed       zzz=500 INTERNAL SERVER ERRO blocked
+  POST //flag  brevski: X                  george=closed       zzz=500 INTERNAL SERVER ERRO blocked
+== method scoping ==
+  GET /flag  brevski: X                    george=closed       zzz=closed       both closed
+  PUT /flag  brevski: X                    george=closed       zzz=405 METHOD NOT ALLOWED blocked
+  PLAY /flag  brevski: X                   george=closed       zzz=405 METHOD NOT ALLOWED blocked
+  DELETE /flag  brevski: X                 george=closed       zzz=405 METHOD NOT ALLOWED blocked
+== Host scoping ==
+  Host: localhost  brevski: X              george=closed       zzz=500 INTERNAL SERVER ERRO blocked
+  Host: evil.example  brevski: X           george=closed       zzz=500 INTERNAL SERVER ERRO blocked
+  Host: 127.0.0.1:8888  brevski: X         george=closed       zzz=500 INTERNAL SERVER ERRO blocked
+== other header names: is anything ELSE blocked? ==
+  notbrevski: X                            george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+  brevskii: X                              george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+  x-brevski: X                             george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+  authorization: X                         george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+  x-forwarded-for: X                       george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+  user-agent: X                            george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+  cookie: X                                george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+  referer: X                               george=500 INTERNAL SERVER ERRO zzz=500 INTERNAL SERVER ERRO NOT blocked
+== rule 1 (GET + /flag) ==
+  GET /flag no brevski                     -> closed
+  GET /fl%%61g no brevski                   -> 405 METHOD NOT ALLOWED
+== THE PRIMITIVE: brevski in the chunked trailer ==
+  trailer brevski: george   -> 500 INTERNAL SERVER ERRO
+  trailer brevski: zzz      -> 500 INTERNAL SERVER ERRO

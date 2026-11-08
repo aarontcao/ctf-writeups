@@ -1,0 +1,13 @@
+target: http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com
+captured: 2026-09-06T13:21:08Z
+
+ 200 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/whoami  -> 30b-api-whoami.json.http
+ 200 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2F127.0.0.1%3A5000%2F  -> 42-unfurl-app-root.json.http
+ 200 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2F127.0.0.1%3A8001%2Fstatus%2Fbanner  -> 43-unfurl-internal-8001.json.http
+ 200 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2F127.0.0.1%3A5000%2Fidp%2Fjwks  -> 44-unfurl-jwks.json.http
+ 502 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=http%3A%2F%2F127.0.0.1%3A5000%2Fadmin%2Fupdates  -> 45-unfurl-admin-updates.json.http
+ 400 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/unfurl?url=file%3A%2F%2F%2Fetc%2Fpasswd  -> 46-unfurl-file-scheme.json.http
+ 200 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/status/banner  -> 60-status-banner.http
+ 200 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/import?url=http%3A%2F%2F127.0.0.1%3A5000%2F  -> 61-import-form.http
+ 403 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/api/release/stage  -> 62-api-release-stage.http
+ 200 http://meshgate-f1a5eea8fd01ddea.challs.ctf.thefewchosen.com/auth/sso/federated  -> 63-auth-sso-federated.http

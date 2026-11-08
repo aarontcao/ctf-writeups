@@ -1,0 +1,16 @@
+<h2>Capabilities &amp; scopes</h2>
+<p>Each restore session carries a single <code>scope</code>. Requesters start with a standard
+scope for uploading and inspecting a recovery bundle; the maintenance actions are available to
+higher scopes managed from the console.</p>
+
+<table class="kv">
+  <tr><td>guest</td><td>read job telemetry, upload a bundle</td></tr>
+  <tr><td>viewer</td><td>read catalog, metrics, audit tail</td></tr>
+  <tr><td>operator</td><td>run system file restore</td></tr>
+  <tr><td>maintainer</td><td>import a database manifest</td></tr>
+  <tr><td>admin</td><td>manage the console and replication</td></tr>
+</table>
+
+<h3>Bundle compatibility</h3>
+<p>Vaultkeeper reads recovery bundles exported by 4.x appliances. Bundles from older releases
+are still accepted; only their plain data fields are carried forward during import.</p>
