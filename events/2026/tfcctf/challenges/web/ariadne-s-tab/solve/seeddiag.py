@@ -24,6 +24,7 @@ def main():
     state = ari.load_state()
     grant = ari.get_token(state["email"], state["password"])
     token = grant["access_token"]
+    id_token = grant.get("id_token", "")
     scope = grant.get("scope") or "openid profile email"
     state["access_token"] = token
     ari.save_state(state)
@@ -50,7 +51,7 @@ def main():
             "  for (const [k, v] of entries) localStorage.setItem(k, v);"
             "}",
             [keys["privateKey"], keys["publicKey"],
-             payval.auth0_cache_entries(token, scope)],
+             payval.auth0_cache_entries(token, scope, id_token)],
         )
 
         # Build an auth0-spa-js client in the page from window.DOCUMENTS_CONFIG.
