@@ -1,6 +1,6 @@
 # UIUCTF 2017
 
-I played this 36-hour Taylor Swift themed CTF with [Michael Zhang](https://mzhang.io), and we finished 23rd of 163 with 1300 points. SIGPwny ran it at UIUC from 2017-04-29 to 2017-04-30 ([CTFtime](https://ctftime.org/event/453)). His writeup is [on his site](https://mzhang.io/posts/2017-05-01_uiuctf-2017-writeups/) and in the [original Medium post](https://medium.com/michaels-blog/uiuctf-2017-writeups-a53aabe1bc56).
+I played this 36-hour Taylor Swift themed CTF with [Michael Zhang](https://mzhang.io), and we finished 23rd of 163 with 1300 points. SIGPwny ran it at UIUC from 2017-04-29 to 2017-04-30 ([CTFtime](https://ctftime.org/event/453)). Michael's writeup is [on his site](https://mzhang.io/posts/2017-05-01_uiuctf-2017-writeups/) and in the [original Medium post](https://medium.com/michaels-blog/uiuctf-2017-writeups-a53aabe1bc56).
 
 ## Challenges
 
