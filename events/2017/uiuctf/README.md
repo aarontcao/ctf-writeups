@@ -16,4 +16,4 @@ I played this 36-hour Taylor Swift themed CTF with [Michael Zhang](https://mzhan
 
 These seven make up 1000 of the 1300. The other 300 came from LSLol (200, rev) and a 100-point recon challenge built around [@knobsondoors](https://www.instagram.com/knobsondoors/) on Instagram.
 
-The table's points are the static values from the [CTFtime task list](https://ctftime.org/event/453/tasks/), which skips LSLol.
+The table's points are the static values from the [CTFtime task list](https://ctftime.org/event/453/tasks/), which unfortunately doesn't archive LSLol or thr Instagram recon challenge.
