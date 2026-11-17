@@ -8,6 +8,7 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import subprocess
 import sys
 
@@ -123,9 +124,12 @@ def find_flag(blob, start: str | None = None) -> str | None:
 
 
 def record(flag: str, slug: str | None = None) -> None:
-    """Record a flag through the CLI."""
+    """Record a flag through the `ctf` CLI. A clone without the CLI only prints the flag."""
+    cli = shutil.which("ctf")
+    if not cli:
+        return
     slug = slug or challenge_dir().name
-    subprocess.run([os.path.expanduser("~/.ctf/bin/ctf"), "flag", slug, flag], check=False)
+    subprocess.run([cli, "flag", slug, flag], check=False)
 
 
 def win(blob, slug: str | None = None) -> str | None:
